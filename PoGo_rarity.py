@@ -266,6 +266,39 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
+    def scrape_structured_spawn_data(self) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Fetch spawn rates from a structured JSON dataset"""
+        logger.info("Fetching structured spawn data...")
+        rarity_data: Dict[str, float] = {}
+        url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
+
+        try:
+            response = self.safe_request(url)
+            data = response.json()
+            for entry in data.get("pokemon", []):
+                name = entry.get("name")
+                spawn_chance = entry.get("spawn_chance")
+                if name and spawn_chance is not None:
+                    try:
+                        chance = float(spawn_chance)
+                        # Map 0-20% spawn chance to 0-10 score
+                        score = min(10.0, max(0.0, chance / 2.0))
+                        rarity_data[name] = score
+                    except (TypeError, ValueError):
+                        continue
+
+            report = DataSourceReport(
+                "Structured Spawn Data", len(rarity_data), len(rarity_data) > 0
+            )
+            if len(rarity_data) == 0:
+                report.error_message = "No spawn data found"
+
+        except Exception as e:
+            logger.error(f"Structured spawn data fetch failed: {e}")
+            report = DataSourceReport("Structured Spawn Data", 0, False, str(e))
+
+        return rarity_data, report
+
     def is_pokemon_name(self, text: str) -> bool:
         """Check if text looks like a Pokemon name"""
         if not text or len(text) < 3:
@@ -540,18 +573,19 @@ class EnhancedRarityScraper:
         logger.info("Aggregating rarity data from multiple enhanced sources...")
 
         # Collect data from all sources
-        gamepress_data, gamepress_report = self.scrape_gamepress_v2()
-        hub_data, hub_report = self.scrape_pokemon_go_hub()
+        structured_data, structured_report = self.scrape_structured_spawn_data()
         api_data, api_report = self.scrape_pogo_api_data()
         curated_data, curated_report = self.get_curated_spawn_data()
 
         # Store reports for later display
-        self.data_source_reports = [gamepress_report,
-                                    hub_report, api_report, curated_report]
+        self.data_source_reports = [
+            structured_report,
+            api_report,
+            curated_report,
+        ]
 
         sources = {
-            'GamePress v2': gamepress_data,
-            'Pokemon GO Hub': hub_data,
+            'Structured Spawn Data': structured_data,
             'Pokemon GO API': api_data,
             'Enhanced Curated Data': curated_data,
         }
