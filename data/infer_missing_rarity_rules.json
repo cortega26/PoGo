@@ -1,0 +1,27 @@
+{
+  "pseudo_legendaries": {
+    "description": "Pseudo-legendary Pokémon that are rare despite not being legendary",
+    "pokemon": ["Dratini", "Larvitar", "Bagon", "Beldum", "Gible", "Axew", "Deino", "Goomy", "Jangmo-o", "Dreepy"],
+    "score": 1.5
+  },
+  "starters": {
+    "description": "Starter Pokémon from each generation are relatively common",
+    "pokemon": [
+      "Bulbasaur", "Charmander", "Squirtle", "Chikorita", "Cyndaquil", "Totodile",
+      "Treecko", "Torchic", "Mudkip", "Turtwig", "Chimchar", "Piplup",
+      "Snivy", "Tepig", "Oshawott", "Chespin", "Fennekin", "Froakie",
+      "Rowlet", "Litten", "Popplio", "Grookey", "Scorbunny", "Sobble"
+    ],
+    "score": 6.0
+  },
+  "very_common": {
+    "description": "Early-route Pokémon that appear very frequently",
+    "pokemon": ["Pidgey", "Rattata", "Caterpie", "Weedle", "Bidoof", "Patrat", "Lillipup"],
+    "score": 8.5
+  },
+  "regional_forms": {
+    "description": "Regional form Pokémon that include the region name",
+    "regions": ["Alolan", "Galarian", "Hisuian", "Paldean"],
+    "score": 4.0
+  }
+}
