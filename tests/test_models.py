@@ -1,7 +1,8 @@
 import pytest
+from datetime import datetime
 from pydantic import ValidationError
 
-from pogorarity.models import DataSourceReport, PokemonRarity
+from pogorarity.models import DataSourceReport, PokemonRarity, RarityRecord
 
 
 def test_pokemon_rarity_validation():
@@ -31,3 +32,23 @@ def test_pokemon_rarity_validation():
 def test_datasource_report_validation():
     with pytest.raises(ValidationError):
         DataSourceReport(source_name="site", pokemon_count="ten", success=True)
+
+
+def test_rarity_record_validation():
+    rec = RarityRecord(
+        pokemon_name="Bulbasaur",
+        rarity=1.0,
+        source="test",
+        confidence=0.9,
+        timestamp=datetime.utcnow(),
+    )
+    assert rec.source == "test"
+
+    with pytest.raises(ValidationError):
+        RarityRecord(
+            pokemon_name="Bulbasaur",
+            rarity="bad",
+            source="test",
+            confidence=0.9,
+            timestamp=datetime.utcnow(),
+        )
