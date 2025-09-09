@@ -511,6 +511,7 @@ class EnhancedRarityScraper:
         # test runs.
         pokemon_list = self.get_comprehensive_pokemon_list()
         limit = self.scrape_limit or len(pokemon_list)
+        pokemon_list = pokemon_list[:limit]
 
         # Collect data from all sources
         structured_data, structured_report = self.scrape_structured_spawn_data()

@@ -10,6 +10,7 @@ from .adapters import (
     parse_pokemondb_page,
     parse_structured_spawn_data,
 )
+from .normalizer import Encounter, Rarity, normalize_encounters
 
 __all__ = [
     "EnhancedRarityScraper",
@@ -22,4 +23,7 @@ __all__ = [
     "parse_go_hub",
     "parse_pokemondb_page",
     "parse_structured_spawn_data",
+    "Encounter",
+    "Rarity",
+    "normalize_encounters",
 ]
