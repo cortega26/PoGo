@@ -37,6 +37,7 @@ def _run(
     dry_run: bool = False,
     output_dir: Optional[str] = None,
     validate_only: bool = False,
+    weights_file: Optional[str] = None,
 ) -> None:
     run_id = uuid.uuid4().hex
     _log_run(
@@ -66,7 +67,10 @@ def _run(
 
     try:
         metrics = {"requests": 0, "errors": 0, "latencies": []}
-        pokemon_data, reports = aggregate_data(limit=limit, metrics=metrics)
+        weight_path = Path(weights_file) if weights_file else None
+        pokemon_data, reports = aggregate_data(
+            limit=limit, metrics=metrics, weights_path=weight_path
+        )
         report_data_source_quality(reports)
         rows = len(pokemon_data)
 
@@ -124,12 +128,19 @@ def main(argv: Optional[list[str]] = None) -> None:  # pragma: no cover - thin w
     parser.add_argument(
         "--validate-only", action="store_true", help="Validate data without writing CSV output"
     )
+    parser.add_argument(
+        "--weights-file",
+        type=str,
+        default=None,
+        help="Path to JSON file mapping source names to weight multipliers",
+    )
     args = parser.parse_args(argv)
     _run(
         limit=args.limit,
         dry_run=args.dry_run,
         output_dir=args.output_dir,
         validate_only=args.validate_only,
+        weights_file=args.weights_file,
     )
 
 

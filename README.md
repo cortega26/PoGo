@@ -49,6 +49,9 @@ scores are combined using a weighted average:
 - PokeAPI Capture Rate – weight 2.0
 - Silph Road Spawn Tier – weight 0.5
 
+Weights can be customised by passing a JSON file to the CLI with
+`--weights-file`.
+
 The resulting `Average_Rarity_Score` feeds two threshold sets:
 
 - Rarity bands: `<2` Very Rare, `2–4` Rare, `4–7` Uncommon, `≥7` Common.
@@ -91,15 +94,22 @@ pokemon-rarity --limit 5 --dry-run
 # quick one-minute demo
 pokemon-rarity --limit 1 --dry-run
 
+# customise source weighting
+pokemon-rarity --weights-file weights.example.json --dry-run
+
 # launch the Streamlit interface on http://localhost:8501
 streamlit run app.py
 ```
 
 ## Configuration
 
-| Name | Type | Default | Required | Description |
+| Flag | Type | Default | Required | Description |
 |---|---|---|---|---|
-| N/A | – | – | – | Configuration is handled via CLI flags (`--limit`, `--dry-run`, `--output-dir`). |
+| `--limit` | int | – | No | Limit number of Pokémon scraped for testing |
+| `--dry-run` | flag | false | No | Run the scraper without writing CSV output |
+| `--output-dir` | str | – | No | Directory to save the CSV output file |
+| `--weights-file` | str | – | No | JSON file mapping source names to weight multipliers |
+| `--validate-only` | flag | false | No | Validate data without writing CSV output |
 
 ## Commands
 
