@@ -13,3 +13,12 @@ pokemon-rarity --limit 50
 The `--limit` option restricts the number of Pokémon processed from
 PokemonDB, which is useful during testing.
 
+
+## Streamlit App
+
+Run the interactive app with:
+
+```bash
+streamlit run app.py
+```
+
