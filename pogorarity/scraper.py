@@ -10,11 +10,9 @@ import os
 try:
     # Try relative import (when run as module)
     from .models import PokemonRarity, DataSourceReport
-    from .normalizer import canonicalize_name, lookup_number
 except ImportError:
     # Fall back to absolute import (when run directly)
     from models import PokemonRarity, DataSourceReport
-    from normalizer import canonicalize_name, lookup_number
 import requests
 import pandas as pd
 import time
@@ -78,8 +76,6 @@ class EnhancedRarityScraper:
 
         # Output directory for CSV export
         self.output_dir: Optional[str] = None
-        # place to stash intermediate DataFrames for debugging
-        self.intermediate_frames: Dict[str, pd.DataFrame] = {}
 
     def safe_request(
         self,
@@ -230,28 +226,23 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
-    def scrape_pokemondb_catch_rate(self, limit: Optional[int] = None) -> Tuple[Dict[int, float], DataSourceReport]:
-        """Scrape catch rates from Pokémon Database.
-
-        The returned mapping is keyed by National Dex number so it can be merged
-        with other sources without relying on raw names.
-        """
-
+    def scrape_pokemondb_catch_rate(self, limit: Optional[int] = None) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Scrape catch rates from Pokémon Database"""
         logger.info("Attempting to scrape Pokemon Database...")
-        rarity_data: Dict[int, float] = {}
+        rarity_data: Dict[str, float] = {}
 
         try:
             pokemon_list = self.get_comprehensive_pokemon_list()
             if limit is not None:
                 pokemon_list = pokemon_list[:limit]
-            for name, number in pokemon_list:
+            for name, _ in pokemon_list:
                 url = f"https://pokemondb.net/pokedex/{self.slugify_name(name)}"
                 try:
                     response = self.safe_request(url)
                     catch_rate = self.parse_pokemondb_catch_rate(response.text)
                     if catch_rate is not None:
                         score = min(10.0, catch_rate / 25.5)
-                        rarity_data[number] = score
+                        rarity_data[name] = score
                 except Exception:
                     continue
 
@@ -274,33 +265,26 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
-    def scrape_structured_spawn_data(self) -> Tuple[Dict[int, float], DataSourceReport]:
-        """Fetch spawn rates from a structured JSON dataset.
-
-        Returns a mapping of National Dex number to a 0-10 encounter score.
-        """
-
+    def scrape_structured_spawn_data(self) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Fetch spawn rates from a structured JSON dataset"""
         logger.info("Fetching structured spawn data...")
-        rarity_data: Dict[int, float] = {}
+        rarity_data: Dict[str, float] = {}
         url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
 
         try:
             response = self.safe_request(url)
             data = response.json()
             for entry in data.get("pokemon", []):
-                name_raw = entry.get("name")
+                name = entry.get("name")
                 spawn_chance = entry.get("spawn_chance")
-                if name_raw and spawn_chance is not None:
+                if name and spawn_chance is not None:
                     try:
                         chance = float(spawn_chance)
+                        # Map 0-20% spawn chance to 0-10 score
+                        score = min(10.0, max(0.0, chance / 2.0))
+                        rarity_data[name] = score
                     except (TypeError, ValueError):
                         continue
-                    number = lookup_number(name_raw)
-                    if number is None:
-                        continue
-                    # Map 0-20% spawn chance to 0-10 score
-                    score = min(10.0, max(0.0, chance / 2.0))
-                    rarity_data[number] = score
 
             report = DataSourceReport(
                 source_name="Structured Spawn Data",
@@ -410,33 +394,25 @@ class EnhancedRarityScraper:
         # Default
         return 5.0
 
-    def get_curated_spawn_data(self) -> Tuple[Dict[int, float], DataSourceReport]:
-        """Get enhanced curated spawn data with fixed categorization."""
-
+    def get_curated_spawn_data(self) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Get enhanced curated spawn data with fixed categorization"""
         logger.info("Loading enhanced curated spawn data...")
 
-        data_path = Path(__file__).parent.parent / "data" / "curated_spawn_data.json"
-        rarity_data: Dict[int, float] = {}
+        data_path = Path(__file__).parent.parent / \
+            "data" / "curated_spawn_data.json"
         try:
             with open(data_path, encoding="utf-8") as f:
                 spawn_data = json.load(f)
-            for name_raw, score in spawn_data.items():
-                number = lookup_number(name_raw)
-                if number is None:
-                    continue
-                try:
-                    rarity_data[number] = float(score)
-                except (TypeError, ValueError):
-                    continue
             report = DataSourceReport(
                 source_name="Enhanced Curated Data",
-                pokemon_count=len(rarity_data),
+                pokemon_count=len(spawn_data),
                 success=True,
             )
             logger.info(
-                f"Loaded {len(rarity_data)} Pokemon spawn rates from enhanced curated data")
+                f"Loaded {len(spawn_data)} Pokemon spawn rates from enhanced curated data")
         except (FileNotFoundError, json.JSONDecodeError) as e:
             logger.error(f"Curated spawn data load failed: {e}")
+            spawn_data = {}
             report = DataSourceReport(
                 source_name="Enhanced Curated Data",
                 pokemon_count=0,
@@ -444,7 +420,7 @@ class EnhancedRarityScraper:
                 error_message=str(e),
             )
 
-        return rarity_data, report
+        return spawn_data, report
 
     def categorize_pokemon_spawn_type(self, pokemon_name: str, pokemon_number: int) -> str:
         """FIXED categorization with complete legendary list"""
@@ -550,26 +526,10 @@ class EnhancedRarityScraper:
             pokemondb_report,
         ]
 
-        # Build DataFrames for debugging/analysis and join on dex number
-        structured_df = pd.DataFrame(
-            [(num, score) for num, score in structured_data.items()],
-            columns=["number", "Structured_Spawn_Data_Score"],
-        )
-        curated_df = pd.DataFrame(
-            [(num, score) for num, score in curated_data.items()],
-            columns=["number", "Enhanced_Curated_Data_Score"],
-        )
-        catch_df = pd.DataFrame(
-            [(num, score) for num, score in pokemondb_data.items()],
-            columns=["number", "PokemonDB_Catch_Rate_Score"],
-        )
-        merged_df = structured_df.merge(curated_df, on="number", how="outer")
-        merged_df = merged_df.merge(catch_df, on="number", how="outer")
-        self.intermediate_frames = {
-            "structured": structured_df,
-            "curated": curated_df,
-            "catch_rate": catch_df,
-            "merged": merged_df,
+        sources = {
+            'Structured Spawn Data': structured_data,
+            'Enhanced Curated Data': curated_data,
+            'PokemonDB Catch Rate': pokemondb_data,
         }
 
         logger.info(f"Processing {len(pokemon_list)} Pokemon total...")
@@ -587,38 +547,32 @@ class EnhancedRarityScraper:
             spawn_type = self.categorize_pokemon_spawn_type(
                 pokemon_name, pokemon_number)
 
-            ss = structured_data.get(pokemon_number)
-            cs = curated_data.get(pokemon_number)
-            catch = pokemondb_data.get(pokemon_number)
+            # Collect scores from each source
+            for source_name, source_data in sources.items():
+                if pokemon_name in source_data:
+                    rarity_scores[source_name] = source_data[pokemon_name]
+                    data_sources.append(source_name)
 
-            if ss is not None:
-                rarity_scores['Structured Spawn Data'] = ss
-                data_sources.append('Structured Spawn Data')
-            if cs is not None:
-                rarity_scores['Enhanced Curated Data'] = cs
-                data_sources.append('Enhanced Curated Data')
-            if catch is not None:
-                rarity_scores['PokemonDB Catch Rate'] = catch
-                data_sources.append('PokemonDB Catch Rate')
-
-            spawn_scores = [s for s in (ss, cs) if s is not None]
-
-            if spawn_scores:
-                # Use the highest reported spawn score to avoid outdated low values
-                encounter_score = max(spawn_scores)
+            # Calculate average score or infer if missing
+            if len(rarity_scores) > 1:
+                average_score = sum(rarity_scores.values()
+                                    ) / len(rarity_scores)
                 recommendation = self.get_trading_recommendation(
-                    encounter_score, spawn_type)
-                if len(spawn_scores) > 1:
-                    pokemon_with_multiple_sources += 1
-                else:
-                    pokemon_with_single_source += 1
+                    average_score, spawn_type)
+                pokemon_with_multiple_sources += 1
+            elif len(rarity_scores) == 1:
+                average_score = list(rarity_scores.values())[0]
+                recommendation = self.get_trading_recommendation(
+                    average_score, spawn_type)
+                pokemon_with_single_source += 1
             else:
                 # Infer rarity using improved logic
-                encounter_score = self.infer_missing_rarity(
+                inferred_score = self.infer_missing_rarity(
                     pokemon_name, pokemon_number, spawn_type)
+                average_score = inferred_score
                 recommendation = self.get_trading_recommendation(
-                    encounter_score, spawn_type)
-                rarity_scores['Inferred'] = encounter_score
+                    average_score, spawn_type)
+                rarity_scores['Inferred'] = inferred_score
                 data_sources.append('Inferred')
                 pokemon_inferred += 1
 
@@ -627,7 +581,7 @@ class EnhancedRarityScraper:
                 name=pokemon_name,
                 number=pokemon_number,
                 rarity_scores=rarity_scores,
-                average_score=encounter_score,
+                average_score=average_score,
                 recommendation=recommendation,
                 data_sources=data_sources,
                 spawn_type=spawn_type
@@ -713,7 +667,7 @@ class EnhancedRarityScraper:
 
         pokemon_list: List[Tuple[str, int]] = []
         for entry in data:
-            name = canonicalize_name(entry.get("name", ""))
+            name = entry.get("name")
             number = entry.get("number")
             if not isinstance(name, str) or not isinstance(number, int):
                 logger.warning("Skipping malformed entry: %s", entry)

@@ -1,3 +1,5 @@
 /.qodo
 /.venv
 pogorarity/run_log.jsonl
+__pycache__/
+*.pyc
