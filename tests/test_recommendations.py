@@ -8,7 +8,7 @@ from pogorarity import get_trading_recommendation, categorize_pokemon_spawn_type
         (5.0, "legendary", "Never Transfer (Legendary)"),
         (5.0, "event-only", "Never Transfer (Event Only)"),
         (5.0, "evolution-only", "Evaluate for Evolution"),
-        (3.99, "wild", "Should Always Trade"),
+        (3.99, "wild", "Keep or Trade Sparingly"),
         (4.0, "wild", "Depends on Circumstances"),
         (6.99, "wild", "Depends on Circumstances"),
         (7.0, "wild", "Safe to Transfer"),
