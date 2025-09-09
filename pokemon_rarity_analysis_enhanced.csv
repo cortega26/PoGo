@@ -1,952 +1,952 @@
 Number,Name,Spawn_Type,Average_Rarity_Score,Recommendation,Data_Sources,GamePress_v2_Score,Pokemon_GO_Hub_Score,Pokemon_GO_API_Score,Enhanced_Curated_Data_Score,Inferred_Score
-1,Bulbasaur,wild,3.17,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-2,Ivysaur,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
-3,Venusaur,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-4,Charmander,wild,3.06,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-5,Charmeleon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-6,Charizard,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-7,Squirtle,wild,3.15,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-8,Wartortle,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
-9,Blastoise,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-10,Caterpie,wild,4.76,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
-11,Metapod,evolution-only,0.09,Evaluate for Evolution,Structured Spawn Data,,,,,
-12,Butterfree,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-13,Weedle,wild,5.78,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
-14,Kakuna,evolution-only,0.22,Evaluate for Evolution,Structured Spawn Data,,,,,
-15,Beedrill,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
-16,Pidgey,wild,9.0,Safe to Transfer,"Structured Spawn Data, Enhanced Curated Data",,,,10,
-17,Pidgeotto,evolution-only,0.51,Evaluate for Evolution,Structured Spawn Data,,,,,
-18,Pidgeot,evolution-only,0.07,Evaluate for Evolution,Structured Spawn Data,,,,,
-19,Rattata,wild,7.76,Safe to Transfer,"Structured Spawn Data, Enhanced Curated Data",,,,9,
+1,Bulbasaur,wild,3.22,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data, Serebii, PokemonDB Catch Rate",,,7.0,6,
+2,Ivysaur,evolution-only,2.45,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+3,Venusaur,evolution-only,2.19,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+4,Charmander,wild,3.18,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data, Serebii, PokemonDB Catch Rate",,,7.0,6,
+5,Charmeleon,evolution-only,2.44,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+6,Charizard,evolution-only,2.19,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+7,Squirtle,wild,3.21,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data, Serebii, PokemonDB Catch Rate",,,7.0,6,
+8,Wartortle,evolution-only,2.45,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+9,Blastoise,evolution-only,2.19,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+10,Caterpie,wild,5.5,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data, Serebii, PokemonDB Catch Rate",,,7.0,8,
+11,Metapod,evolution-only,3.2,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+12,Butterfree,evolution-only,2.44,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+13,Weedle,wild,5.91,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data, Serebii, PokemonDB Catch Rate",,,7.0,8,
+14,Kakuna,evolution-only,3.23,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+15,Beedrill,evolution-only,2.2,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API, Serebii, PokemonDB Catch Rate",,,7.0,,
+16,Pidgey,wild,8.33,Safe to Transfer,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,10,
+17,Pidgeotto,evolution-only,3.75,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+18,Pidgeot,evolution-only,3.53,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+19,Rattata,wild,7.51,Safe to Transfer,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,9,
 19,Alolan Rattata,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-20,Raticate,evolution-only,0.2,Evaluate for Evolution,Structured Spawn Data,,,,,
+20,Raticate,evolution-only,3.6,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 20,Alolan Raticate,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-21,Spearow,wild,4.68,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-22,Fearow,evolution-only,0.07,Evaluate for Evolution,Structured Spawn Data,,,,,
-23,Ekans,wild,1.14,Should Always Trade,Structured Spawn Data,,,,,
-24,Arbok,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-25,Pikachu,wild,3.05,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-26,Raichu,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+21,Spearow,wild,5.46,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+22,Fearow,evolution-only,3.54,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+23,Ekans,wild,4.07,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+24,Arbok,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+25,Pikachu,wild,4.37,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+26,Raichu,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 26,Alolan Raichu,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-27,Sandshrew,wild,3.28,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+27,Sandshrew,wild,4.52,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
 27,Alolan Sandshrew,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-28,Sandslash,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+28,Sandslash,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 28,Alolan Sandslash,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-29,Nidoran♀,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-30,Nidorina,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-31,Nidoqueen,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-32,Nidoran♂,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-33,Nidorino,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-34,Nidoking,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-35,Clefairy,wild,2.23,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-36,Clefable,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-37,Vulpix,wild,2.56,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,5,
+29,Nidoran♀,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+30,Nidorina,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+31,Nidoqueen,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+32,Nidoran♂,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+33,Nidorino,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+34,Nidoking,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+35,Clefairy,wild,3.82,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+36,Clefable,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+37,Vulpix,wild,4.04,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,5,
 37,Alolan Vulpix,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-38,Ninetales,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+38,Ninetales,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 38,Alolan Ninetales,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-39,Jigglypuff,wild,2.1,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-40,Wigglytuff,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-41,Zubat,wild,5.63,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
-42,Golbat,evolution-only,0.21,Evaluate for Evolution,Structured Spawn Data,,,,,
-43,Oddish,wild,3.75,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-44,Gloom,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
-45,Vileplume,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-46,Paras,wild,4.09,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-47,Parasect,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-48,Venonat,wild,4.07,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-49,Venomoth,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-50,Diglett,wild,0.2,Should Always Trade,Structured Spawn Data,,,,,
+39,Jigglypuff,wild,3.73,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+40,Wigglytuff,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+41,Zubat,wild,6.09,Safe to Transfer,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+42,Golbat,evolution-only,3.6,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+43,Oddish,wild,4.84,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+44,Gloom,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+45,Vileplume,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+46,Paras,wild,5.06,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+47,Parasect,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+48,Venonat,wild,5.05,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+49,Venomoth,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+50,Diglett,wild,3.6,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 50,Alolan Diglett,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-51,Dugtrio,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+51,Dugtrio,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 51,Alolan Dugtrio,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-52,Meowth,wild,0.43,Should Always Trade,Structured Spawn Data,,,,,
+52,Meowth,wild,3.71,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 52,Alolan Meowth,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
 52,Galarian Meowth,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-53,Persian,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+53,Persian,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 53,Alolan Persian,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-54,Psyduck,wild,4.13,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-55,Golduck,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-56,Mankey,wild,0.46,Should Always Trade,Structured Spawn Data,,,,,
-57,Primeape,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
-58,Growlithe,wild,0.46,Should Always Trade,Structured Spawn Data,,,,,
-59,Arcanine,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-60,Poliwag,wild,3.55,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-61,Poliwhirl,evolution-only,0.07,Evaluate for Evolution,Structured Spawn Data,,,,,
-62,Poliwrath,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-63,Abra,wild,3.1,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-64,Kadabra,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-65,Alakazam,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-66,Machop,wild,3.12,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-67,Machoke,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
-68,Machamp,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-69,Bellsprout,wild,3.79,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-70,Weepinbell,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-71,Victreebel,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-72,Tentacool,wild,3.7,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-73,Tentacruel,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-74,Geodude,wild,3.3,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+54,Psyduck,wild,5.09,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+55,Golduck,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+56,Mankey,wild,3.73,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+57,Primeape,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+58,Growlithe,wild,3.73,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+59,Arcanine,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+60,Poliwag,wild,4.7,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+61,Poliwhirl,evolution-only,3.53,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+62,Poliwrath,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+63,Abra,wild,4.4,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+64,Kadabra,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+65,Alakazam,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+66,Machop,wild,4.42,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+67,Machoke,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+68,Machamp,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+69,Bellsprout,wild,4.86,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+70,Weepinbell,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+71,Victreebel,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+72,Tentacool,wild,4.8,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+73,Tentacruel,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+74,Geodude,wild,4.53,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
 74,Alolan Geodude,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-75,Graveler,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+75,Graveler,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 75,Alolan Graveler,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-76,Golem,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+76,Golem,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 76,Alolan Golem,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-77,Ponyta,wild,0.26,Should Always Trade,Structured Spawn Data,,,,,
+77,Ponyta,wild,3.63,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 77,Galarian Ponyta,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-78,Rapidash,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+78,Rapidash,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 78,Galarian Rapidash,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-79,Slowpoke,wild,2.76,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,5,
+79,Slowpoke,wild,4.17,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,5,
 79,Galarian Slowpoke,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-80,Slowbro,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+80,Slowbro,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 80,Galarian Slowbro,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-81,Magnemite,wild,2.18,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-82,Magneton,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+81,Magnemite,wild,3.79,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+82,Magneton,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 83,Farfetch'd,wild,1.51,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
 83,Galarian Farfetch'd,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-84,Doduo,wild,3.13,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-85,Dodrio,evolution-only,0.11,Evaluate for Evolution,Structured Spawn Data,,,,,
-86,Seel,wild,3.07,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-87,Dewgong,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-88,Grimer,wild,2.01,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+84,Doduo,wild,4.42,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+85,Dodrio,evolution-only,3.56,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+86,Seel,wild,4.38,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+87,Dewgong,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+88,Grimer,wild,3.68,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
 88,Alolan Grimer,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-89,Muk,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+89,Muk,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 89,Alolan Muk,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-90,Shellder,wild,2.13,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-91,Cloyster,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-92,Gastly,wild,4.2,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
-93,Haunter,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
-94,Gengar,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-95,Onix,wild,1.52,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-96,Drowzee,wild,3.3,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,5,
-97,Hypno,evolution-only,0.05,Evaluate for Evolution,Structured Spawn Data,,,,,
-98,Krabby,wild,3.53,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
-99,Kingler,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
-100,Voltorb,wild,2.16,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+90,Shellder,wild,3.75,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+91,Cloyster,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+92,Gastly,wild,5.13,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+93,Haunter,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+94,Gengar,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+95,Onix,wild,3.35,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+96,Drowzee,wild,4.54,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+97,Hypno,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+98,Krabby,wild,4.69,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+99,Kingler,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+100,Voltorb,wild,3.77,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
 100,Hisuian Voltorb,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-101,Electrode,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+101,Electrode,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 101,Hisuian Electrode,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-102,Exeggcute,wild,2.19,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-103,Exeggutor,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+102,Exeggcute,wild,3.8,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+103,Exeggutor,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 103,Alolan Exeggutor,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-104,Cubone,wild,2.15,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-105,Marowak,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+104,Cubone,wild,3.77,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+105,Marowak,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 105,Alolan Marowak,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-106,Hitmonlee,wild,1.5,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-107,Hitmonchan,wild,1.51,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-108,Lickitung,wild,1.5,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-109,Koffing,wild,2.05,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-110,Weezing,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+106,Hitmonlee,wild,3.34,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+107,Hitmonchan,wild,3.34,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+108,Lickitung,wild,3.34,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+109,Koffing,wild,3.7,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+110,Weezing,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 110,Galarian Weezing,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-111,Rhyhorn,wild,2.16,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-112,Rhydon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-113,Chansey,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-114,Tangela,wild,2.06,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-115,Kangaskhan,wild,1.5,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-116,Horsea,wild,3.78,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-117,Seadra,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
-118,Goldeen,wild,4.54,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
-119,Seaking,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
-120,Staryu,wild,3.99,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
-121,Starmie,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
-122,Mr. Mime,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+111,Rhyhorn,wild,3.77,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+112,Rhydon,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+113,Chansey,wild,3.0,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+114,Tangela,wild,3.7,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+115,Kangaskhan,wild,3.33,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+116,Horsea,wild,4.85,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+117,Seadra,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+118,Goldeen,wild,5.36,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+119,Seaking,evolution-only,3.52,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+120,Staryu,wild,4.99,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+121,Starmie,evolution-only,3.51,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+122,Mr. Mime,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
 122,Galarian Mr. Mime,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-123,Scyther,wild,1.53,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-124,Jynx,wild,1.59,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-125,Electabuzz,wild,2.02,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-126,Magmar,wild,2.02,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-127,Pinsir,wild,2.25,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
-128,Tauros,wild,1.53,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+123,Scyther,wild,3.36,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+124,Jynx,wild,3.39,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+125,Electabuzz,wild,3.68,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+126,Magmar,wild,3.68,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+127,Pinsir,wild,3.83,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+128,Tauros,wild,3.35,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
 128,Paldean Tauros,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-129,Magikarp,wild,5.7,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,9,
-130,Gyarados,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-131,Lapras,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-132,Ditto,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-133,Eevee,wild,4.69,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
-134,Vaporeon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-135,Jolteon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-136,Flareon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-137,Porygon,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-138,Omanyte,wild,1.53,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-139,Omastar,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-140,Kabuto,wild,1.52,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
-141,Kabutops,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-142,Aerodactyl,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-143,Snorlax,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-144,Articuno,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
+129,Magikarp,wild,6.13,Safe to Transfer,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,9,
+130,Gyarados,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+131,Lapras,wild,3.0,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+132,Ditto,wild,3.0,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+133,Eevee,wild,5.46,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+134,Vaporeon,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+135,Jolteon,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+136,Flareon,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+137,Porygon,wild,3.0,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+138,Omanyte,wild,3.36,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+139,Omastar,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+140,Kabuto,wild,3.35,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+141,Kabutops,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+142,Aerodactyl,wild,3.0,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+143,Snorlax,wild,3.0,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+144,Articuno,legendary,0.0,Never Transfer (Legendary),"Structured Spawn Data, Pokemon GO API",,,0.0,,
 144,Galarian Articuno,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-145,Zapdos,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
+145,Zapdos,legendary,0.0,Never Transfer (Legendary),"Structured Spawn Data, Pokemon GO API",,,0.0,,
 145,Galarian Zapdos,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-146,Moltres,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
+146,Moltres,legendary,0.0,Never Transfer (Legendary),"Structured Spawn Data, Pokemon GO API",,,0.0,,
 146,Galarian Moltres,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-147,Dratini,wild,1.07,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
-148,Dragonair,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
-149,Dragonite,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
-150,Mewtwo,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
-151,Mew,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
-152,Chikorita,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-153,Bayleef,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-154,Meganium,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-155,Cyndaquil,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-156,Quilava,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-157,Typhlosion,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
+147,Dratini,wild,3.05,Depends on Circumstances,"Structured Spawn Data, Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+148,Dragonair,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+149,Dragonite,evolution-only,3.5,Evaluate for Evolution,"Structured Spawn Data, Pokemon GO API",,,7.0,,
+150,Mewtwo,legendary,0.0,Never Transfer (Legendary),"Structured Spawn Data, Pokemon GO API",,,0.0,,
+151,Mew,legendary,0.0,Never Transfer (Legendary),"Structured Spawn Data, Pokemon GO API",,,0.0,,
+152,Chikorita,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+153,Bayleef,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+154,Meganium,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+155,Cyndaquil,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+156,Quilava,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+157,Typhlosion,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 157,Hisuian Typhlosion,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-158,Totodile,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-159,Croconaw,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-160,Feraligatr,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-161,Sentret,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-162,Furret,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-163,Hoothoot,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-164,Noctowl,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-165,Ledyba,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-166,Ledian,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-167,Spinarak,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-168,Ariados,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-169,Crobat,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-170,Chinchou,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-171,Lanturn,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-172,Pichu,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-173,Cleffa,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-174,Igglybuff,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-175,Togepi,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-176,Togetic,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-177,Natu,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-178,Xatu,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-179,Mareep,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-180,Flaaffy,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-181,Ampharos,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-182,Bellossom,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-183,Marill,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-184,Azumarill,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-185,Sudowoodo,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-186,Politoed,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-187,Hoppip,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-188,Skiploom,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-189,Jumpluff,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-190,Aipom,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-191,Sunkern,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-192,Sunflora,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-193,Yanma,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-194,Wooper,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
+158,Totodile,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+159,Croconaw,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+160,Feraligatr,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+161,Sentret,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+162,Furret,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+163,Hoothoot,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+164,Noctowl,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+165,Ledyba,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+166,Ledian,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+167,Spinarak,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+168,Ariados,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+169,Crobat,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+170,Chinchou,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+171,Lanturn,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+172,Pichu,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+173,Cleffa,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+174,Igglybuff,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+175,Togepi,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+176,Togetic,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+177,Natu,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+178,Xatu,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+179,Mareep,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+180,Flaaffy,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+181,Ampharos,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+182,Bellossom,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+183,Marill,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+184,Azumarill,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+185,Sudowoodo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+186,Politoed,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+187,Hoppip,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+188,Skiploom,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+189,Jumpluff,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+190,Aipom,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+191,Sunkern,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+192,Sunflora,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+193,Yanma,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+194,Wooper,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
 194,Paldean Wooper,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-195,Quagsire,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-196,Espeon,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-197,Umbreon,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-198,Murkrow,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-199,Slowking,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
+195,Quagsire,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+196,Espeon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+197,Umbreon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+198,Murkrow,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+199,Slowking,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 199,Galarian Slowking,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-200,Misdreavus,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-201,Unown,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-202,Wobbuffet,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-203,Girafarig,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-204,Pineco,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-205,Forretress,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-206,Dunsparce,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-207,Gligar,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-208,Steelix,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-209,Snubbull,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-210,Granbull,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-211,Qwilfish,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
+200,Misdreavus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+201,Unown,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+202,Wobbuffet,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+203,Girafarig,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+204,Pineco,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+205,Forretress,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+206,Dunsparce,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+207,Gligar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+208,Steelix,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+209,Snubbull,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+210,Granbull,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+211,Qwilfish,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 211,Hisuian Qwilfish,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-212,Scizor,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-213,Shuckle,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-214,Heracross,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-215,Sneasel,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
+212,Scizor,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+213,Shuckle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+214,Heracross,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+215,Sneasel,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 215,Hisuian Sneasel,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-216,Teddiursa,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-217,Ursaring,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-218,Slugma,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-219,Magcargo,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-220,Swinub,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-221,Piloswine,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-222,Corsola,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
+216,Teddiursa,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+217,Ursaring,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+218,Slugma,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+219,Magcargo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+220,Swinub,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+221,Piloswine,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+222,Corsola,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 222,Galarian Corsola,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-223,Remoraid,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-224,Octillery,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-225,Delibird,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-226,Mantine,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-227,Skarmory,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-228,Houndour,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-229,Houndoom,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-230,Kingdra,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-231,Phanpy,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-232,Donphan,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-233,Porygon2,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-234,Stantler,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-235,Smeargle,event-only,0.0,Never Transfer (Event Only),Inferred,,,,,0.0
-236,Tyrogue,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-237,Hitmontop,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-238,Smoochum,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-239,Elekid,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-240,Magby,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-241,Miltank,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-242,Blissey,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-243,Raikou,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-244,Entei,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-245,Suicune,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-246,Larvitar,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-247,Pupitar,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-248,Tyranitar,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
-249,Lugia,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-250,Ho-Oh,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-251,Celebi,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-252,Treecko,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-253,Grovyle,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-254,Sceptile,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-255,Torchic,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-256,Combusken,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-257,Blaziken,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-258,Mudkip,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-259,Marshtomp,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-260,Swampert,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-261,Poochyena,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-262,Mightyena,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-263,Zigzagoon,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
+223,Remoraid,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+224,Octillery,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+225,Delibird,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+226,Mantine,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+227,Skarmory,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+228,Houndour,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+229,Houndoom,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+230,Kingdra,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+231,Phanpy,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+232,Donphan,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+233,Porygon2,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+234,Stantler,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+235,Smeargle,event-only,7.0,Never Transfer (Event Only),Pokemon GO API,,,7.0,,
+236,Tyrogue,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+237,Hitmontop,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+238,Smoochum,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+239,Elekid,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+240,Magby,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+241,Miltank,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+242,Blissey,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+243,Raikou,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+244,Entei,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+245,Suicune,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+246,Larvitar,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+247,Pupitar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+248,Tyranitar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+249,Lugia,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+250,Ho-Oh,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+251,Celebi,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+252,Treecko,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+253,Grovyle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+254,Sceptile,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+255,Torchic,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+256,Combusken,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+257,Blaziken,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+258,Mudkip,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+259,Marshtomp,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+260,Swampert,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+261,Poochyena,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+262,Mightyena,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+263,Zigzagoon,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
 263,Galarian Zigzagoon,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-264,Linoone,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
+264,Linoone,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 264,Galarian Linoone,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-265,Wurmple,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-266,Silcoon,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-267,Beautifly,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-268,Cascoon,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-269,Dustox,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-270,Lotad,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-271,Lombre,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-272,Ludicolo,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-273,Seedot,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-274,Nuzleaf,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-275,Shiftry,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-276,Taillow,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-277,Swellow,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-278,Wingull,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-279,Pelipper,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-280,Ralts,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-281,Kirlia,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-282,Gardevoir,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-283,Surskit,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-284,Masquerain,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-285,Shroomish,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-286,Breloom,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-287,Slakoth,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-288,Vigoroth,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-289,Slaking,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-290,Nincada,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-291,Ninjask,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-292,Shedinja,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-293,Whismur,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-294,Loudred,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-295,Exploud,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-296,Makuhita,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-297,Hariyama,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-298,Azurill,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-299,Nosepass,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-300,Skitty,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-301,Delcatty,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-302,Sableye,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-303,Mawile,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-304,Aron,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-305,Lairon,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-306,Aggron,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-307,Meditite,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-308,Medicham,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-309,Electrike,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-310,Manectric,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-311,Plusle,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-312,Minun,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-313,Volbeat,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-314,Illumise,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-315,Roselia,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-316,Gulpin,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-317,Swalot,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-318,Carvanha,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-319,Sharpedo,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-320,Wailmer,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-321,Wailord,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-322,Numel,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-323,Camerupt,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-324,Torkoal,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-325,Spoink,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-326,Grumpig,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-327,Spinda,event-only,0.0,Never Transfer (Event Only),Inferred,,,,,0.0
-328,Trapinch,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-329,Vibrava,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-330,Flygon,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-331,Cacnea,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-332,Cacturne,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-333,Swablu,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-334,Altaria,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-335,Zangoose,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-336,Seviper,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-337,Lunatone,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-338,Solrock,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-339,Barboach,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-340,Whiscash,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-341,Corphish,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-342,Crawdaunt,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-343,Baltoy,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-344,Claydol,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-345,Lileep,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-346,Cradily,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-347,Anorith,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-348,Armaldo,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-349,Feebas,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-350,Milotic,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-351,Castform,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-352,Kecleon,event-only,2,Never Transfer (Event Only),Enhanced Curated Data,,,,2,
-353,Shuppet,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-354,Banette,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-355,Duskull,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-356,Dusclops,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-357,Tropius,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-358,Chimecho,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-359,Absol,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-360,Wynaut,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-361,Snorunt,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-362,Glalie,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-363,Spheal,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-364,Sealeo,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-365,Walrein,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-366,Clamperl,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-367,Huntail,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-368,Gorebyss,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-369,Relicanth,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-370,Luvdisc,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-371,Bagon,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-372,Shelgon,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-373,Salamence,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-374,Beldum,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-375,Metang,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-376,Metagross,wild,5.0,Depends on Circumstances,Inferred,,,,,5.0
-377,Regirock,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-378,Regice,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-379,Registeel,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-380,Latias,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-381,Latios,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-382,Kyogre,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-383,Groudon,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-384,Rayquaza,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-385,Jirachi,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-386,Deoxys,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-387,Turtwig,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-388,Grotle,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-389,Torterra,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-390,Chimchar,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-391,Monferno,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-392,Infernape,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-393,Piplup,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-394,Prinplup,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-395,Empoleon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-396,Starly,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-397,Staravia,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-398,Staraptor,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-399,Bidoof,wild,9,Safe to Transfer,Enhanced Curated Data,,,,9,
-400,Bibarel,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-401,Kricketot,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-402,Kricketune,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-403,Shinx,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-404,Luxio,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-405,Luxray,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-406,Budew,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-407,Roserade,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-408,Cranidos,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-409,Rampardos,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-410,Shieldon,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-411,Bastiodon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-412,Burmy,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-413,Wormadam,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-414,Mothim,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-415,Combee,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-416,Vespiquen,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-417,Pachirisu,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-418,Buizel,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-419,Floatzel,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-420,Cherubi,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-421,Cherrim,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-422,Shellos,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-423,Gastrodon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-424,Ambipom,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-425,Drifloon,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-426,Drifblim,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-427,Buneary,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-428,Lopunny,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-429,Mismagius,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-430,Honchkrow,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-431,Glameow,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-432,Purugly,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-433,Chingling,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-434,Stunky,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-435,Skuntank,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-436,Bronzor,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-437,Bronzong,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-438,Bonsly,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-439,Mime Jr.,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-440,Happiny,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-441,Chatot,event-only,1,Never Transfer (Event Only),Enhanced Curated Data,,,,1,
-442,Spiritomb,event-only,1,Never Transfer (Event Only),Enhanced Curated Data,,,,1,
-443,Gible,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-444,Gabite,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-445,Garchomp,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-446,Munchlax,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-447,Riolu,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-448,Lucario,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-449,Hippopotas,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-450,Hippowdon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-451,Skorupi,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-452,Drapion,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-453,Croagunk,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-454,Toxicroak,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-455,Carnivine,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-456,Finneon,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-457,Lumineon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-458,Mantyke,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-459,Snover,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-460,Abomasnow,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-461,Weavile,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-462,Magnezone,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-463,Lickilicky,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-464,Rhyperior,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-465,Tangrowth,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-466,Electivire,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-467,Magmortar,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-468,Togekiss,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-469,Yanmega,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-470,Leafeon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-471,Glaceon,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-472,Gliscor,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-473,Mamoswine,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-474,Porygon-Z,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-475,Gallade,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-476,Probopass,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-477,Dusknoir,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-478,Froslass,wild,4.5,Depends on Circumstances,Inferred,,,,,4.5
-479,Rotom,event-only,2,Never Transfer (Event Only),Enhanced Curated Data,,,,2,
-480,Uxie,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-481,Mesprit,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-482,Azelf,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-483,Dialga,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-484,Palkia,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-485,Heatran,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-486,Regigigas,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-487,Giratina,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-488,Cresselia,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-489,Phione,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-490,Manaphy,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-491,Darkrai,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-492,Shaymin,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-493,Arceus,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-494,Victini,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-495,Snivy,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-496,Servine,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-497,Serperior,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-498,Tepig,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-499,Pignite,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-500,Emboar,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-501,Oshawott,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-502,Dewott,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-503,Samurott,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
+265,Wurmple,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+266,Silcoon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+267,Beautifly,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+268,Cascoon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+269,Dustox,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+270,Lotad,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+271,Lombre,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+272,Ludicolo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+273,Seedot,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+274,Nuzleaf,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+275,Shiftry,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+276,Taillow,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+277,Swellow,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+278,Wingull,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+279,Pelipper,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+280,Ralts,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+281,Kirlia,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+282,Gardevoir,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+283,Surskit,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+284,Masquerain,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+285,Shroomish,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+286,Breloom,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+287,Slakoth,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+288,Vigoroth,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+289,Slaking,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+290,Nincada,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+291,Ninjask,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+292,Shedinja,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+293,Whismur,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+294,Loudred,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+295,Exploud,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+296,Makuhita,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+297,Hariyama,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+298,Azurill,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+299,Nosepass,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+300,Skitty,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+301,Delcatty,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+302,Sableye,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+303,Mawile,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+304,Aron,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+305,Lairon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+306,Aggron,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+307,Meditite,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+308,Medicham,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+309,Electrike,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+310,Manectric,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+311,Plusle,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+312,Minun,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+313,Volbeat,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+314,Illumise,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+315,Roselia,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+316,Gulpin,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+317,Swalot,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+318,Carvanha,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+319,Sharpedo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+320,Wailmer,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+321,Wailord,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+322,Numel,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+323,Camerupt,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+324,Torkoal,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+325,Spoink,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+326,Grumpig,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+327,Spinda,event-only,7.0,Never Transfer (Event Only),Pokemon GO API,,,7.0,,
+328,Trapinch,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+329,Vibrava,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+330,Flygon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+331,Cacnea,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+332,Cacturne,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+333,Swablu,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+334,Altaria,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+335,Zangoose,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+336,Seviper,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+337,Lunatone,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+338,Solrock,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+339,Barboach,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+340,Whiscash,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+341,Corphish,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+342,Crawdaunt,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+343,Baltoy,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+344,Claydol,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+345,Lileep,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+346,Cradily,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+347,Anorith,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+348,Armaldo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+349,Feebas,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+350,Milotic,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+351,Castform,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+352,Kecleon,event-only,4.5,Never Transfer (Event Only),"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+353,Shuppet,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+354,Banette,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+355,Duskull,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+356,Dusclops,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+357,Tropius,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+358,Chimecho,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+359,Absol,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+360,Wynaut,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+361,Snorunt,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+362,Glalie,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+363,Spheal,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+364,Sealeo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+365,Walrein,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+366,Clamperl,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+367,Huntail,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+368,Gorebyss,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+369,Relicanth,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+370,Luvdisc,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+371,Bagon,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+372,Shelgon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+373,Salamence,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+374,Beldum,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+375,Metang,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+376,Metagross,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+377,Regirock,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+378,Regice,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+379,Registeel,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+380,Latias,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+381,Latios,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+382,Kyogre,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+383,Groudon,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+384,Rayquaza,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+385,Jirachi,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+386,Deoxys,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+387,Turtwig,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+388,Grotle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+389,Torterra,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+390,Chimchar,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+391,Monferno,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+392,Infernape,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+393,Piplup,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+394,Prinplup,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+395,Empoleon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+396,Starly,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+397,Staravia,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+398,Staraptor,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+399,Bidoof,wild,8.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,9,
+400,Bibarel,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+401,Kricketot,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+402,Kricketune,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+403,Shinx,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+404,Luxio,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+405,Luxray,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+406,Budew,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+407,Roserade,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+408,Cranidos,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+409,Rampardos,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+410,Shieldon,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+411,Bastiodon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+412,Burmy,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+413,Wormadam,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+414,Mothim,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+415,Combee,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+416,Vespiquen,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+417,Pachirisu,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+418,Buizel,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+419,Floatzel,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+420,Cherubi,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+421,Cherrim,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+422,Shellos,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+423,Gastrodon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+424,Ambipom,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+425,Drifloon,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+426,Drifblim,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+427,Buneary,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+428,Lopunny,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+429,Mismagius,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+430,Honchkrow,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+431,Glameow,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+432,Purugly,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+433,Chingling,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+434,Stunky,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+435,Skuntank,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+436,Bronzor,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+437,Bronzong,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+438,Bonsly,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+439,Mime Jr.,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+440,Happiny,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+441,Chatot,event-only,4.0,Never Transfer (Event Only),"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+442,Spiritomb,event-only,4.0,Never Transfer (Event Only),"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+443,Gible,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+444,Gabite,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+445,Garchomp,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+446,Munchlax,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+447,Riolu,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+448,Lucario,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+449,Hippopotas,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+450,Hippowdon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+451,Skorupi,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+452,Drapion,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+453,Croagunk,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+454,Toxicroak,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+455,Carnivine,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+456,Finneon,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+457,Lumineon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+458,Mantyke,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+459,Snover,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+460,Abomasnow,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+461,Weavile,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+462,Magnezone,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+463,Lickilicky,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+464,Rhyperior,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+465,Tangrowth,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+466,Electivire,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+467,Magmortar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+468,Togekiss,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+469,Yanmega,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+470,Leafeon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+471,Glaceon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+472,Gliscor,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+473,Mamoswine,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+474,Porygon-Z,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+475,Gallade,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+476,Probopass,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+477,Dusknoir,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+478,Froslass,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+479,Rotom,event-only,4.5,Never Transfer (Event Only),"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+480,Uxie,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+481,Mesprit,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+482,Azelf,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+483,Dialga,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+484,Palkia,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+485,Heatran,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+486,Regigigas,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+487,Giratina,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+488,Cresselia,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+489,Phione,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+490,Manaphy,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+491,Darkrai,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+492,Shaymin,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+493,Arceus,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+494,Victini,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+495,Snivy,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+496,Servine,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+497,Serperior,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+498,Tepig,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+499,Pignite,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+500,Emboar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+501,Oshawott,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+502,Dewott,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+503,Samurott,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 503,Hisuian Samurott,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-504,Patrat,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-505,Watchog,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-506,Lillipup,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-507,Herdier,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-508,Stoutland,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-509,Purrloin,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-510,Liepard,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-511,Pansage,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-512,Simisage,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-513,Pansear,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-514,Simisear,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-515,Panpour,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-516,Simipour,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-517,Munna,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-518,Musharna,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-519,Pidove,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-520,Tranquill,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-521,Unfezant,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-522,Blitzle,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-523,Zebstrika,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-524,Roggenrola,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-525,Boldore,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-526,Gigalith,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-527,Woobat,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-528,Swoobat,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-529,Drilbur,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-530,Excadrill,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-531,Audino,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-532,Timburr,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-533,Gurdurr,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-534,Conkeldurr,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-535,Tympole,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-536,Palpitoad,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-537,Seismitoad,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-538,Throh,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-539,Sawk,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-540,Sewaddle,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-541,Swadloon,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-542,Leavanny,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-543,Venipede,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-544,Whirlipede,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-545,Scolipede,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-546,Cottonee,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-547,Whimsicott,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-548,Petilil,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-549,Lilligant,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
+504,Patrat,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+505,Watchog,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+506,Lillipup,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+507,Herdier,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+508,Stoutland,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+509,Purrloin,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+510,Liepard,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+511,Pansage,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+512,Simisage,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+513,Pansear,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+514,Simisear,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+515,Panpour,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+516,Simipour,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+517,Munna,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+518,Musharna,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+519,Pidove,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+520,Tranquill,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+521,Unfezant,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+522,Blitzle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+523,Zebstrika,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+524,Roggenrola,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+525,Boldore,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+526,Gigalith,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+527,Woobat,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+528,Swoobat,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+529,Drilbur,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+530,Excadrill,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+531,Audino,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+532,Timburr,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+533,Gurdurr,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+534,Conkeldurr,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+535,Tympole,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+536,Palpitoad,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+537,Seismitoad,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+538,Throh,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+539,Sawk,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+540,Sewaddle,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+541,Swadloon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+542,Leavanny,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+543,Venipede,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+544,Whirlipede,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+545,Scolipede,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+546,Cottonee,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+547,Whimsicott,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+548,Petilil,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+549,Lilligant,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 549,Hisuian Lilligant,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-550,Basculin,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-551,Sandile,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-552,Krokorok,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-553,Krookodile,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-554,Darumaka,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
+550,Basculin,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+551,Sandile,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+552,Krokorok,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+553,Krookodile,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+554,Darumaka,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
 554,Galarian Darumaka,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-555,Darmanitan,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
+555,Darmanitan,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 555,Galarian Darmanitan,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-556,Maractus,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-557,Dwebble,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-558,Crustle,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-559,Scraggy,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-560,Scrafty,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-561,Sigilyph,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-562,Yamask,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
+556,Maractus,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+557,Dwebble,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+558,Crustle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+559,Scraggy,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+560,Scrafty,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+561,Sigilyph,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+562,Yamask,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
 562,Galarian Yamask,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-563,Cofagrigus,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-564,Tirtouga,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-565,Carracosta,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-566,Archen,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-567,Archeops,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-568,Trubbish,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-569,Garbodor,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-570,Zorua,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
+563,Cofagrigus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+564,Tirtouga,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+565,Carracosta,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+566,Archen,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+567,Archeops,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+568,Trubbish,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+569,Garbodor,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+570,Zorua,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
 570,Hisuian Zorua,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-571,Zoroark,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
+571,Zoroark,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 571,Hisuian Zoroark,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-572,Minccino,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-573,Cinccino,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-574,Gothita,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-575,Gothorita,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-576,Gothitelle,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-577,Solosis,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-578,Duosion,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-579,Reuniclus,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-580,Ducklett,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-581,Swanna,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-582,Vanillite,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-583,Vanillish,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-584,Vanilluxe,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-585,Deerling,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-586,Sawsbuck,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-587,Emolga,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-588,Karrablast,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-589,Escavalier,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-590,Foongus,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-591,Amoonguss,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-592,Frillish,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-593,Jellicent,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-594,Alomomola,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-595,Joltik,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-596,Galvantula,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-597,Ferroseed,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-598,Ferrothorn,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-599,Klink,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-600,Klang,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-601,Klinklang,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-602,Tynamo,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-603,Eelektrik,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-604,Eelektross,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-605,Elgyem,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-606,Beheeyem,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-607,Litwick,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-608,Lampent,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-609,Chandelure,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-610,Axew,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-611,Fraxure,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-612,Haxorus,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-613,Cubchoo,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-614,Beartic,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-615,Cryogonal,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-616,Shelmet,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-617,Accelgor,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-618,Stunfisk,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
+572,Minccino,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+573,Cinccino,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+574,Gothita,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+575,Gothorita,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+576,Gothitelle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+577,Solosis,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+578,Duosion,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+579,Reuniclus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+580,Ducklett,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+581,Swanna,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+582,Vanillite,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+583,Vanillish,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+584,Vanilluxe,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+585,Deerling,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+586,Sawsbuck,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+587,Emolga,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+588,Karrablast,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+589,Escavalier,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+590,Foongus,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+591,Amoonguss,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+592,Frillish,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+593,Jellicent,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+594,Alomomola,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+595,Joltik,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+596,Galvantula,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+597,Ferroseed,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+598,Ferrothorn,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+599,Klink,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+600,Klang,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+601,Klinklang,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+602,Tynamo,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+603,Eelektrik,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+604,Eelektross,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+605,Elgyem,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+606,Beheeyem,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+607,Litwick,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+608,Lampent,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+609,Chandelure,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+610,Axew,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+611,Fraxure,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+612,Haxorus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+613,Cubchoo,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+614,Beartic,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+615,Cryogonal,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+616,Shelmet,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+617,Accelgor,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+618,Stunfisk,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
 618,Galarian Stunfisk,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-619,Mienfoo,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-620,Mienshao,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-621,Druddigon,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-622,Golett,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-623,Golurk,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-624,Pawniard,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-625,Bisharp,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-626,Bouffalant,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-627,Rufflet,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-628,Braviary,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
+619,Mienfoo,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+620,Mienshao,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+621,Druddigon,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+622,Golett,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+623,Golurk,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+624,Pawniard,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+625,Bisharp,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+626,Bouffalant,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+627,Rufflet,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+628,Braviary,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 628,Hisuian Braviary,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-629,Vullaby,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-630,Mandibuzz,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-631,Heatmor,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-632,Durant,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-633,Deino,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-634,Zweilous,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-635,Hydreigon,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-636,Larvesta,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-637,Volcarona,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-638,Cobalion,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-639,Terrakion,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-640,Virizion,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-641,Tornadus,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-642,Thundurus,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-643,Reshiram,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-644,Zekrom,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-645,Landorus,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-646,Kyurem,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-647,Keldeo,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-648,Meloetta,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-649,Genesect,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-650,Chespin,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-651,Quilladin,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-652,Chesnaught,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-653,Fennekin,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-654,Braixen,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-655,Delphox,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-656,Froakie,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-657,Frogadier,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-658,Greninja,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-659,Bunnelby,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-660,Diggersby,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-661,Fletchling,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-662,Fletchinder,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-663,Talonflame,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-664,Scatterbug,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-665,Spewpa,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-666,Vivillon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-667,Litleo,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-668,Pyroar,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
+629,Vullaby,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+630,Mandibuzz,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+631,Heatmor,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+632,Durant,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+633,Deino,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+634,Zweilous,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+635,Hydreigon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+636,Larvesta,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+637,Volcarona,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+638,Cobalion,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+639,Terrakion,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+640,Virizion,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+641,Tornadus,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+642,Thundurus,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+643,Reshiram,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+644,Zekrom,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+645,Landorus,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+646,Kyurem,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+647,Keldeo,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+648,Meloetta,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+649,Genesect,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+650,Chespin,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+651,Quilladin,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+652,Chesnaught,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+653,Fennekin,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+654,Braixen,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+655,Delphox,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+656,Froakie,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+657,Frogadier,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+658,Greninja,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+659,Bunnelby,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+660,Diggersby,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+661,Fletchling,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+662,Fletchinder,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+663,Talonflame,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+664,Scatterbug,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+665,Spewpa,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+666,Vivillon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+667,Litleo,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+668,Pyroar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 669,Flabébé,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-670,Floette,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-671,Florges,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-672,Skiddo,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-673,Gogoat,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-674,Pancham,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-675,Pangoro,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-676,Furfrou,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-677,Espurr,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-678,Meowstic,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-679,Honedge,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-680,Doublade,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-681,Aegislash,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-682,Spritzee,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-683,Aromatisse,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-684,Swirlix,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-685,Slurpuff,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-686,Inkay,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-687,Malamar,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-688,Binacle,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-689,Barbaracle,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-690,Skrelp,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-691,Dragalge,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-692,Clauncher,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-693,Clawitzer,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-694,Helioptile,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-695,Heliolisk,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-696,Tyrunt,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-697,Tyrantrum,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-698,Amaura,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-699,Aurorus,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-700,Sylveon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-701,Hawlucha,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-702,Dedenne,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-703,Carbink,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-704,Goomy,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-705,Sliggoo,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
+670,Floette,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+671,Florges,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+672,Skiddo,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+673,Gogoat,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+674,Pancham,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+675,Pangoro,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+676,Furfrou,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+677,Espurr,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+678,Meowstic,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+679,Honedge,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+680,Doublade,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+681,Aegislash,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+682,Spritzee,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+683,Aromatisse,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+684,Swirlix,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+685,Slurpuff,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+686,Inkay,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+687,Malamar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+688,Binacle,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+689,Barbaracle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+690,Skrelp,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+691,Dragalge,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+692,Clauncher,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+693,Clawitzer,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+694,Helioptile,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+695,Heliolisk,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+696,Tyrunt,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+697,Tyrantrum,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+698,Amaura,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+699,Aurorus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+700,Sylveon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+701,Hawlucha,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+702,Dedenne,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+703,Carbink,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+704,Goomy,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+705,Sliggoo,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 705,Hisuian Sliggoo,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-706,Goodra,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
+706,Goodra,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 706,Hisuian Goodra,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-707,Klefki,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-708,Phantump,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-709,Trevenant,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-710,Pumpkaboo,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-711,Gourgeist,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-712,Bergmite,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-713,Avalugg,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
+707,Klefki,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+708,Phantump,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+709,Trevenant,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+710,Pumpkaboo,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+711,Gourgeist,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+712,Bergmite,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+713,Avalugg,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 713,Hisuian Avalugg,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-714,Noibat,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-715,Noivern,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-716,Xerneas,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-717,Yveltal,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-718,Zygarde,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-719,Diancie,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-720,Hoopa,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-721,Volcanion,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-722,Rowlet,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-723,Dartrix,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-724,Decidueye,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
+714,Noibat,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+715,Noivern,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+716,Xerneas,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+717,Yveltal,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+718,Zygarde,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+719,Diancie,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+720,Hoopa,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+721,Volcanion,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+722,Rowlet,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+723,Dartrix,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+724,Decidueye,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 724,Hisuian Decidueye,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-725,Litten,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-726,Torracat,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-727,Incineroar,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-728,Popplio,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-729,Brionne,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-730,Primarina,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-731,Pikipek,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-732,Trumbeak,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-733,Toucannon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-734,Yungoos,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-735,Gumshoos,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-736,Grubbin,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-737,Charjabug,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-738,Vikavolt,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-739,Crabrawler,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-740,Crabominable,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-741,Oricorio,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-742,Cutiefly,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-743,Ribombee,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-744,Rockruff,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-745,Lycanroc,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-746,Wishiwashi,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-747,Mareanie,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-748,Toxapex,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-749,Mudbray,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-750,Mudsdale,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-751,Dewpider,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-752,Araquanid,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-753,Fomantis,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-754,Lurantis,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-755,Morelull,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-756,Shiinotic,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-757,Salandit,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-758,Salazzle,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-759,Stufful,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-760,Bewear,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-761,Bounsweet,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-762,Steenee,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-763,Tsareena,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-764,Comfey,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-765,Oranguru,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-766,Passimian,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-767,Wimpod,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-768,Golisopod,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-769,Sandygast,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-770,Palossand,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-771,Pyukumuku,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-772,Type: Null,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-773,Silvally,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-774,Minior,event-only,3,Never Transfer (Event Only),Enhanced Curated Data,,,,3,
-775,Komala,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-776,Turtonator,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-777,Togedemaru,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-778,Mimikyu,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-779,Bruxish,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-780,Drampa,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-781,Dhelmise,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-782,Jangmo-o,wild,1,Should Always Trade,Enhanced Curated Data,,,,1,
-783,Hakamo-o,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-784,Kommo-o,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-785,Tapu Koko,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-786,Tapu Lele,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-787,Tapu Bulu,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-788,Tapu Fini,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-789,Cosmog,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-790,Cosmoem,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-791,Solgaleo,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-792,Lunala,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-793,Necrozma,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-794,Magearna,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-795,Marshadow,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-805,Stakataka,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-806,Poipole,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-806,Blacephalon,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-807,Naganadel,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-807,Zeraora,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-808,Meltan,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-809,Melmetal,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-810,Grookey,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-811,Thwackey,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-812,Rillaboom,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-813,Scorbunny,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-814,Raboot,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-815,Cinderace,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-816,Sobble,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-817,Drizzile,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-818,Inteleon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-819,Skwovet,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-820,Greedent,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-821,Rookidee,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-822,Corvisquire,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-823,Corviknight,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-824,Blipbug,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-825,Dottler,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-826,Orbeetle,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-827,Nickit,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-828,Thievul,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-829,Gossifleur,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-830,Eldegoss,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-831,Wooloo,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-832,Dubwool,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-833,Chewtle,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-834,Drednaw,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-835,Yamper,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-836,Boltund,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-837,Rolycoly,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-838,Carkol,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-839,Coalossal,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-840,Applin,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-841,Flapple,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-842,Appletun,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-843,Silicobra,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-844,Sandaconda,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-845,Cramorant,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-846,Arrokuda,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-847,Barraskewda,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-848,Toxel,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-849,Toxtricity,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-850,Sizzlipede,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-851,Centiskorch,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-852,Clobbopus,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-853,Grapploct,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-854,Sinistea,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-855,Polteageist,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-856,Hatenna,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-857,Hattrem,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-858,Hatterene,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-859,Impidimp,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-860,Morgrem,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-861,Grimmsnarl,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-862,Obstagoon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-862,Obstagoon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-863,Perrserker,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-863,Perrserker,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-864,Cursola,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-864,Cursola,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
+725,Litten,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+726,Torracat,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+727,Incineroar,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+728,Popplio,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+729,Brionne,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+730,Primarina,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+731,Pikipek,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+732,Trumbeak,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+733,Toucannon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+734,Yungoos,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+735,Gumshoos,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+736,Grubbin,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+737,Charjabug,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+738,Vikavolt,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+739,Crabrawler,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+740,Crabominable,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+741,Oricorio,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+742,Cutiefly,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+743,Ribombee,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+744,Rockruff,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+745,Lycanroc,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+746,Wishiwashi,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+747,Mareanie,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+748,Toxapex,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+749,Mudbray,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+750,Mudsdale,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+751,Dewpider,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+752,Araquanid,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+753,Fomantis,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+754,Lurantis,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+755,Morelull,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+756,Shiinotic,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+757,Salandit,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+758,Salazzle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+759,Stufful,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+760,Bewear,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+761,Bounsweet,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+762,Steenee,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+763,Tsareena,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+764,Comfey,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+765,Oranguru,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+766,Passimian,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+767,Wimpod,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+768,Golisopod,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+769,Sandygast,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+770,Palossand,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+771,Pyukumuku,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+772,Type: Null,legendary,7.0,Never Transfer (Legendary),Pokemon GO API,,,7.0,,
+773,Silvally,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+774,Minior,event-only,5.0,Never Transfer (Event Only),"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+775,Komala,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+776,Turtonator,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+777,Togedemaru,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+778,Mimikyu,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+779,Bruxish,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+780,Drampa,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+781,Dhelmise,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+782,Jangmo-o,wild,4.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,1,
+783,Hakamo-o,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+784,Kommo-o,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+785,Tapu Koko,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+786,Tapu Lele,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+787,Tapu Bulu,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+788,Tapu Fini,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+789,Cosmog,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+790,Cosmoem,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+791,Solgaleo,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+792,Lunala,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+793,Necrozma,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+794,Magearna,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+795,Marshadow,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+805,Stakataka,legendary,2.0,Never Transfer (Legendary),Pokemon GO API,,,2.0,,
+806,Poipole,legendary,2.0,Never Transfer (Legendary),Pokemon GO API,,,2.0,,
+806,Blacephalon,legendary,2.0,Never Transfer (Legendary),Pokemon GO API,,,2.0,,
+807,Naganadel,legendary,2.0,Never Transfer (Legendary),Pokemon GO API,,,2.0,,
+807,Zeraora,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+808,Meltan,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+809,Melmetal,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+810,Grookey,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+811,Thwackey,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+812,Rillaboom,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+813,Scorbunny,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+814,Raboot,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+815,Cinderace,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+816,Sobble,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+817,Drizzile,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+818,Inteleon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+819,Skwovet,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+820,Greedent,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+821,Rookidee,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+822,Corvisquire,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+823,Corviknight,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+824,Blipbug,wild,7.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,8,
+825,Dottler,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+826,Orbeetle,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+827,Nickit,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+828,Thievul,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+829,Gossifleur,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+830,Eldegoss,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+831,Wooloo,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+832,Dubwool,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+833,Chewtle,wild,7.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,7,
+834,Drednaw,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+835,Yamper,wild,6.5,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,6,
+836,Boltund,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+837,Rolycoly,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+838,Carkol,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+839,Coalossal,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+840,Applin,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+841,Flapple,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+842,Appletun,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+843,Silicobra,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+844,Sandaconda,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+845,Cramorant,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+846,Arrokuda,wild,6.0,Safe to Transfer,"Pokemon GO API, Enhanced Curated Data",,,7.0,5,
+847,Barraskewda,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+848,Toxel,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+849,Toxtricity,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+850,Sizzlipede,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+851,Centiskorch,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+852,Clobbopus,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+853,Grapploct,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+854,Sinistea,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+855,Polteageist,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+856,Hatenna,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+857,Hattrem,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+858,Hatterene,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+859,Impidimp,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+860,Morgrem,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+861,Grimmsnarl,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+862,Obstagoon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+862,Obstagoon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+863,Perrserker,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+863,Perrserker,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+864,Cursola,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+864,Cursola,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
 865,Sirfetch'd,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
 865,Sirfetch'd,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-866,Mr. Rime,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-866,Mr. Rime,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-867,Runerigus,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-867,Runerigus,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-868,Milcery,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-869,Alcremie,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-870,Falinks,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-871,Pincurchin,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-872,Snom,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-873,Frosmoth,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-874,Stonjourner,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-875,Eiscue,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-876,Indeedee,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-877,Morpeko,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-878,Cufant,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-879,Copperajah,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-880,Dracozolt,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-881,Arctozolt,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-882,Dracovish,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-883,Arctovish,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-884,Duraludon,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-885,Dreepy,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-886,Drakloak,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-887,Dragapult,wild,3.5,Depends on Circumstances,Inferred,,,,,3.5
-888,Zacian,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-889,Zamazenta,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-890,Eternatus,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-891,Kubfu,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-892,Urshifu,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-893,Zarude,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-894,Regieleki,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-895,Regidrago,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-896,Glastrier,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-897,Spectrier,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-898,Calyrex,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
+866,Mr. Rime,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+866,Mr. Rime,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+867,Runerigus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+867,Runerigus,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+868,Milcery,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+869,Alcremie,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+870,Falinks,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+871,Pincurchin,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+872,Snom,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+873,Frosmoth,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+874,Stonjourner,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+875,Eiscue,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+876,Indeedee,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+877,Morpeko,wild,5.0,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,3,
+878,Cufant,wild,5.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,4,
+879,Copperajah,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+880,Dracozolt,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+881,Arctozolt,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+882,Dracovish,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+883,Arctovish,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+884,Duraludon,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+885,Dreepy,wild,4.5,Depends on Circumstances,"Pokemon GO API, Enhanced Curated Data",,,7.0,2,
+886,Drakloak,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+887,Dragapult,wild,7.0,Safe to Transfer,Pokemon GO API,,,7.0,,
+888,Zacian,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+889,Zamazenta,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+890,Eternatus,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+891,Kubfu,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+892,Urshifu,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+893,Zarude,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+894,Regieleki,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+895,Regidrago,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+896,Glastrier,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+897,Spectrier,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
+898,Calyrex,legendary,0.0,Never Transfer (Legendary),Pokemon GO API,,,0.0,,
 980,Paldean Clodsire,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
