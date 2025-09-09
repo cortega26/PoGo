@@ -31,11 +31,13 @@ flowchart LR
 
 ## Scoring Model
 
-The pipeline aggregates rarity information from three sources:
+The pipeline aggregates rarity information from five sources:
 
 - Structured Spawn Data
 - Enhanced Curated Data
 - PokemonDB Catch Rate
+- PokeAPI Capture Rate
+- Silph Road Spawn Tier (community reported)
 
 Each source's raw spawn chance or catch rate is normalised onto a 0–10
 scale where 0 denotes the rarest encounters and 10 the most common. The
@@ -44,6 +46,8 @@ scores are combined using a weighted average:
 - Structured Spawn Data – weight 1.0
 - Enhanced Curated Data – weight 1.0
 - PokemonDB Catch Rate – weight 2.0
+- PokeAPI Capture Rate – weight 2.0
+- Silph Road Spawn Tier – weight 0.5
 
 The resulting `Average_Rarity_Score` feeds two threshold sets:
 
@@ -57,6 +61,10 @@ When no source provides a score, inference rules in
 [data/infer_missing_rarity_rules.json](data/infer_missing_rarity_rules.json)
 assign default values for specific groups such as pseudo-legendaries or
 starters.
+
+> **Note**: Silph Road spawn tier data is crowdsourced and may skew toward
+> regions with more active contributors, so regional availability is not
+> guaranteed.
 
 ## Quickstart
 

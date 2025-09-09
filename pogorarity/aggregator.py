@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 from .models import DataSourceReport, PokemonRarity
-from .sources import curated_spawn, pokemondb, structured_spawn, pokeapi
+from .sources import curated_spawn, pokemondb, structured_spawn, pokeapi, silph_road
 
 logger = logging.getLogger(__name__)
 
@@ -13,6 +13,7 @@ SOURCE_WEIGHTS = {
     "Enhanced Curated Data": 1.0,
     "PokemonDB Catch Rate": 2.0,
     "PokeAPI Capture Rate": 2.0,
+    "Silph Road Spawn Tier": 0.5,
 }
 
 RULES_PATH = Path(__file__).resolve().parent.parent / "data" / "infer_missing_rarity_rules.json"
@@ -165,12 +166,14 @@ def aggregate_data(
     pokeapi_data, pokeapi_report = pokeapi.scrape_capture_rate(
         limit=limit, metrics=metrics
     )
+    silph_data, silph_report = silph_road.scrape_spawn_tiers(metrics=metrics)
 
     sources = {
         "Structured Spawn Data": structured_data,
         "Enhanced Curated Data": curated_data,
         "PokemonDB Catch Rate": pokemondb_data,
         "PokeAPI Capture Rate": pokeapi_data,
+        "Silph Road Spawn Tier": silph_data,
     }
 
     results: List[PokemonRarity] = []
@@ -205,5 +208,11 @@ def aggregate_data(
                 spawn_type=spawn_type,
             )
         )
-    reports = [structured_report, curated_report, pokemondb_report, pokeapi_report]
+    reports = [
+        structured_report,
+        curated_report,
+        pokemondb_report,
+        pokeapi_report,
+        silph_report,
+    ]
     return results, reports
