@@ -161,6 +161,7 @@ def infer_missing_rarity(pokemon_name: str, pokemon_number: int, spawn_type: str
 def aggregate_data(
     limit: Optional[int] = None,
     metrics: Optional[Dict[str, float]] = None,
+    weights: Optional[Dict[str, float]] = None,
 ) -> Tuple[List[PokemonRarity], List[DataSourceReport]]:
     """Aggregate rarity data from all sources and compute recommendations."""
     pokemon_list = get_comprehensive_pokemon_list()
@@ -178,6 +179,7 @@ def aggregate_data(
     silph_data, silph_report = silph_road.scrape_spawn_tiers(metrics=metrics)
     gm_capture_data, gm_spawn_data, gm_reports = game_master.scrape(metrics=metrics)
 
+    weight_map = weights or SOURCE_WEIGHTS
     results: List[PokemonRarity] = []
     for pokemon_name, pokemon_number in pokemon_list:
         rarity_scores: Dict[str, float] = {}
@@ -207,9 +209,9 @@ def aggregate_data(
                 rarity_scores["PokeAPI Capture Rate"] = pokeapi_data[pokemon_name]
                 data_sources.append("PokeAPI Capture Rate")
         if rarity_scores:
-            total_weight = sum(SOURCE_WEIGHTS.get(src, 1.0) for src in rarity_scores)
+            total_weight = sum(weight_map.get(src, 1.0) for src in rarity_scores)
             weighted = sum(
-                rarity_scores[src] * SOURCE_WEIGHTS.get(src, 1.0) for src in rarity_scores
+                rarity_scores[src] * weight_map.get(src, 1.0) for src in rarity_scores
             )
             average_score = weighted / total_weight
             recommendation = get_trading_recommendation(average_score, spawn_type)

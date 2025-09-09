@@ -9,6 +9,8 @@ def _scale_records(
     expected_min: float,
     expected_max: float,
     auto_scale: bool,
+    *,
+    on_out_of_range: str = "clamp",
 ) -> Dict[str, float]:
     records = list(records)
     if not records:
@@ -32,6 +34,12 @@ def _scale_records(
         return {name: 0.0 for name, _ in records}
     scaled: Dict[str, float] = {}
     for name, value in records:
+        if not auto_scale and (value < expected_min or value > expected_max):
+            if on_out_of_range == "discard":
+                logger.warning(
+                    "Discarding %s value %s outside expected range", name, value
+                )
+                continue
         score = 10.0 * (value - range_min) / (range_max - range_min)
         score = max(0.0, min(10.0, score))
         scaled[name] = score
@@ -44,6 +52,7 @@ def scrape_structured_spawn_data(
     expected_min: float = 0.0,
     expected_max: float = 20.0,
     auto_scale: bool = False,
+    on_out_of_range: str = "clamp",
 ) -> Dict[str, float]:
     """Compute scores from structured spawn data entries."""
     records = []
@@ -56,7 +65,9 @@ def scrape_structured_spawn_data(
             records.append((name, float(spawn_chance)))
         except (TypeError, ValueError):
             continue
-    return _scale_records(records, expected_min, expected_max, auto_scale)
+    return _scale_records(
+        records, expected_min, expected_max, auto_scale, on_out_of_range=on_out_of_range
+    )
 
 
 def scrape_pokemondb_catch_rate(
@@ -65,6 +76,7 @@ def scrape_pokemondb_catch_rate(
     expected_min: float = 0.0,
     expected_max: float = 255.0,
     auto_scale: bool = False,
+    on_out_of_range: str = "clamp",
 ) -> Dict[str, float]:
     """Compute scores from PokemonDB catch rate data."""
     records = []
@@ -73,4 +85,6 @@ def scrape_pokemondb_catch_rate(
             records.append((name, float(rate)))
         except (TypeError, ValueError):
             continue
-    return _scale_records(records, expected_min, expected_max, auto_scale)
+    return _scale_records(
+        records, expected_min, expected_max, auto_scale, on_out_of_range=on_out_of_range
+    )

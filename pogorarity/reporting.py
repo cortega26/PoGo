@@ -91,3 +91,15 @@ def export_to_csv(
         encoding="utf-8",
     )
     logger.info("Successfully exported %d Pokemon to %s", len(pokemon_data), filename)
+
+
+def generate_summary_report(pokemon_data: List[PokemonRarity]) -> str:
+    """Return a simple text summary of the aggregated rarity data."""
+    lines = ["SUMMARY REPORT"]
+    for p in pokemon_data:
+        lines.append(
+            f"{p.number:03d} {p.name}: {p.average_score:.2f} - {p.recommendation}"
+        )
+    summary = "\n".join(lines)
+    print("\n" + summary)
+    return summary
