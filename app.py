@@ -39,7 +39,13 @@ def rarity_band(score: float) -> str:
     common, which inverted the rarity bands (e.g. ubiquitous Pokémon
     like Caterpie were marked "Very Rare"). The thresholds below now
     reflect the correct ordering where larger scores correspond to more
-    common Pokémon.
+    common Pokémon.  The score ranges shared with
+    :func:`pogorarity.aggregator.get_trading_recommendation` are:
+
+    - ``score < 2`` -> "Very Rare"
+    - ``2 <= score < 4`` -> "Rare"
+    - ``4 <= score < 7`` -> "Uncommon"
+    - ``score >= 7`` -> "Common"
 
     Parameters
     ----------
@@ -53,11 +59,11 @@ def rarity_band(score: float) -> str:
         One of "Very Rare", "Rare", "Uncommon", or "Common".
     """
 
-    if score >= 3:
+    if score >= 7:
         return "Common"
-    if score >= 2:
+    if score >= 4:
         return "Uncommon"
-    if score >= 1:
+    if score >= 2:
         return "Rare"
     return "Very Rare"
 

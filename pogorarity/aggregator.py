@@ -90,15 +90,28 @@ def categorize_pokemon_spawn_type(pokemon_name: str, pokemon_number: int) -> str
 
 
 def get_trading_recommendation(score: float, spawn_type: str) -> str:
+    """Return a trading recommendation based on rarity score and spawn type.
+
+    Scores are on a 0--10 scale where higher numbers represent more common
+    Pokémon.  The same numeric ranges are used by :func:`app.rarity_band` to
+    display rarity bands.  The ranges are:
+
+    - ``score < 4``  -> "Should Always Trade"
+    - ``4 <= score < 7`` -> "Depends on Circumstances"
+    - ``score >= 7`` -> "Safe to Transfer"
+
+    Special spawn types take precedence over the numeric score.
+    """
+
     if spawn_type == "legendary":
         return "Never Transfer (Legendary)"
     if spawn_type == "event-only":
         return "Never Transfer (Event Only)"
     if spawn_type == "evolution-only":
         return "Evaluate for Evolution"
-    if score >= 6:
+    if score >= 7:
         return "Safe to Transfer"
-    if score >= 3:
+    if score >= 4:
         return "Depends on Circumstances"
     return "Should Always Trade"
 
