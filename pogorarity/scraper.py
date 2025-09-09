@@ -11,12 +11,10 @@ import re
 from bs4 import BeautifulSoup
 from typing import Dict, List, Tuple, Optional
 import json
-from dataclasses import dataclass
 from urllib.parse import urljoin, urlparse
 from pathlib import Path
 import logging
 import random
-import argparse
 import uuid
 
 # Configure logging
@@ -32,23 +30,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-@dataclass
-class PokemonRarity:
-    name: str
-    number: int
-    rarity_scores: Dict[str, float]
-    average_score: float
-    recommendation: str
-    data_sources: List[str]
-    spawn_type: str
-
-
-@dataclass
-class DataSourceReport:
-    source_name: str
-    pokemon_count: int
-    success: bool
-    error_message: Optional[str] = None
+from .models import PokemonRarity, DataSourceReport
 
 
 class EnhancedRarityScraper:
@@ -619,7 +601,7 @@ class EnhancedRarityScraper:
 
     def get_comprehensive_pokemon_list(self) -> List[Tuple[str, int]]:
         """Get complete Pokemon list for all generations from data file"""
-        data_path = Path(__file__).parent / "data" / "pokemon_list.json"
+        data_path = Path(__file__).resolve().parent.parent / "data" / "pokemon_list.json"
         try:
             with open(data_path, encoding="utf-8") as f:
                 data = json.load(f)
@@ -810,49 +792,3 @@ class EnhancedRarityScraper:
         )
 
 
-def main(limit: Optional[int] = None):
-    """Main execution function
-
-    Args:
-        limit: Optional limit for expensive web scrapers.  ``None`` scrapes all
-            Pokémon while an integer restricts the number processed from
-            PokemonDB.  This is primarily useful for testing to avoid thousands
-            of HTTP requests.
-    """
-    scraper = EnhancedRarityScraper()
-    scraper.scrape_limit = limit
-
-    try:
-        # Aggregate data from multiple enhanced sources
-        pokemon_data = scraper.aggregate_data()
-
-        # Report on data source quality
-        scraper.report_data_source_quality()
-
-        # Export to CSV
-        scraper.export_to_csv(pokemon_data)
-
-        # Generate enhanced summary report
-        scraper.generate_summary_report(pokemon_data)
-
-        # Log request metrics
-        scraper.report_metrics()
-
-        print(f"\n🎉 Enhanced analysis complete! Check 'pokemon_rarity_analysis_enhanced.csv' for full results.")
-        print(f"✨ Key improvements: Fixed categorization bugs, added multiple data sources, enhanced reporting")
-
-    except Exception as e:
-        logger.error(f"Error during execution: {e}")
-        raise
-
-
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Pokemon GO rarity analysis")
-    parser.add_argument(
-        "--limit",
-        type=int,
-        default=None,
-        help="Limit number of Pokemon scraped from PokemonDB for testing",
-    )
-    args = parser.parse_args()
-    main(limit=args.limit)
