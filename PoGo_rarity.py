@@ -56,7 +56,13 @@ class EnhancedRarityScraper:
     def __init__(self):
         self.session = requests.Session()
         self.session.headers.update({
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            # Provide a realistic browser fingerprint so sites with basic bot
+            # protection (e.g. Cloudflare) serve content rather than a 403
+            # challenge page.
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.9',
+            'Referer': 'https://google.com',
         })
         self.pokemon_data = {}
         # Reduce delay slightly to keep runtime reasonable while still
@@ -82,13 +88,19 @@ class EnhancedRarityScraper:
             logger.error("Failed to load Pokémon list: %s", e)
             self.pokemon_name_set = set()
 
-    def safe_request(self, url: str, retries: int = 3) -> requests.Response:
-        """Make a safe HTTP request with retries, structured logging and metrics"""
+    def safe_request(self, url: str, retries: int = 3, session: Optional[requests.Session] = None) -> requests.Response:
+        """Make a safe HTTP request with retries, structured logging and metrics.
+
+        ``session`` allows callers to provide an alternative ``requests.Session``
+        instance with custom headers or cookies.  When ``None`` the scraper's
+        default session is used.
+        """
+        sess = session or self.session
         for attempt in range(retries):
             request_id = uuid.uuid4().hex[:8]
             start = time.time()
             try:
-                response = self.session.get(url, timeout=15)
+                response = sess.get(url, timeout=15)
                 latency = time.time() - start
                 status = response.status_code
                 logger.info(
@@ -148,9 +160,8 @@ class EnhancedRarityScraper:
         try:
             # Try new GamePress URLs
             urls_to_try = [
-                "https://pokemongo.gamepress.gg/pokemon-list",
+                # Primary site; legacy domains consistently return 404
                 "https://pogo.gamepress.gg/pokemon-list",
-                "https://pokemongo.gamepress.gg/comprehensive-dps-spreadsheet"
             ]
 
             response = None
@@ -214,12 +225,17 @@ class EnhancedRarityScraper:
                             break
 
             if pokemon_found == 0:
-                raise Exception(
-                    f"No Pokemon data found in new structure from {working_url}")
-
-            report = DataSourceReport("GamePress v2", len(rarity_data), True)
-            logger.info(
-                f"Successfully scraped {len(rarity_data)} Pokemon from GamePress v2")
+                logger.warning(
+                    "No Pokemon data found in new structure from %s", working_url
+                )
+                report = DataSourceReport(
+                    "GamePress v2", 0, False,
+                    f"No data found at {working_url}"
+                )
+            else:
+                report = DataSourceReport("GamePress v2", len(rarity_data), True)
+                logger.info(
+                    f"Successfully scraped {len(rarity_data)} Pokemon from GamePress v2")
 
         except Exception as e:
             logger.error(f"GamePress v2 scraping failed: {e}")
@@ -233,9 +249,13 @@ class EnhancedRarityScraper:
         rarity_data = {}
 
         try:
-            # Pokemon GO Hub database
+            # Pokemon GO Hub database.  Use a fresh session with the same
+            # browser-like headers to avoid Cloudflare cookie challenges that
+            # can result in a 403 when reusing the default session.
             url = "https://db.pokemongohub.net/"
-            response = self.safe_request(url)
+            temp_session = requests.Session()
+            temp_session.headers.update(self.session.headers)
+            response = self.safe_request(url, session=temp_session)
             soup = BeautifulSoup(response.content, 'html.parser')
 
             # Look for Pokemon cards or entries
@@ -638,7 +658,10 @@ class EnhancedRarityScraper:
         api_data, api_report = self.scrape_pogo_api_data()
         curated_data, curated_report = self.get_curated_spawn_data()
         gamepress_data, gp_report = self.scrape_gamepress_v2()
-        hub_data, hub_report = self.scrape_pokemon_go_hub()
+        # Pokemon GO Hub currently serves a Cloudflare challenge page which is
+        # difficult to scrape reliably without a full browser.  Temporarily
+        # skip this source to avoid repeated 403 errors.
+        # hub_data, hub_report = self.scrape_pokemon_go_hub()
         serebii_data, serebii_report = self.scrape_serebii_rarity(limit=limit)
         pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate(limit=limit)
 
@@ -648,7 +671,6 @@ class EnhancedRarityScraper:
             api_report,
             curated_report,
             gp_report,
-            hub_report,
             serebii_report,
             pokemondb_report,
         ]
@@ -658,7 +680,6 @@ class EnhancedRarityScraper:
             'Pokemon GO API': api_data,
             'Enhanced Curated Data': curated_data,
             'GamePress v2': gamepress_data,
-            'Pokemon GO Hub': hub_data,
             'Serebii': serebii_data,
             'PokemonDB Catch Rate': pokemondb_data,
         }
