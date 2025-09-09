@@ -74,7 +74,6 @@ def load_data() -> pd.DataFrame:
         "Structured_Spawn_Data_Score",
         "Enhanced_Curated_Data_Score",
         "PokemonDB_Catch_Rate_Score",
-        "Inferred_Score",
     ]
     df = pd.read_csv(
         DATA_FILE,
@@ -175,7 +174,6 @@ def main() -> None:
                     "Structured": row["Structured_Spawn_Data_Score"],
                     "Curated": row["Enhanced_Curated_Data_Score"],
                     "Catch Rate": row["PokemonDB_Catch_Rate_Score"],
-                    "Inferred": row["Inferred_Score"],
                 }
             )
 
