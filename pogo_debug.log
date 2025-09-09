@@ -1,0 +1,215 @@
+2025-09-08 22:51:18,936 - INFO - Aggregating rarity data from multiple enhanced sources...
+2025-09-08 22:51:18,937 - INFO - Fetching structured spawn data...
+2025-09-08 22:51:19,369 - INFO - Attempting to get Pokemon GO API data...
+2025-09-08 22:51:20,326 - INFO - Successfully got 1007 Pokemon from API data
+2025-09-08 22:51:20,327 - INFO - Loading enhanced curated spawn data...
+2025-09-08 22:51:20,328 - INFO - Loaded 365 Pokemon spawn rates from enhanced curated data
+2025-09-08 22:51:20,328 - INFO - Attempting to scrape GamePress v2...
+2025-09-08 22:51:20,328 - INFO - Trying URL: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 22:51:20,895 - WARNING - Request to https://pokemongo.gamepress.gg/pokemon-list failed (attempt 1): 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 22:51:23,024 - WARNING - Request to https://pokemongo.gamepress.gg/pokemon-list failed (attempt 2): 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 22:51:25,766 - WARNING - Request to https://pokemongo.gamepress.gg/pokemon-list failed (attempt 3): 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 22:51:25,766 - INFO - URL https://pokemongo.gamepress.gg/pokemon-list failed: 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 22:51:25,766 - INFO - Trying URL: https://pogo.gamepress.gg/pokemon-list
+2025-09-08 22:51:26,271 - ERROR - GamePress v2 scraping failed: No Pokemon data found in new structure from https://pogo.gamepress.gg/pokemon-list
+2025-09-08 22:51:26,272 - INFO - Attempting to scrape Pokemon GO Hub...
+2025-09-08 22:51:26,671 - WARNING - Request to https://db.pokemongohub.net/ failed (attempt 1): 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 22:51:28,190 - WARNING - Request to https://db.pokemongohub.net/ failed (attempt 2): 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 22:51:30,858 - WARNING - Request to https://db.pokemongohub.net/ failed (attempt 3): 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 22:51:30,859 - ERROR - Pokemon GO Hub scraping failed: 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 22:51:30,860 - INFO - Attempting to scrape Serebii data...
+2025-09-08 22:55:28,346 - INFO - Successfully scraped 945 Pokemon from Serebii
+2025-09-08 22:55:28,347 - INFO - Attempting to scrape Pokemon Database...
+2025-09-08 22:55:32,404 - WARNING - Request to https://pokemondb.net/pokedex/alolan-rattata failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-rattata
+2025-09-08 22:55:34,021 - WARNING - Request to https://pokemondb.net/pokedex/alolan-rattata failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-rattata
+2025-09-08 22:55:36,924 - WARNING - Request to https://pokemondb.net/pokedex/alolan-rattata failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-rattata
+2025-09-08 22:55:37,643 - WARNING - Request to https://pokemondb.net/pokedex/alolan-raticate failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-raticate
+2025-09-08 22:55:39,485 - WARNING - Request to https://pokemondb.net/pokedex/alolan-raticate failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-raticate
+2025-09-08 22:55:42,253 - WARNING - Request to https://pokemondb.net/pokedex/alolan-raticate failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-raticate
+2025-09-08 22:55:44,077 - WARNING - Request to https://pokemondb.net/pokedex/alolan-raichu failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-raichu
+2025-09-08 22:55:45,417 - WARNING - Request to https://pokemondb.net/pokedex/alolan-raichu failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-raichu
+2025-09-08 22:55:47,445 - WARNING - Request to https://pokemondb.net/pokedex/alolan-raichu failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-raichu
+2025-09-08 22:55:48,018 - WARNING - Request to https://pokemondb.net/pokedex/alolan-sandshrew failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-sandshrew
+2025-09-08 22:55:49,324 - WARNING - Request to https://pokemondb.net/pokedex/alolan-sandshrew failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-sandshrew
+2025-09-08 22:55:52,335 - WARNING - Request to https://pokemondb.net/pokedex/alolan-sandshrew failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-sandshrew
+2025-09-08 22:55:53,186 - WARNING - Request to https://pokemondb.net/pokedex/alolan-sandslash failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-sandslash
+2025-09-08 22:55:54,277 - WARNING - Request to https://pokemondb.net/pokedex/alolan-sandslash failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-sandslash
+2025-09-08 22:55:57,245 - WARNING - Request to https://pokemondb.net/pokedex/alolan-sandslash failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-sandslash
+2025-09-08 22:56:00,013 - WARNING - Request to https://pokemondb.net/pokedex/alolan-vulpix failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-vulpix
+2025-09-08 22:56:01,969 - WARNING - Request to https://pokemondb.net/pokedex/alolan-vulpix failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-vulpix
+2025-09-08 22:56:04,906 - WARNING - Request to https://pokemondb.net/pokedex/alolan-vulpix failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-vulpix
+2025-09-08 22:56:05,469 - WARNING - Request to https://pokemondb.net/pokedex/alolan-ninetales failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-ninetales
+2025-09-08 22:56:06,952 - WARNING - Request to https://pokemondb.net/pokedex/alolan-ninetales failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-ninetales
+2025-09-08 22:56:09,832 - WARNING - Request to https://pokemondb.net/pokedex/alolan-ninetales failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-ninetales
+2025-09-08 22:56:25,184 - WARNING - Request to https://pokemondb.net/pokedex/wigglytuff failed (attempt 1): HTTPSConnectionPool(host='pokemondb.net', port=443): Read timed out. (read timeout=15)
+2025-09-08 22:56:30,923 - WARNING - Request to https://pokemondb.net/pokedex/alolan-diglett failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-diglett
+2025-09-08 22:56:32,578 - WARNING - Request to https://pokemondb.net/pokedex/alolan-diglett failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-diglett
+2025-09-08 22:56:35,164 - WARNING - Request to https://pokemondb.net/pokedex/alolan-diglett failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-diglett
+2025-09-08 22:56:35,984 - WARNING - Request to https://pokemondb.net/pokedex/alolan-dugtrio failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-dugtrio
+2025-09-08 22:56:37,042 - WARNING - Request to https://pokemondb.net/pokedex/alolan-dugtrio failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-dugtrio
+2025-09-08 22:56:39,134 - WARNING - Request to https://pokemondb.net/pokedex/alolan-dugtrio failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-dugtrio
+2025-09-08 22:56:40,218 - WARNING - Request to https://pokemondb.net/pokedex/alolan-meowth failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-meowth
+2025-09-08 22:56:42,241 - WARNING - Request to https://pokemondb.net/pokedex/alolan-meowth failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-meowth
+2025-09-08 22:56:44,798 - WARNING - Request to https://pokemondb.net/pokedex/alolan-meowth failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-meowth
+2025-09-08 22:56:45,245 - WARNING - Request to https://pokemondb.net/pokedex/galarian-meowth failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-meowth
+2025-09-08 22:56:47,196 - WARNING - Request to https://pokemondb.net/pokedex/galarian-meowth failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-meowth
+2025-09-08 22:56:50,156 - WARNING - Request to https://pokemondb.net/pokedex/galarian-meowth failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-meowth
+2025-09-08 22:56:51,105 - WARNING - Request to https://pokemondb.net/pokedex/alolan-persian failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-persian
+2025-09-08 22:56:52,830 - WARNING - Request to https://pokemondb.net/pokedex/alolan-persian failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-persian
+2025-09-08 22:56:55,148 - WARNING - Request to https://pokemondb.net/pokedex/alolan-persian failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-persian
+2025-09-08 22:57:02,484 - WARNING - Request to https://pokemondb.net/pokedex/alolan-geodude failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-geodude
+2025-09-08 22:57:03,780 - WARNING - Request to https://pokemondb.net/pokedex/alolan-geodude failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-geodude
+2025-09-08 22:57:06,360 - WARNING - Request to https://pokemondb.net/pokedex/alolan-geodude failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-geodude
+2025-09-08 22:57:07,380 - WARNING - Request to https://pokemondb.net/pokedex/alolan-graveler failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-graveler
+2025-09-08 22:57:09,238 - WARNING - Request to https://pokemondb.net/pokedex/alolan-graveler failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-graveler
+2025-09-08 22:57:12,077 - WARNING - Request to https://pokemondb.net/pokedex/alolan-graveler failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-graveler
+2025-09-08 22:57:12,641 - WARNING - Request to https://pokemondb.net/pokedex/alolan-golem failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-golem
+2025-09-08 22:57:14,232 - WARNING - Request to https://pokemondb.net/pokedex/alolan-golem failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-golem
+2025-09-08 22:57:16,730 - WARNING - Request to https://pokemondb.net/pokedex/alolan-golem failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-golem
+2025-09-08 22:57:17,337 - WARNING - Request to https://pokemondb.net/pokedex/galarian-ponyta failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-ponyta
+2025-09-08 22:57:19,196 - WARNING - Request to https://pokemondb.net/pokedex/galarian-ponyta failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-ponyta
+2025-09-08 22:57:21,894 - WARNING - Request to https://pokemondb.net/pokedex/galarian-ponyta failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-ponyta
+2025-09-08 22:57:22,209 - WARNING - Request to https://pokemondb.net/pokedex/galarian-rapidash failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-rapidash
+2025-09-08 22:57:23,908 - WARNING - Request to https://pokemondb.net/pokedex/galarian-rapidash failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-rapidash
+2025-09-08 22:57:25,962 - WARNING - Request to https://pokemondb.net/pokedex/galarian-rapidash failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-rapidash
+2025-09-08 22:57:26,439 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowpoke failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowpoke
+2025-09-08 22:57:28,455 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowpoke failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowpoke
+2025-09-08 22:57:30,591 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowpoke failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowpoke
+2025-09-08 22:57:31,306 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowbro failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowbro
+2025-09-08 22:57:33,072 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowbro failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowbro
+2025-09-08 22:57:36,023 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowbro failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowbro
+2025-09-08 22:57:37,237 - WARNING - Request to https://pokemondb.net/pokedex/galarian-farfetchd failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-farfetchd
+2025-09-08 22:57:39,057 - WARNING - Request to https://pokemondb.net/pokedex/galarian-farfetchd failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-farfetchd
+2025-09-08 22:57:41,740 - WARNING - Request to https://pokemondb.net/pokedex/galarian-farfetchd failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-farfetchd
+2025-09-08 22:57:43,540 - WARNING - Request to https://pokemondb.net/pokedex/alolan-grimer failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-grimer
+2025-09-08 22:57:44,678 - WARNING - Request to https://pokemondb.net/pokedex/alolan-grimer failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-grimer
+2025-09-08 22:57:47,224 - WARNING - Request to https://pokemondb.net/pokedex/alolan-grimer failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-grimer
+2025-09-08 22:57:48,061 - WARNING - Request to https://pokemondb.net/pokedex/alolan-muk failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-muk
+2025-09-08 22:57:49,302 - WARNING - Request to https://pokemondb.net/pokedex/alolan-muk failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-muk
+2025-09-08 22:57:51,698 - WARNING - Request to https://pokemondb.net/pokedex/alolan-muk failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-muk
+2025-09-08 22:57:55,996 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-voltorb failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-voltorb
+2025-09-08 22:57:57,506 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-voltorb failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-voltorb
+2025-09-08 22:58:00,478 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-voltorb failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-voltorb
+2025-09-08 22:58:01,381 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-electrode failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-electrode
+2025-09-08 22:58:02,707 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-electrode failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-electrode
+2025-09-08 22:58:05,199 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-electrode failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-electrode
+2025-09-08 22:58:06,244 - WARNING - Request to https://pokemondb.net/pokedex/alolan-exeggutor failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-exeggutor
+2025-09-08 22:58:07,871 - WARNING - Request to https://pokemondb.net/pokedex/alolan-exeggutor failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-exeggutor
+2025-09-08 22:58:10,592 - WARNING - Request to https://pokemondb.net/pokedex/alolan-exeggutor failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-exeggutor
+2025-09-08 22:58:11,132 - WARNING - Request to https://pokemondb.net/pokedex/alolan-marowak failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-marowak
+2025-09-08 22:58:12,744 - WARNING - Request to https://pokemondb.net/pokedex/alolan-marowak failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-marowak
+2025-09-08 22:58:14,912 - WARNING - Request to https://pokemondb.net/pokedex/alolan-marowak failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/alolan-marowak
+2025-09-08 22:58:16,284 - WARNING - Request to https://pokemondb.net/pokedex/galarian-weezing failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-weezing
+2025-09-08 22:58:17,446 - WARNING - Request to https://pokemondb.net/pokedex/galarian-weezing failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-weezing
+2025-09-08 22:58:19,577 - WARNING - Request to https://pokemondb.net/pokedex/galarian-weezing failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-weezing
+2025-09-08 22:58:23,348 - WARNING - Request to https://pokemondb.net/pokedex/galarian-mr-mime failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-mr-mime
+2025-09-08 22:58:24,717 - WARNING - Request to https://pokemondb.net/pokedex/galarian-mr-mime failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-mr-mime
+2025-09-08 22:58:27,194 - WARNING - Request to https://pokemondb.net/pokedex/galarian-mr-mime failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-mr-mime
+2025-09-08 22:58:29,348 - WARNING - Request to https://pokemondb.net/pokedex/paldean-tauros failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-tauros
+2025-09-08 22:58:30,630 - WARNING - Request to https://pokemondb.net/pokedex/paldean-tauros failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-tauros
+2025-09-08 22:58:32,969 - WARNING - Request to https://pokemondb.net/pokedex/paldean-tauros failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-tauros
+2025-09-08 22:58:37,716 - WARNING - Request to https://pokemondb.net/pokedex/galarian-articuno failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-articuno
+2025-09-08 22:58:39,203 - WARNING - Request to https://pokemondb.net/pokedex/galarian-articuno failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-articuno
+2025-09-08 22:58:42,089 - WARNING - Request to https://pokemondb.net/pokedex/galarian-articuno failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-articuno
+2025-09-08 22:58:42,765 - WARNING - Request to https://pokemondb.net/pokedex/galarian-zapdos failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-zapdos
+2025-09-08 22:58:44,393 - WARNING - Request to https://pokemondb.net/pokedex/galarian-zapdos failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-zapdos
+2025-09-08 22:58:46,779 - WARNING - Request to https://pokemondb.net/pokedex/galarian-zapdos failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-zapdos
+2025-09-08 22:58:47,709 - WARNING - Request to https://pokemondb.net/pokedex/galarian-moltres failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-moltres
+2025-09-08 22:58:49,247 - WARNING - Request to https://pokemondb.net/pokedex/galarian-moltres failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-moltres
+2025-09-08 22:58:51,735 - WARNING - Request to https://pokemondb.net/pokedex/galarian-moltres failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-moltres
+2025-09-08 22:58:56,186 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-typhlosion failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-typhlosion
+2025-09-08 22:58:57,825 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-typhlosion failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-typhlosion
+2025-09-08 22:59:00,272 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-typhlosion failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-typhlosion
+2025-09-08 22:59:13,586 - WARNING - Request to https://pokemondb.net/pokedex/paldean-wooper failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-wooper
+2025-09-08 22:59:14,705 - WARNING - Request to https://pokemondb.net/pokedex/paldean-wooper failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-wooper
+2025-09-08 22:59:17,132 - WARNING - Request to https://pokemondb.net/pokedex/paldean-wooper failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-wooper
+2025-09-08 22:59:18,803 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowking failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowking
+2025-09-08 22:59:20,281 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowking failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowking
+2025-09-08 22:59:22,493 - WARNING - Request to https://pokemondb.net/pokedex/galarian-slowking failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-slowking
+2025-09-08 22:59:26,588 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-qwilfish failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-qwilfish
+2025-09-08 22:59:28,318 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-qwilfish failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-qwilfish
+2025-09-08 22:59:30,442 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-qwilfish failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-qwilfish
+2025-09-08 22:59:32,160 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-sneasel failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-sneasel
+2025-09-08 22:59:33,267 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-sneasel failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-sneasel
+2025-09-08 22:59:36,005 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-sneasel failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-sneasel
+2025-09-08 22:59:38,239 - WARNING - Request to https://pokemondb.net/pokedex/galarian-corsola failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-corsola
+2025-09-08 22:59:39,496 - WARNING - Request to https://pokemondb.net/pokedex/galarian-corsola failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-corsola
+2025-09-08 22:59:42,256 - WARNING - Request to https://pokemondb.net/pokedex/galarian-corsola failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-corsola
+2025-09-08 22:59:55,997 - WARNING - Request to https://pokemondb.net/pokedex/galarian-zigzagoon failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-zigzagoon
+2025-09-08 22:59:57,660 - WARNING - Request to https://pokemondb.net/pokedex/galarian-zigzagoon failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-zigzagoon
+2025-09-08 23:00:00,343 - WARNING - Request to https://pokemondb.net/pokedex/galarian-zigzagoon failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-zigzagoon
+2025-09-08 23:00:00,797 - WARNING - Request to https://pokemondb.net/pokedex/galarian-linoone failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-linoone
+2025-09-08 23:00:02,187 - WARNING - Request to https://pokemondb.net/pokedex/galarian-linoone failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-linoone
+2025-09-08 23:00:04,345 - WARNING - Request to https://pokemondb.net/pokedex/galarian-linoone failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-linoone
+2025-09-08 23:01:20,794 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-samurott failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-samurott
+2025-09-08 23:01:22,406 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-samurott failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-samurott
+2025-09-08 23:01:24,478 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-samurott failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-samurott
+2025-09-08 23:01:40,033 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-lilligant failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-lilligant
+2025-09-08 23:01:41,227 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-lilligant failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-lilligant
+2025-09-08 23:01:43,670 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-lilligant failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-lilligant
+2025-09-08 23:01:45,557 - WARNING - Request to https://pokemondb.net/pokedex/galarian-darumaka failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-darumaka
+2025-09-08 23:01:46,650 - WARNING - Request to https://pokemondb.net/pokedex/galarian-darumaka failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-darumaka
+2025-09-08 23:01:49,668 - WARNING - Request to https://pokemondb.net/pokedex/galarian-darumaka failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-darumaka
+2025-09-08 23:01:50,561 - WARNING - Request to https://pokemondb.net/pokedex/galarian-darmanitan failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-darmanitan
+2025-09-08 23:01:52,151 - WARNING - Request to https://pokemondb.net/pokedex/galarian-darmanitan failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-darmanitan
+2025-09-08 23:01:54,311 - WARNING - Request to https://pokemondb.net/pokedex/galarian-darmanitan failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-darmanitan
+2025-09-08 23:01:57,383 - WARNING - Request to https://pokemondb.net/pokedex/galarian-yamask failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-yamask
+2025-09-08 23:01:59,094 - WARNING - Request to https://pokemondb.net/pokedex/galarian-yamask failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-yamask
+2025-09-08 23:02:01,325 - WARNING - Request to https://pokemondb.net/pokedex/galarian-yamask failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-yamask
+2025-09-08 23:02:03,884 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-zorua failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-zorua
+2025-09-08 23:02:05,551 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-zorua failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-zorua
+2025-09-08 23:02:07,804 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-zorua failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-zorua
+2025-09-08 23:02:08,489 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-zoroark failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-zoroark
+2025-09-08 23:02:09,737 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-zoroark failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-zoroark
+2025-09-08 23:02:11,916 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-zoroark failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-zoroark
+2025-09-08 23:02:29,897 - WARNING - Request to https://pokemondb.net/pokedex/galarian-stunfisk failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-stunfisk
+2025-09-08 23:02:31,740 - WARNING - Request to https://pokemondb.net/pokedex/galarian-stunfisk failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-stunfisk
+2025-09-08 23:02:34,342 - WARNING - Request to https://pokemondb.net/pokedex/galarian-stunfisk failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/galarian-stunfisk
+2025-09-08 23:02:37,190 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-braviary failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-braviary
+2025-09-08 23:02:38,290 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-braviary failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-braviary
+2025-09-08 23:02:40,892 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-braviary failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-braviary
+2025-09-08 23:03:08,204 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-sliggoo failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-sliggoo
+2025-09-08 23:03:09,255 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-sliggoo failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-sliggoo
+2025-09-08 23:03:12,028 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-sliggoo failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-sliggoo
+2025-09-08 23:03:12,695 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-goodra failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-goodra
+2025-09-08 23:03:14,341 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-goodra failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-goodra
+2025-09-08 23:03:16,888 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-goodra failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-goodra
+2025-09-08 23:03:20,413 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-avalugg failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-avalugg
+2025-09-08 23:03:22,131 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-avalugg failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-avalugg
+2025-09-08 23:03:24,730 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-avalugg failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-avalugg
+2025-09-08 23:03:29,377 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-decidueye failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-decidueye
+2025-09-08 23:03:30,680 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-decidueye failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-decidueye
+2025-09-08 23:03:33,619 - WARNING - Request to https://pokemondb.net/pokedex/hisuian-decidueye failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/hisuian-decidueye
+2025-09-08 23:03:51,574 - WARNING - Request to https://pokemondb.net/pokedex/type:-null failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/type:-null
+2025-09-08 23:03:53,484 - WARNING - Request to https://pokemondb.net/pokedex/type:-null failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/type:-null
+2025-09-08 23:03:55,999 - WARNING - Request to https://pokemondb.net/pokedex/type:-null failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/type:-null
+2025-09-08 23:04:36,898 - WARNING - Request to https://pokemondb.net/pokedex/paldean-clodsire failed (attempt 1): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-clodsire
+2025-09-08 23:04:37,933 - WARNING - Request to https://pokemondb.net/pokedex/paldean-clodsire failed (attempt 2): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-clodsire
+2025-09-08 23:04:41,549 - WARNING - Request to https://pokemondb.net/pokedex/paldean-clodsire failed (attempt 3): 404 Client Error: Not Found for url: https://pokemondb.net/pokedex/paldean-clodsire
+2025-09-08 23:04:41,549 - INFO - Successfully scraped 890 Pokemon from PokemonDB
+2025-09-08 23:04:41,550 - INFO - Processing 951 Pokemon total...
+2025-09-08 23:04:41,557 - INFO - Pokemon with multiple data sources: 933
+2025-09-08 23:04:41,562 - INFO - Pokemon with single data source: 18
+2025-09-08 23:04:41,563 - INFO - Pokemon with inferred data: 0
+2025-09-08 23:04:41,570 - INFO - Exporting enhanced data to pokemon_rarity_analysis_enhanced.csv...
+2025-09-08 23:04:41,586 - INFO - Successfully exported 951 Pokemon to pokemon_rarity_analysis_enhanced.csv
+2025-09-08 23:20:23,947 - INFO - Aggregating rarity data from multiple enhanced sources...
+2025-09-08 23:20:23,948 - INFO - Fetching structured spawn data...
+2025-09-08 23:20:24,383 - INFO - Attempting to get Pokemon GO API data...
+2025-09-08 23:20:24,949 - INFO - Successfully got 1007 Pokemon from API data
+2025-09-08 23:20:24,949 - INFO - Loading enhanced curated spawn data...
+2025-09-08 23:20:24,950 - INFO - Loaded 365 Pokemon spawn rates from enhanced curated data
+2025-09-08 23:20:24,950 - INFO - Attempting to scrape GamePress v2...
+2025-09-08 23:20:24,950 - INFO - Trying URL: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 23:20:25,750 - WARNING - Request to https://pokemongo.gamepress.gg/pokemon-list failed (attempt 1): 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 23:20:27,456 - WARNING - Request to https://pokemongo.gamepress.gg/pokemon-list failed (attempt 2): 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 23:20:30,842 - WARNING - Request to https://pokemongo.gamepress.gg/pokemon-list failed (attempt 3): 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 23:20:30,842 - INFO - URL https://pokemongo.gamepress.gg/pokemon-list failed: 404 Client Error: Not Found for url: https://pokemongo.gamepress.gg/pokemon-list
+2025-09-08 23:20:30,842 - INFO - Trying URL: https://pogo.gamepress.gg/pokemon-list
+2025-09-08 23:20:31,231 - ERROR - GamePress v2 scraping failed: No Pokemon data found in new structure from https://pogo.gamepress.gg/pokemon-list
+2025-09-08 23:20:31,232 - INFO - Attempting to scrape Pokemon GO Hub...
+2025-09-08 23:20:31,674 - WARNING - Request to https://db.pokemongohub.net/ failed (attempt 1): 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 23:20:33,547 - WARNING - Request to https://db.pokemongohub.net/ failed (attempt 2): 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 23:20:36,209 - WARNING - Request to https://db.pokemongohub.net/ failed (attempt 3): 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 23:20:36,209 - ERROR - Pokemon GO Hub scraping failed: 403 Client Error: Forbidden for url: https://db.pokemongohub.net/
+2025-09-08 23:20:36,210 - INFO - Attempting to scrape Serebii data...
