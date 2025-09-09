@@ -31,6 +31,17 @@ try:
 except Exception:
     RARITY_RULES = {}
 
+SPAWN_TYPES_PATH = Path(__file__).resolve().parent.parent / "data" / "spawn_types.json"
+_SPAWN_TYPES: Optional[Dict[str, str]] = None
+
+
+def _load_spawn_types(path: Path) -> Dict[str, str]:
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
 
 def get_comprehensive_pokemon_list() -> List[Tuple[str, int]]:
     """Get complete Pokemon list for all generations from data file."""
@@ -46,58 +57,18 @@ def get_comprehensive_pokemon_list() -> List[Tuple[str, int]]:
     return pokemon_list
 
 
-def categorize_pokemon_spawn_type(pokemon_name: str, pokemon_number: int) -> str:
-    """Categorize Pokemon by spawn type using a curated list."""
-    legendaries = {
-        "Articuno", "Zapdos", "Moltres", "Mewtwo", "Mew",
-        "Raikou", "Entei", "Suicune", "Lugia", "Ho-Oh", "Celebi",
-        "Regirock", "Regice", "Registeel", "Latias", "Latios",
-        "Kyogre", "Groudon", "Rayquaza", "Jirachi", "Deoxys",
-        "Dialga", "Palkia", "Heatran", "Regigigas", "Giratina",
-        "Cresselia", "Phione", "Manaphy", "Darkrai", "Shaymin", "Arceus",
-        "Uxie", "Mesprit", "Azelf",
-        "Victini", "Cobalion", "Terrakion", "Virizion", "Tornadus",
-        "Thundurus", "Reshiram", "Zekrom", "Landorus", "Kyurem",
-        "Keldeo", "Meloetta", "Genesect",
-        "Xerneas", "Yveltal", "Zygarde", "Diancie", "Hoopa", "Volcanion",
-        "Tapu Koko", "Tapu Lele", "Tapu Bulu", "Tapu Fini", "Cosmog", "Cosmoem",
-        "Solgaleo", "Lunala", "Necrozma", "Magearna", "Marshadow",
-        "Zeraora", "Meltan", "Melmetal", "Poipole", "Naganadel",
-        "Stakataka", "Blacephalon",
-        "Zacian", "Zamazenta", "Eternatus", "Kubfu", "Urshifu", "Zarude",
-        "Regieleki", "Regidrago", "Glastrier", "Spectrier", "Calyrex",
-        "Galarian Articuno", "Galarian Zapdos", "Galarian Moltres",
-        "Type: Null",
-    }
-
-    evolution_only = {
-        "Ivysaur", "Venusaur", "Charmeleon", "Charizard", "Wartortle", "Blastoise",
-        "Metapod", "Butterfree", "Kakuna", "Beedrill", "Pidgeotto", "Pidgeot",
-        "Raticate", "Fearow", "Arbok", "Raichu", "Sandslash", "Nidorina",
-        "Nidoqueen", "Nidorino", "Nidoking", "Clefable", "Ninetales",
-        "Wigglytuff", "Golbat", "Gloom", "Vileplume", "Parasect", "Venomoth",
-        "Dugtrio", "Persian", "Golduck", "Primeape", "Arcanine", "Poliwhirl",
-        "Poliwrath", "Kadabra", "Alakazam", "Machoke", "Machamp", "Weepinbell",
-        "Victreebel", "Tentacruel", "Graveler", "Golem", "Rapidash", "Slowbro",
-        "Magneton", "Dodrio", "Dewgong", "Muk", "Cloyster", "Haunter",
-        "Gengar", "Hypno", "Kingler", "Electrode", "Exeggutor", "Marowak",
-        "Weezing", "Rhydon", "Seadra", "Seaking", "Starmie", "Mr. Mime",
-        "Gyarados", "Vaporeon", "Jolteon", "Flareon", "Omastar", "Kabutops",
-        "Dragonair", "Dragonite",
-    }
-
-    event_only = {
-        "Smeargle", "Spinda", "Kecleon", "Spiritomb", "Rotom", "Minior",
-        "Chatot",
-    }
-
-    if pokemon_name in legendaries:
-        return "legendary"
-    if pokemon_name in evolution_only:
-        return "evolution-only"
-    if pokemon_name in event_only:
-        return "event-only"
-    return "wild"
+def categorize_pokemon_spawn_type(
+    pokemon_name: str,
+    pokemon_number: int,
+    mapping_path: Optional[Path] = None,
+) -> str:
+    """Categorize Pokemon by spawn type using an external data file."""
+    path = mapping_path or SPAWN_TYPES_PATH
+    global _SPAWN_TYPES
+    if _SPAWN_TYPES is None and path == SPAWN_TYPES_PATH:
+        _SPAWN_TYPES = _load_spawn_types(path)
+    mapping = _SPAWN_TYPES if path == SPAWN_TYPES_PATH else _load_spawn_types(path)
+    return mapping.get(pokemon_name, "wild")
 
 
 def get_trading_recommendation(score: float, spawn_type: str) -> str:

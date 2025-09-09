@@ -1,3 +1,4 @@
+import json
 import pytest
 from pogorarity import get_trading_recommendation, categorize_pokemon_spawn_type
 
@@ -18,6 +19,18 @@ def test_get_trading_recommendation(score, spawn_type, expected):
     assert get_trading_recommendation(score, spawn_type) == expected
 
 
+@pytest.fixture
+def spawn_types_file(tmp_path):
+    mapping = {
+        "Mewtwo": "legendary",
+        "Ivysaur": "evolution-only",
+        "Smeargle": "event-only",
+    }
+    path = tmp_path / "spawn_types.json"
+    path.write_text(json.dumps(mapping))
+    return path
+
+
 @pytest.mark.parametrize(
     "name,number,expected",
     [
@@ -27,6 +40,6 @@ def test_get_trading_recommendation(score, spawn_type, expected):
         ("Pikachu", 25, "wild"),
     ],
 )
-def test_categorize_pokemon_spawn_type(name, number, expected):
-    assert categorize_pokemon_spawn_type(name, number) == expected
+def test_categorize_pokemon_spawn_type(spawn_types_file, name, number, expected):
+    assert categorize_pokemon_spawn_type(name, number, spawn_types_file) == expected
 
