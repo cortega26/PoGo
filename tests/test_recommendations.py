@@ -1,6 +1,7 @@
 import json
 import pytest
 from pogorarity import get_trading_recommendation, categorize_pokemon_spawn_type
+from pogorarity.thresholds import COMMON, UNCOMMON
 
 
 @pytest.mark.parametrize(
@@ -9,10 +10,10 @@ from pogorarity import get_trading_recommendation, categorize_pokemon_spawn_type
         (5.0, "legendary", "Never Transfer (Legendary)"),
         (5.0, "event-only", "Never Transfer (Event Only)"),
         (5.0, "evolution-only", "Evaluate for Evolution"),
-        (3.99, "wild", "Keep or Trade Sparingly"),
-        (4.0, "wild", "Depends on Circumstances"),
-        (6.99, "wild", "Depends on Circumstances"),
-        (7.0, "wild", "Safe to Transfer"),
+        (UNCOMMON - 0.01, "wild", "Keep or Trade Sparingly"),
+        (UNCOMMON, "wild", "Depends on Circumstances"),
+        (COMMON - 0.01, "wild", "Depends on Circumstances"),
+        (COMMON, "wild", "Safe to Transfer"),
     ],
 )
 def test_get_trading_recommendation(score, spawn_type, expected):

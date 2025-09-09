@@ -8,6 +8,7 @@ import streamlit as st
 
 from pogorarity.health import check_cache
 from pogorarity.aggregator import SOURCE_WEIGHTS
+from pogorarity.thresholds import SCORE_BANDS
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
@@ -41,18 +42,10 @@ def generation_from_number(num: int) -> int:
 def rarity_band(score: float) -> str:
     """Map a numeric rarity score to a human-friendly rarity band.
 
-    The underlying data uses higher scores to indicate more common
-    Pokémon. Previously this function treated lower scores as more
-    common, which inverted the rarity bands (e.g. ubiquitous Pokémon
-    like Caterpie were marked "Very Rare"). The thresholds below now
-    reflect the correct ordering where larger scores correspond to more
-    common Pokémon.  The score ranges shared with
-    :func:`pogorarity.aggregator.get_trading_recommendation` are:
-
-    - ``score < 2`` -> "Very Rare"
-    - ``2 <= score < 4`` -> "Rare"
-    - ``4 <= score < 7`` -> "Uncommon"
-    - ``score >= 7`` -> "Common"
+    Higher scores indicate more common Pokémon.  The score bands and
+    thresholds shared with
+    :func:`pogorarity.aggregator.get_trading_recommendation` are defined in
+    :mod:`pogorarity.thresholds`.
 
     Parameters
     ----------
@@ -66,13 +59,11 @@ def rarity_band(score: float) -> str:
         One of "Very Rare", "Rare", "Uncommon", or "Common".
     """
 
-    if score >= 7:
-        return "Common"
-    if score >= 4:
-        return "Uncommon"
-    if score >= 2:
-        return "Rare"
-    return "Very Rare"
+    for threshold, label in SCORE_BANDS:
+        if score >= threshold:
+            return label
+    # Fallback, though SCORE_BANDS should cover all scores
+    return SCORE_BANDS[-1][1]
 
 
 @st.cache_data
