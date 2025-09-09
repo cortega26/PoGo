@@ -1,3 +1,4 @@
+import json
 import pytest
 
 from pogorarity.aggregator import aggregate_data
@@ -141,4 +142,73 @@ def test_weight_override(monkeypatch):
         "Silph Road Spawn Tier": 0.0,
     }
     results, _ = aggregate_data(limit=1, weights=custom_weights)
+    assert results[0].average_score == pytest.approx(2.0)
+
+
+def test_weight_file_override(monkeypatch, tmp_path):
+    """Weights loaded from a JSON file should influence the score."""
+    monkeypatch.setattr(
+        "pogorarity.aggregator.get_comprehensive_pokemon_list",
+        lambda: [("Bulbasaur", 1)],
+    )
+    monkeypatch.setattr(
+        "pogorarity.aggregator.categorize_pokemon_spawn_type",
+        lambda name, num: "wild",
+    )
+
+    def fake_structured():
+        return ({"Bulbasaur": 2.0}, DataSourceReport(
+            source_name="Structured Spawn Data", pokemon_count=1, success=True
+        ))
+
+    def fake_curated():
+        return ({"Bulbasaur": 4.0}, DataSourceReport(
+            source_name="Enhanced Curated Data", pokemon_count=1, success=True
+        ))
+
+    def fake_pokemondb(limit=None, session=None, metrics=None):
+        return ({"Bulbasaur": 6.0}, DataSourceReport(
+            source_name="PokemonDB Catch Rate", pokemon_count=1, success=True
+        ))
+
+    def fake_pokeapi(limit=None, session=None, metrics=None):
+        return ({"Bulbasaur": 8.0}, DataSourceReport(
+            source_name="PokeAPI Capture Rate", pokemon_count=1, success=True
+        ))
+
+    def fake_silph(metrics=None):
+        return ({"Bulbasaur": 10.0}, DataSourceReport(
+            source_name="Silph Road Spawn Tier", pokemon_count=1, success=True
+        ))
+
+    def fake_game_master(metrics=None):
+        return {}, {}, [
+            DataSourceReport(
+                source_name="Game Master Capture Rate",
+                pokemon_count=0,
+                success=False,
+            ),
+            DataSourceReport(
+                source_name="Game Master Spawn Weight",
+                pokemon_count=0,
+                success=False,
+            ),
+        ]
+
+    monkeypatch.setattr(structured_spawn, "scrape", lambda metrics=None: fake_structured())
+    monkeypatch.setattr(curated_spawn, "get_data", lambda: fake_curated())
+    monkeypatch.setattr(pokemondb, "scrape_catch_rate", lambda limit=None, session=None, metrics=None: fake_pokemondb())
+    monkeypatch.setattr(pokeapi, "scrape_capture_rate", lambda limit=None, session=None, metrics=None: fake_pokeapi())
+    monkeypatch.setattr(silph_road, "scrape_spawn_tiers", lambda metrics=None: fake_silph())
+    monkeypatch.setattr(game_master, "scrape", lambda metrics=None: fake_game_master())
+
+    weights_file = tmp_path / "weights.json"
+    weights_file.write_text(json.dumps({
+        "Structured Spawn Data": 10.0,
+        "Enhanced Curated Data": 0.0,
+        "PokemonDB Catch Rate": 0.0,
+        "PokeAPI Capture Rate": 0.0,
+        "Silph Road Spawn Tier": 0.0,
+    }))
+    results, _ = aggregate_data(limit=1, weights_path=weights_file)
     assert results[0].average_score == pytest.approx(2.0)

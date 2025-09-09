@@ -35,6 +35,17 @@ SPAWN_TYPES_PATH = Path(__file__).resolve().parent.parent / "data" / "spawn_type
 _SPAWN_TYPES: Optional[Dict[str, str]] = None
 
 
+def _load_weights(path: Path) -> Dict[str, float]:
+    """Load source weights from a JSON file."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            data = json.load(fh)
+        return {str(k): float(v) for k, v in data.items()}
+    except Exception as exc:  # pragma: no cover - logging side effect
+        logger.error("Failed to load weights from %s: %s", path, exc)
+        return {}
+
+
 def _load_spawn_types(path: Path) -> Dict[str, str]:
     try:
         with open(path, encoding="utf-8") as f:
@@ -133,6 +144,7 @@ def aggregate_data(
     limit: Optional[int] = None,
     metrics: Optional[Dict[str, float]] = None,
     weights: Optional[Dict[str, float]] = None,
+    weights_path: Optional[Path] = None,
 ) -> Tuple[List[PokemonRarity], List[DataSourceReport]]:
     """Aggregate rarity data from all sources and compute recommendations."""
     pokemon_list = get_comprehensive_pokemon_list()
@@ -150,7 +162,12 @@ def aggregate_data(
     silph_data, silph_report = silph_road.scrape_spawn_tiers(metrics=metrics)
     gm_capture_data, gm_spawn_data, gm_reports = game_master.scrape(metrics=metrics)
 
-    weight_map = weights or SOURCE_WEIGHTS
+    weight_map = weights
+    if weight_map is None and weights_path:
+        loaded = _load_weights(weights_path)
+        if loaded:
+            weight_map = loaded
+    weight_map = weight_map or SOURCE_WEIGHTS
     results: List[PokemonRarity] = []
     for pokemon_name, pokemon_number in pokemon_list:
         rarity_scores: Dict[str, float] = {}
