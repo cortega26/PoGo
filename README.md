@@ -175,5 +175,5 @@ See [AGENTS.md](AGENTS.md) for automation details.
 
 ## License & Support
 
-- License: TODO
+- License: [MIT](LICENSE)
 - Support: open an issue or contact `support@example.com`
