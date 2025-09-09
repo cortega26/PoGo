@@ -66,6 +66,13 @@ class EnhancedRarityScraper:
             "errors": 0,
             "latencies": []
         }
+        # Weights expressing confidence in each data source when aggregating
+        # scores. Higher values indicate greater trust in that source.
+        self.source_weights = {
+            'Structured Spawn Data': 1.0,
+            'Enhanced Curated Data': 1.0,
+            'PokemonDB Catch Rate': 2.0,
+        }
         try:
             self.pokemon_name_set = {
                 name.lower() for name, _ in self.get_comprehensive_pokemon_list()
@@ -553,18 +560,21 @@ class EnhancedRarityScraper:
                     rarity_scores[source_name] = source_data[pokemon_name]
                     data_sources.append(source_name)
 
-            # Calculate average score or infer if missing
-            if len(rarity_scores) > 1:
-                average_score = sum(rarity_scores.values()
-                                    ) / len(rarity_scores)
+            # Calculate weighted average score or infer if missing
+            if len(rarity_scores) > 0:
+                total_weight = sum(
+                    self.source_weights.get(src, 1.0) for src in rarity_scores)
+                weighted_sum = sum(
+                    rarity_scores[src] * self.source_weights.get(src, 1.0)
+                    for src in rarity_scores
+                )
+                average_score = weighted_sum / total_weight
                 recommendation = self.get_trading_recommendation(
                     average_score, spawn_type)
-                pokemon_with_multiple_sources += 1
-            elif len(rarity_scores) == 1:
-                average_score = list(rarity_scores.values())[0]
-                recommendation = self.get_trading_recommendation(
-                    average_score, spawn_type)
-                pokemon_with_single_source += 1
+                if len(rarity_scores) > 1:
+                    pokemon_with_multiple_sources += 1
+                else:
+                    pokemon_with_single_source += 1
             else:
                 # Infer rarity using improved logic
                 inferred_score = self.infer_missing_rarity(
