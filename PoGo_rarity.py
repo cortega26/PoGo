@@ -68,10 +68,10 @@ class EnhancedRarityScraper:
         # being courteous to external sites.
         self.delay = 1
         self.data_source_reports = []
-        # Optional limit for expensive scrapers like Serebii/PokemonDB.  When
-        # set to ``None`` all Pokémon in the dataset will be scraped.  This can
-        # result in a very large number of HTTP requests so tests may override
-        # this value with a smaller integer.
+        # Optional limit for expensive scrapers such as PokemonDB.  When set to
+        # ``None`` all Pokémon in the dataset will be scraped.  This can result
+        # in a very large number of HTTP requests so tests may override this
+        # value with a smaller integer.
         self.scrape_limit: Optional[int] = None
         # simple metrics for observability
         self.metrics = {
@@ -213,53 +213,6 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
-    def scrape_serebii_rarity(self, limit: Optional[int] = None) -> Tuple[Dict[str, float], DataSourceReport]:
-        """Scrape rarity hints from Serebii's Pokémon GO pages
-
-        ``limit`` controls how many Pokémon are fetched.  ``None`` (default)
-        iterates through the entire Pokédex which can be slow but yields the
-        most complete dataset.
-        """
-        logger.info("Attempting to scrape Serebii data...")
-        rarity_data: Dict[str, float] = {}
-
-        try:
-            pokemon_list = self.get_comprehensive_pokemon_list()
-            if limit is not None:
-                pokemon_list = pokemon_list[:limit]
-            for name, number in pokemon_list:
-                url = f"https://www.serebii.net/pokemongo/pokemon/{number:03d}.shtml"
-                try:
-                    response = self.safe_request(url)
-                    text = response.text.lower()
-
-                    score = None
-                    if 'event only' in text or 'event-exclusive' in text:
-                        score = 0.0
-                    elif 'field research' in text or 'special research' in text:
-                        score = 1.0
-                    elif 'rare' in text and 'very rare' not in text:
-                        score = 3.0
-                    elif 'uncommon' in text:
-                        score = 5.0
-                    elif 'common' in text:
-                        score = 7.0
-
-                    if score is not None:
-                        rarity_data[name] = score
-                except Exception:
-                    continue
-
-            report = DataSourceReport("Serebii", len(rarity_data), True)
-            logger.info(
-                f"Successfully scraped {len(rarity_data)} Pokemon from Serebii")
-
-        except Exception as e:
-            logger.error(f"Serebii scraping failed: {e}")
-            report = DataSourceReport("Serebii", 0, False, str(e))
-
-        return rarity_data, report
-
     def scrape_pokemondb_catch_rate(self, limit: Optional[int] = None) -> Tuple[Dict[str, float], DataSourceReport]:
         """Scrape catch rates from Pokémon Database"""
         logger.info("Attempting to scrape Pokemon Database...")
@@ -288,44 +241,6 @@ class EnhancedRarityScraper:
         except Exception as e:
             logger.error(f"PokemonDB scraping failed: {e}")
             report = DataSourceReport("PokemonDB Catch Rate", 0, False, str(e))
-
-        return rarity_data, report
-
-    def scrape_pogo_api_data(self) -> Tuple[Dict[str, float], DataSourceReport]:
-        """Attempt to get data from Pokemon GO API or community APIs"""
-        logger.info("Attempting to get Pokemon GO API data...")
-        rarity_data = {}
-
-        try:
-            url = "https://pogoapi.net/api/v1/pokemon_rarity.json"
-            response = self.safe_request(url)
-            data = response.json()
-
-            rarity_map = {
-                'Legendary': 0.0,
-                'Mythic': 0.0,
-                'Ultra beast': 2.0,
-                'Standard': 7.0
-            }
-
-            for category, entries in data.items():
-                score = rarity_map.get(category, 5.0)
-                for entry in entries:
-                    name = entry.get('pokemon_name')
-                    if name:
-                        rarity_data[name] = score
-
-            report = DataSourceReport("Pokemon GO API", len(
-                rarity_data), len(rarity_data) > 0)
-            if len(rarity_data) > 0:
-                logger.info(
-                    f"Successfully got {len(rarity_data)} Pokemon from API data")
-            else:
-                report.error_message = "No working APIs found"
-
-        except Exception as e:
-            logger.error(f"Pokemon GO API scraping failed: {e}")
-            report = DataSourceReport("Pokemon GO API", 0, False, str(e))
 
         return rarity_data, report
 
@@ -563,27 +478,19 @@ class EnhancedRarityScraper:
 
         # Collect data from all sources
         structured_data, structured_report = self.scrape_structured_spawn_data()
-        api_data, api_report = self.scrape_pogo_api_data()
         curated_data, curated_report = self.get_curated_spawn_data()
-        # GamePress scraping currently fails due to site changes. Skip this
-        # source until a reliable method is available.
-        serebii_data, serebii_report = self.scrape_serebii_rarity(limit=limit)
         pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate(limit=limit)
 
         # Store reports for later display
         self.data_source_reports = [
             structured_report,
-            api_report,
             curated_report,
-            serebii_report,
             pokemondb_report,
         ]
 
         sources = {
             'Structured Spawn Data': structured_data,
-            'Pokemon GO API': api_data,
             'Enhanced Curated Data': curated_data,
-            'Serebii': serebii_data,
             'PokemonDB Catch Rate': pokemondb_data,
         }
 
@@ -770,7 +677,7 @@ class EnhancedRarityScraper:
         """Export with enhanced data source information"""
         logger.info(f"Exporting enhanced data to {filename}...")
 
-        sources = ['Pokemon GO API', 'Enhanced Curated Data', 'Serebii',
+        sources = ['Structured Spawn Data', 'Enhanced Curated Data',
                    'PokemonDB Catch Rate', 'Inferred']
 
         rows = []
@@ -909,8 +816,8 @@ def main(limit: Optional[int] = None):
     Args:
         limit: Optional limit for expensive web scrapers.  ``None`` scrapes all
             Pokémon while an integer restricts the number processed from
-            Serebii and PokemonDB.  This is primarily useful for testing to
-            avoid thousands of HTTP requests.
+            PokemonDB.  This is primarily useful for testing to avoid thousands
+            of HTTP requests.
     """
     scraper = EnhancedRarityScraper()
     scraper.scrape_limit = limit
@@ -945,7 +852,7 @@ if __name__ == "__main__":
         "--limit",
         type=int,
         default=None,
-        help="Limit number of Pokemon scraped from Serebii and PokemonDB for testing",
+        help="Limit number of Pokemon scraped from PokemonDB for testing",
     )
     args = parser.parse_args()
     main(limit=args.limit)
