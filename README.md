@@ -52,7 +52,7 @@ scores are combined using a weighted average:
 The resulting `Average_Rarity_Score` feeds two threshold sets:
 
 - Rarity bands: `<2` Very Rare, `2–4` Rare, `4–7` Uncommon, `≥7` Common.
-- Trading recommendations: score `<4` → "Should Always Trade", `4–7` →
+- Trading recommendations: score `<4` → "Keep or Trade Sparingly", `4–7` →
   "Depends on Circumstances", `≥7` → "Safe to Transfer". Legendary,
   event-only, and evolution-only species override these thresholds with
   conservative recommendations.

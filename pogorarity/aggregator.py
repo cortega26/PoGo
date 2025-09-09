@@ -107,7 +107,7 @@ def get_trading_recommendation(score: float, spawn_type: str) -> str:
     Pokémon.  The same numeric ranges are used by :func:`app.rarity_band` to
     display rarity bands.  The ranges are:
 
-    - ``score < 4``  -> "Should Always Trade"
+    - ``score < 4``  -> "Keep or Trade Sparingly"
     - ``4 <= score < 7`` -> "Depends on Circumstances"
     - ``score >= 7`` -> "Safe to Transfer"
 
@@ -124,7 +124,7 @@ def get_trading_recommendation(score: float, spawn_type: str) -> str:
         return "Safe to Transfer"
     if score >= 4:
         return "Depends on Circumstances"
-    return "Should Always Trade"
+    return "Keep or Trade Sparingly"
 
 
 def infer_missing_rarity(pokemon_name: str, pokemon_number: int, spawn_type: str) -> float:
