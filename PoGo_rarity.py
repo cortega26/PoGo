@@ -17,6 +17,7 @@ from urllib.parse import urljoin, urlparse
 from pathlib import Path
 import logging
 import random
+import argparse
 
 # Configure logging
 logging.basicConfig(level=logging.INFO,
@@ -54,6 +55,11 @@ class EnhancedRarityScraper:
         # being courteous to external sites.
         self.delay = 1
         self.data_source_reports = []
+        # Optional limit for expensive scrapers like Serebii/PokemonDB.  When
+        # set to ``None`` all Pokémon in the dataset will be scraped.  This can
+        # result in a very large number of HTTP requests so tests may override
+        # this value with a smaller integer.
+        self.scrape_limit: Optional[int] = None
         try:
             self.pokemon_name_set = {
                 name.lower() for name, _ in self.get_comprehensive_pokemon_list()
@@ -238,13 +244,20 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
-    def scrape_serebii_rarity(self, limit: int = 15) -> Tuple[Dict[str, float], DataSourceReport]:
-        """Scrape rarity hints from Serebii's Pokemon GO pages"""
+    def scrape_serebii_rarity(self, limit: Optional[int] = None) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Scrape rarity hints from Serebii's Pokémon GO pages
+
+        ``limit`` controls how many Pokémon are fetched.  ``None`` (default)
+        iterates through the entire Pokédex which can be slow but yields the
+        most complete dataset.
+        """
         logger.info("Attempting to scrape Serebii data...")
         rarity_data: Dict[str, float] = {}
 
         try:
-            pokemon_list = self.get_comprehensive_pokemon_list()[:limit]
+            pokemon_list = self.get_comprehensive_pokemon_list()
+            if limit is not None:
+                pokemon_list = pokemon_list[:limit]
             for name, number in pokemon_list:
                 url = f"https://www.serebii.net/pokemongo/pokemon/{number:03d}.shtml"
                 try:
@@ -278,8 +291,8 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
-    def scrape_pokemondb_catch_rate(self, limit: int = 15) -> Tuple[Dict[str, float], DataSourceReport]:
-        """Scrape catch rates from Pokemon Database"""
+    def scrape_pokemondb_catch_rate(self, limit: Optional[int] = None) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Scrape catch rates from Pokémon Database"""
         logger.info("Attempting to scrape Pokemon Database...")
         rarity_data: Dict[str, float] = {}
 
@@ -291,7 +304,9 @@ class EnhancedRarityScraper:
             return slug
 
         try:
-            pokemon_list = self.get_comprehensive_pokemon_list()[:limit]
+            pokemon_list = self.get_comprehensive_pokemon_list()
+            if limit is not None:
+                pokemon_list = pokemon_list[:limit]
             for name, _ in pokemon_list:
                 url = f"https://pokemondb.net/pokedex/{slugify(name)}"
                 try:
@@ -554,14 +569,20 @@ class EnhancedRarityScraper:
         """Aggregate data from multiple enhanced sources"""
         logger.info("Aggregating rarity data from multiple enhanced sources...")
 
+        # Determine how many Pokémon to scrape from slow sources.  ``scrape_limit``
+        # defaults to the full Pokédex size but can be overridden for quicker
+        # test runs.
+        pokemon_list = self.get_comprehensive_pokemon_list()
+        limit = self.scrape_limit or len(pokemon_list)
+
         # Collect data from all sources
         structured_data, structured_report = self.scrape_structured_spawn_data()
         api_data, api_report = self.scrape_pogo_api_data()
         curated_data, curated_report = self.get_curated_spawn_data()
         gamepress_data, gp_report = self.scrape_gamepress_v2()
         hub_data, hub_report = self.scrape_pokemon_go_hub()
-        serebii_data, serebii_report = self.scrape_serebii_rarity()
-        pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate()
+        serebii_data, serebii_report = self.scrape_serebii_rarity(limit=limit)
+        pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate(limit=limit)
 
         # Store reports for later display
         self.data_source_reports = [
@@ -584,8 +605,6 @@ class EnhancedRarityScraper:
             'PokemonDB Catch Rate': pokemondb_data,
         }
 
-        # Get comprehensive Pokemon list (same as before)
-        pokemon_list = self.get_comprehensive_pokemon_list()
         logger.info(f"Processing {len(pokemon_list)} Pokemon total...")
 
         results = []
@@ -891,9 +910,17 @@ class EnhancedRarityScraper:
             print(f"Pokemon with {source}: {count} ({percentage:.1f}%)")
 
 
-def main():
-    """Main execution function"""
+def main(limit: Optional[int] = None):
+    """Main execution function
+
+    Args:
+        limit: Optional limit for expensive web scrapers.  ``None`` scrapes all
+            Pokémon while an integer restricts the number processed from
+            Serebii and PokemonDB.  This is primarily useful for testing to
+            avoid thousands of HTTP requests.
+    """
     scraper = EnhancedRarityScraper()
+    scraper.scrape_limit = limit
 
     try:
         # Aggregate data from multiple enhanced sources
@@ -917,4 +944,12 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    parser = argparse.ArgumentParser(description="Pokemon GO rarity analysis")
+    parser.add_argument(
+        "--limit",
+        type=int,
+        default=None,
+        help="Limit number of Pokemon scraped from Serebii and PokemonDB for testing",
+    )
+    args = parser.parse_args()
+    main(limit=args.limit)
