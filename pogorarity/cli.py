@@ -77,14 +77,34 @@ def _run(
         if errors:
             print(f"{len(errors)} schema errors.")
 
+        normalized_df = pd.DataFrame([r.model_dump() for r in normalized])
+        scraper.intermediate_frames["normalized"] = normalized_df
+
         if not dry_run:
-            df = pd.DataFrame([r.model_dump() for r in normalized])
+            outdir = Path(output_dir) if output_dir else Path(".")
+            outdir.mkdir(parents=True, exist_ok=True)
+            for name, frame in scraper.intermediate_frames.items():
+                frame.to_csv(outdir / f"intermediate_{name}.csv", index=False)
+
             filename = "pokemon_rarity_analysis_enhanced.csv"
-            if output_dir:
-                Path(output_dir).mkdir(parents=True, exist_ok=True)
-                path = Path(output_dir) / filename
-            else:
-                path = Path(filename)
+            path = outdir / filename
+            df = pd.DataFrame(
+                [
+                    {
+                        "Number": p.number,
+                        "Name": p.name,
+                        "Spawn_Type": p.spawn_type,
+                        "Encounter_Rarity_Score": p.average_score,
+                        "Recommendation": p.recommendation,
+                        "Data_Sources": ", ".join(p.data_sources),
+                        **{
+                            f"{k.replace(' ', '_')}_Score": v
+                            for k, v in p.rarity_scores.items()
+                        },
+                    }
+                    for p in pokemon_data
+                ]
+            )
             df.to_csv(path, index=False)
 
         scraper.generate_summary_report(pokemon_data)
