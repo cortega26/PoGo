@@ -4,6 +4,8 @@
 
 ![tests](https://img.shields.io/badge/tests-passing-brightgreen) ![status](https://img.shields.io/badge/status-experimental-blue)
 
+![Streamlit UI](docs/screenshot.png)
+
 ## Overview
 
 PoGo Rarity collects spawn and catch-rate information from multiple community datasets and websites, normalises the values and produces a single CSV with recommendations. A small Streamlit app lets you explore the results interactively.
@@ -49,6 +51,9 @@ pip install -e .
 # scrape a small sample without writing a file
 pokemon-rarity --limit 5 --dry-run
 
+# quick one-minute demo
+pokemon-rarity --limit 1 --dry-run
+
 # launch the Streamlit interface on http://localhost:8501
 streamlit run app.py
 ```
@@ -81,6 +86,8 @@ INFO - Fetching structured spawn data...
 INFO - Attempting to scrape Pokemon Database...
 ```
 
+The scraper emits structured JSON logs per run in `pogorarity/run_log.jsonl` which the Streamlit UI surfaces.
+
 ```http
 GET / HTTP/1.1
 Host: localhost:8501
@@ -104,7 +111,8 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 
 - Request logs are written to `pogorarity/pogo_debug.log`.
 - Basic metrics (`requests`, `errors`, `latencies`) are available on the `EnhancedRarityScraper.metrics` dict.
-- Health checks: ensure the CSV exists and Streamlit responds on `/`.
+- Run metadata with `run_id` is appended to `pogorarity/run_log.jsonl`.
+- Health checks: ensure the CSV exists and Streamlit responds on `/` or query `/health`.
 
 ## Security & Privacy
 
