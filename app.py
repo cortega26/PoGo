@@ -1,4 +1,3 @@
-import sys
 from pathlib import Path
 import json
 from typing import List, Optional
@@ -7,8 +6,8 @@ import pandas as pd
 import streamlit as st
 
 from pogorarity.health import check_cache
-from pogorarity.aggregator import SOURCE_WEIGHTS
-from pogorarity.thresholds import SCORE_BANDS
+from pogorarity import aggregator, thresholds
+from pogorarity.config import load_config, apply_config
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
@@ -59,16 +58,20 @@ def rarity_band(score: float) -> str:
         One of "Very Rare", "Rare", "Uncommon", or "Common".
     """
 
-    for threshold, label in SCORE_BANDS:
+    for threshold, label in thresholds.SCORE_BANDS:
         if score >= threshold:
             return label
     # Fallback, though SCORE_BANDS should cover all scores
-    return SCORE_BANDS[-1][1]
+    return thresholds.SCORE_BANDS[-1][1]
 
 
 @st.cache_data
-def load_data() -> pd.DataFrame:
-    """Load rarity data and augment with generation and rarity band."""
+def load_data(_thresholds_sig: Optional[tuple] = None) -> pd.DataFrame:
+    """Load rarity data and augment with generation and rarity band.
+
+    The cached result incorporates the active thresholds to ensure the
+    ``Rarity_Band`` column reflects any configuration overrides.
+    """
 
     base_cols = [
         "Number",
@@ -142,9 +145,21 @@ def main() -> None:
         unsafe_allow_html=True,
     )
 
+    st.sidebar.header("Configuration")
+    uploaded = st.sidebar.file_uploader("Config JSON", type="json")
+    if uploaded is not None:
+        try:
+            config = json.load(uploaded)
+        except Exception:
+            config = {}
+    else:
+        config = load_config()
+    apply_config(config)
+
     run_info = load_run_log()
     health_info = check_cache()
-    df = load_data()
+    thresholds_sig = tuple(thresholds.get_thresholds().values())
+    df = load_data(thresholds_sig)
 
     st.sidebar.header("Status")
     if run_info:
@@ -158,6 +173,12 @@ def main() -> None:
         st.sidebar.write("No runs logged.")
     st.sidebar.write(f"Cache fresh: {health_info['cache_fresh']}")
     st.sidebar.write(f"Last updated: {health_info['last_updated']}")
+
+    st.sidebar.subheader("Applied Parameters")
+    st.sidebar.write("Thresholds:", thresholds.get_thresholds())
+    st.sidebar.write("Spawn types file:", aggregator.SPAWN_TYPES_PATH)
+    st.sidebar.write("Weights:")
+    st.sidebar.json(aggregator.SOURCE_WEIGHTS)
 
     st.sidebar.header("Filters")
     species = st.sidebar.multiselect("Species", sorted(df["Name"].unique()))
@@ -212,7 +233,7 @@ def main() -> None:
             for source, col in SOURCE_COLS.items():
                 score = row.get(col)
                 if score is not None and not pd.isna(score):
-                    weight = SOURCE_WEIGHTS.get(source, 1.0)
+                    weight = aggregator.SOURCE_WEIGHTS.get(source, 1.0)
                     st.write(f"{source}: {score} (weight {weight})")
 
 
