@@ -99,6 +99,9 @@ pokemon-rarity --weights-file weights.example.json --dry-run
 
 # launch the Streamlit interface on http://localhost:8501
 streamlit run app.py
+
+# override thresholds, spawn type mapping and weights
+cp config.example.json config.json  # edit values as desired
 ```
 
 ## Configuration
