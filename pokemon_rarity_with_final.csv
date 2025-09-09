@@ -1,0 +1,946 @@
+Number;Name;Spawn_Type;Average_Rarity_Score;Recommendation;Data_Sources;Structured_Spawn_Data_Score;Enhanced_Curated_Data_Score;PokemonDB_Catch_Rate_Score;rarity_score_final
+1;Bulbasaur;wild;2.70;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.34;6.00;1.76;0.62
+2;Ivysaur;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;1.76;0.00
+3;Venusaur;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+4;Charmander;wild;2.63;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.13;6.00;1.76;0.60
+5;Charmeleon;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+6;Charizard;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+7;Squirtle;wild;2.68;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.29;6.00;1.76;0.62
+8;Wartortle;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;1.76;0.00
+9;Blastoise;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+10;Caterpie;wild;6.51;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.52;8.00;10.00;5.29
+11;Metapod;evolution-only;2.40;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.09;;4.71;0.05
+12;Butterfree;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+13;Weedle;wild;7.19;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;3.56;8.00;10.00;6.42
+14;Kakuna;evolution-only;2.46;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.22;;4.71;0.12
+15;Beedrill;evolution-only;0.90;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.03;;1.76;0.01
+16;Pidgey;wild;9.33;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;7.99;10.00;10.00;9.99
+17;Pidgeotto;evolution-only;2.61;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.51;;4.71;0.27
+18;Pidgeot;evolution-only;0.91;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.07;;1.76;0.01
+19;Rattata;wild;8.51;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;6.53;9.00;10.00;8.63
+19;Alolan Rattata;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+20;Raticate;evolution-only;2.59;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.20;;4.98;0.11
+20;Alolan Raticate;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+21;Spearow;wild;6.46;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;2.37;7.00;10.00;5.21
+22;Fearow;evolution-only;1.80;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.07;;3.53;0.03
+23;Ekans;wild;5.57;Depends on Circumstances;Structured Spawn Data, PokemonDB Catch Rate;1.14;;10.00;1.27
+24;Arbok;evolution-only;1.78;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;3.53;0.02
+25;Pikachu;wild;4.52;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.10;6.00;7.45;2.52
+26;Raichu;evolution-only;1.47;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;2.94;0.00
+26;Alolan Raichu;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+27;Sandshrew;wild;5.52;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.56;6.00;10.00;3.64
+27;Alolan Sandshrew;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+28;Sandslash;evolution-only;1.77;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;3.53;0.01
+28;Alolan Sandslash;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+29;Nidoran♀;wild;7.61;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;9.22;6.15
+30;Nidorina;evolution-only;2.37;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;4.71;0.02
+31;Nidoqueen;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+32;Nidoran♂;wild;7.61;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;9.22;6.15
+33;Nidorino;evolution-only;2.37;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;4.71;0.02
+34;Nidoking;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+35;Clefairy;wild;3.45;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.46;4.00;5.88;1.46
+36;Clefable;evolution-only;0.49;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;0.98;0.00
+37;Vulpix;wild;4.19;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.11;5.00;7.45;2.11
+37;Alolan Vulpix;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+38;Ninetales;evolution-only;1.47;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;2.94;0.00
+38;Alolan Ninetales;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+39;Jigglypuff;wild;3.62;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.20;4.00;6.67;1.56
+40;Wigglytuff;evolution-only;0.98;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.96;0.00
+41;Zubat;wild;7.09;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;3.26;8.00;10.00;6.26
+42;Golbat;evolution-only;1.87;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.21;;3.53;0.08
+43;Oddish;wild;5.84;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.51;7.00;10.00;4.17
+44;Gloom;evolution-only;2.37;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.03;;4.71;0.02
+45;Vileplume;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+46;Paras;wild;5.21;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.18;7.00;7.45;3.39
+47;Parasect;evolution-only;1.49;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;2.94;0.01
+48;Venonat;wild;5.20;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.14;7.00;7.45;3.37
+49;Venomoth;evolution-only;1.49;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;2.94;0.01
+50;Diglett;wild;5.10;Depends on Circumstances;Structured Spawn Data, PokemonDB Catch Rate;0.20;;10.00;0.22
+50;Alolan Diglett;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+51;Dugtrio;evolution-only;0.98;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.96;0.00
+51;Alolan Dugtrio;wild;1.96;Should Always Trade;PokemonDB Catch Rate;;;1.96;0.00
+52;Meowth;wild;5.21;Depends on Circumstances;Structured Spawn Data, PokemonDB Catch Rate;0.43;;10.00;0.48
+52;Alolan Meowth;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+52;Galarian Meowth;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+53;Persian;evolution-only;1.77;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;3.53;0.00
+53;Alolan Persian;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+54;Psyduck;wild;5.24;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.27;7.00;7.45;3.42
+55;Golduck;evolution-only;1.49;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;2.94;0.01
+56;Mankey;wild;3.96;Depends on Circumstances;Structured Spawn Data, PokemonDB Catch Rate;0.46;;7.45;0.38
+57;Primeape;evolution-only;1.48;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;2.94;0.01
+58;Growlithe;wild;3.96;Depends on Circumstances;Structured Spawn Data, PokemonDB Catch Rate;0.46;;7.45;0.38
+59;Arcanine;evolution-only;1.47;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.94;0.00
+60;Poliwag;wild;5.70;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.09;6.00;10.00;3.94
+61;Poliwhirl;evolution-only;2.39;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.07;;4.71;0.04
+62;Poliwrath;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+63;Abra;wild;4.68;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.21;6.00;7.84;2.70
+64;Kadabra;evolution-only;1.97;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;3.92;0.00
+65;Alakazam;evolution-only;0.98;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.96;0.00
+66;Machop;wild;4.43;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.24;6.00;7.06;2.45
+67;Machoke;evolution-only;1.77;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;3.53;0.01
+68;Machamp;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+69;Bellsprout;wild;5.86;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.57;7.00;10.00;4.21
+70;Weepinbell;evolution-only;2.37;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;4.71;0.02
+71;Victreebel;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+72;Tentacool;wild;4.95;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.41;7.00;7.45;3.07
+73;Tentacruel;evolution-only;1.20;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;2.35;0.01
+74;Geodude;wild;5.53;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.59;6.00;10.00;3.66
+74;Alolan Geodude;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+75;Graveler;evolution-only;2.37;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;4.71;0.02
+75;Alolan Graveler;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+76;Golem;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+76;Alolan Golem;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+77;Ponyta;wild;3.85;Depends on Circumstances;Structured Spawn Data, PokemonDB Catch Rate;0.26;;7.45;0.22
+77;Galarian Ponyta;wild;5.23;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.45;2.48
+78;Rapidash;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.35;0.00
+78;Galarian Rapidash;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+79;Slowpoke;wild;4.33;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.53;5.00;7.45;2.29
+79;Galarian Slowpoke;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+80;Slowbro;evolution-only;1.48;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;2.94;0.01
+80;Galarian Slowbro;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+81;Magnemite;wild;3.94;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.35;4.00;7.45;1.80
+82;Magneton;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.35;0.00
+83;Farfetch'd;wild;1.59;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;3.00;1.76;0.29
+83;Galarian Farfetch'd;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+84;Doduo;wild;4.57;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.26;6.00;7.45;2.59
+85;Dodrio;evolution-only;0.94;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.11;;1.76;0.02
+86;Seel;wild;4.53;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.14;6.00;7.45;2.54
+87;Dewgong;evolution-only;1.47;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.94;0.00
+88;Grimer;wild;3.83;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.03;4.00;7.45;1.67
+88;Alolan Grimer;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+89;Muk;evolution-only;1.47;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;2.94;0.00
+89;Alolan Muk;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+90;Shellder;wild;3.90;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.26;4.00;7.45;1.76
+91;Cloyster;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.35;0.00
+92;Gastly;wild;5.28;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.40;8.00;7.45;3.48
+93;Haunter;evolution-only;1.78;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.03;;3.53;0.01
+94;Gengar;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+95;Onix;wild;1.60;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.05;3.00;1.76;0.30
+96;Drowzee;wild;4.69;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.60;5.00;7.45;2.73
+97;Hypno;evolution-only;1.50;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.05;;2.94;0.02
+98;Krabby;wild;5.29;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.06;6.00;8.82;3.46
+99;Kingler;evolution-only;1.19;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.03;;2.35;0.01
+100;Voltorb;wild;3.93;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.33;4.00;7.45;1.79
+100;Hisuian Voltorb;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+101;Electrode;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.35;0.00
+101;Hisuian Electrode;wild;2.18;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.35;0.52
+102;Exeggcute;wild;2.64;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.39;4.00;3.53;0.86
+103;Exeggutor;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+103;Alolan Exeggutor;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+104;Cubone;wild;3.92;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.30;4.00;7.45;1.78
+105;Marowak;evolution-only;1.48;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.94;0.00
+105;Alolan Marowak;wild;2.47;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.94;0.65
+106;Hitmonlee;wild;1.59;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;3.00;1.76;0.29
+107;Hitmonchan;wild;1.59;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;3.00;1.76;0.29
+108;Lickitung;wild;1.59;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;3.00;1.76;0.29
+109;Koffing;wild;3.85;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.10;4.00;7.45;1.70
+110;Weezing;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.35;0.00
+110;Galarian Weezing;wild;2.18;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.35;0.52
+111;Rhyhorn;wild;3.01;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.32;4.00;4.71;1.13
+112;Rhydon;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;2.35;0.00
+113;Chansey;wild;1.06;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;2.00;1.18;0.13
+114;Tangela;wild;1.96;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.11;4.00;1.76;0.40
+115;Kangaskhan;wild;1.59;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.00;3.00;1.76;0.29
+116;Horsea;wild;5.46;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.56;7.00;8.82;3.70
+117;Seadra;evolution-only;1.48;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;2.94;0.01
+118;Goldeen;wild;5.97;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.09;8.00;8.82;4.45
+119;Seaking;evolution-only;1.20;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.04;;2.35;0.01
+120;Staryu;wild;5.60;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.97;7.00;8.82;3.91
+121;Starmie;evolution-only;1.18;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.02;;2.35;0.01
+122;Mr. Mime;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+122;Galarian Mr. Mime;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+123;Scyther;wild;1.61;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.07;3.00;1.76;0.30
+124;Jynx;wild;1.65;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.17;3.00;1.76;0.31
+125;Electabuzz;wild;1.93;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.04;4.00;1.76;0.40
+126;Magmar;wild;1.94;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.05;4.00;1.76;0.40
+127;Pinsir;wild;2.09;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.49;4.00;1.76;0.44
+128;Tauros;wild;1.61;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.06;3.00;1.76;0.30
+128;Paldean Tauros;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+129;Magikarp;wild;7.13;Safe to Transfer;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;2.39;9.00;10.00;6.33
+130;Gyarados;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+131;Lapras;wild;1.26;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.00;2.00;1.76;0.20
+132;Ditto;wild;1.12;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.00;2.00;1.37;0.15
+133;Eevee;wild;3.71;Depends on Circumstances;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;1.38;8.00;1.76;0.92
+134;Vaporeon;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+135;Jolteon;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+136;Flareon;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+137;Porygon;wild;1.26;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;2.00;1.76;0.20
+138;Omanyte;wild;1.61;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.07;3.00;1.76;0.30
+139;Omastar;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+140;Kabuto;wild;1.60;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.05;3.00;1.76;0.30
+141;Kabutops;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+142;Aerodactyl;wild;1.26;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;2.00;1.76;0.20
+143;Snorlax;wild;1.00;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.01;2.00;0.98;0.11
+144;Articuno;legendary;0.06;Never Transfer (Legendary);Structured Spawn Data, PokemonDB Catch Rate;0.00;;0.12;0.00
+144;Galarian Articuno;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+145;Zapdos;legendary;0.06;Never Transfer (Legendary);Structured Spawn Data, PokemonDB Catch Rate;0.00;;0.12;0.00
+145;Galarian Zapdos;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+146;Moltres;legendary;0.06;Never Transfer (Legendary);Structured Spawn Data, PokemonDB Catch Rate;0.00;;0.12;0.00
+146;Galarian Moltres;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+147;Dratini;wild;1.30;Should Always Trade;Structured Spawn Data, Enhanced Curated Data, PokemonDB Catch Rate;0.15;2.00;1.76;0.21
+148;Dragonair;evolution-only;0.89;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.01;;1.76;0.00
+149;Dragonite;evolution-only;0.88;Evaluate for Evolution;Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+150;Mewtwo;legendary;0.06;Never Transfer (Legendary);Structured Spawn Data, PokemonDB Catch Rate;0.00;;0.12;0.00
+151;Mew;legendary;0.88;Never Transfer (Legendary);Structured Spawn Data, PokemonDB Catch Rate;0.00;;1.76;0.00
+152;Chikorita;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+153;Bayleef;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+154;Meganium;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+155;Cyndaquil;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+156;Quilava;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+157;Typhlosion;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+157;Hisuian Typhlosion;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+158;Totodile;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+159;Croconaw;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+160;Feraligatr;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+161;Sentret;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+162;Furret;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+163;Hoothoot;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+164;Noctowl;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+165;Ledyba;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+166;Ledian;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+167;Spinarak;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+168;Ariados;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+169;Crobat;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+170;Chinchou;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+171;Lanturn;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+172;Pichu;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+173;Cleffa;wild;5.88;Depends on Circumstances;PokemonDB Catch Rate;;;5.88;0.00
+174;Igglybuff;wild;6.67;Safe to Transfer;PokemonDB Catch Rate;;;6.67;0.00
+175;Togepi;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+176;Togetic;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+177;Natu;wild;7.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.45;5.79
+178;Xatu;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+179;Mareep;wild;6.61;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;9.22;4.10
+180;Flaaffy;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+181;Ampharos;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+182;Bellossom;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+183;Marill;wild;7.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.45;5.79
+184;Azumarill;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+185;Sudowoodo;wild;2.55;Should Always Trade;PokemonDB Catch Rate;;;2.55;0.00
+186;Politoed;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+187;Hoppip;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+188;Skiploom;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+189;Jumpluff;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+190;Aipom;wild;2.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;1.76;0.78
+191;Sunkern;wild;9.22;Safe to Transfer;PokemonDB Catch Rate;;;9.22;0.00
+192;Sunflora;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+193;Yanma;wild;3.47;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;2.94;1.31
+194;Wooper;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+194;Paldean Wooper;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+195;Quagsire;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+196;Espeon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+197;Umbreon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+198;Murkrow;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+199;Slowking;wild;2.75;Should Always Trade;PokemonDB Catch Rate;;;2.75;0.00
+199;Galarian Slowking;wild;2.75;Should Always Trade;PokemonDB Catch Rate;;;2.75;0.00
+200;Misdreavus;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+201;Unown;wild;4.91;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;8.82;0.98
+202;Wobbuffet;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+203;Girafarig;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+204;Pineco;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+205;Forretress;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+206;Dunsparce;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+207;Gligar;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+208;Steelix;wild;0.98;Should Always Trade;PokemonDB Catch Rate;;;0.98;0.00
+209;Snubbull;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+210;Granbull;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+211;Qwilfish;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+211;Hisuian Qwilfish;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+212;Scizor;wild;0.98;Should Always Trade;PokemonDB Catch Rate;;;0.98;0.00
+213;Shuckle;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+214;Heracross;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+215;Sneasel;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+215;Hisuian Sneasel;wild;2.18;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.35;0.52
+216;Teddiursa;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+217;Ursaring;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+218;Slugma;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+219;Magcargo;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+220;Swinub;wild;6.41;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;8.82;3.92
+221;Piloswine;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+222;Corsola;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+222;Galarian Corsola;wild;2.68;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;2.35;0.78
+223;Remoraid;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+224;Octillery;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+225;Delibird;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+226;Mantine;wild;0.98;Should Always Trade;PokemonDB Catch Rate;;;0.98;0.00
+227;Skarmory;wild;0.98;Should Always Trade;PokemonDB Catch Rate;;;0.98;0.00
+228;Houndour;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+229;Houndoom;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+230;Kingdra;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+231;Phanpy;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+232;Donphan;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+233;Porygon2;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+234;Stantler;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+235;Smeargle;event-only;1.76;Never Transfer (Event Only);PokemonDB Catch Rate;;;1.76;0.00
+236;Tyrogue;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+237;Hitmontop;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+238;Smoochum;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+239;Elekid;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+240;Magby;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+241;Miltank;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+242;Blissey;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+243;Raikou;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+244;Entei;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+245;Suicune;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+246;Larvitar;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+247;Pupitar;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+248;Tyranitar;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+249;Lugia;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+250;Ho-Oh;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+251;Celebi;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+252;Treecko;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+253;Grovyle;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+254;Sceptile;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+255;Torchic;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+256;Combusken;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+257;Blaziken;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+258;Mudkip;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+259;Marshtomp;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+260;Swampert;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+261;Poochyena;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+262;Mightyena;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+263;Zigzagoon;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+263;Galarian Zigzagoon;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+264;Linoone;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+264;Galarian Linoone;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+265;Wurmple;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+266;Silcoon;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+267;Beautifly;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+268;Cascoon;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+269;Dustox;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+270;Lotad;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+271;Lombre;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+272;Ludicolo;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+273;Seedot;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+274;Nuzleaf;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+275;Shiftry;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+276;Taillow;wild;7.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.84;6.10
+277;Swellow;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+278;Wingull;wild;7.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.45;5.79
+279;Pelipper;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+280;Ralts;wild;7.11;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;9.22;5.12
+281;Kirlia;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+282;Gardevoir;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+283;Surskit;wild;7.84;Safe to Transfer;PokemonDB Catch Rate;;;7.84;0.00
+284;Masquerain;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+285;Shroomish;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+286;Breloom;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+287;Slakoth;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+288;Vigoroth;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+289;Slaking;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+290;Nincada;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+291;Ninjask;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+292;Shedinja;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+293;Whismur;wild;7.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.45;5.79
+294;Loudred;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+295;Exploud;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+296;Makuhita;wild;6.53;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.06;4.71
+297;Hariyama;wild;7.84;Safe to Transfer;PokemonDB Catch Rate;;;7.84;0.00
+298;Azurill;wild;5.88;Depends on Circumstances;PokemonDB Catch Rate;;;5.88;0.00
+299;Nosepass;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+300;Skitty;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+301;Delcatty;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+302;Sableye;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+303;Mawile;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+304;Aron;wild;6.03;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.06;3.92
+305;Lairon;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+306;Aggron;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+307;Meditite;wild;6.53;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.06;4.71
+308;Medicham;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+309;Electrike;wild;5.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;4.71;3.14
+310;Manectric;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+311;Plusle;wild;6.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.84;4.36
+312;Minun;wild;6.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.84;4.36
+313;Volbeat;wild;5.88;Depends on Circumstances;PokemonDB Catch Rate;;;5.88;0.00
+314;Illumise;wild;5.88;Depends on Circumstances;PokemonDB Catch Rate;;;5.88;0.00
+315;Roselia;wild;5.44;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;5.88;3.27
+316;Gulpin;wild;7.41;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;8.82;5.88
+317;Swalot;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+318;Carvanha;wild;7.41;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;8.82;5.88
+319;Sharpedo;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+320;Wailmer;wild;5.45;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;4.90;3.27
+321;Wailord;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+322;Numel;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+323;Camerupt;wild;5.88;Depends on Circumstances;PokemonDB Catch Rate;;;5.88;0.00
+324;Torkoal;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+325;Spoink;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+326;Grumpig;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+327;Spinda;event-only;10.00;Never Transfer (Event Only);PokemonDB Catch Rate;;;10.00;0.00
+328;Trapinch;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+329;Vibrava;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+330;Flygon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+331;Cacnea;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+332;Cacturne;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+333;Swablu;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+334;Altaria;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+335;Zangoose;wild;3.26;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;3.53;1.18
+336;Seviper;wild;3.26;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;3.53;1.18
+337;Lunatone;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+338;Solrock;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+339;Barboach;wild;7.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.45;5.79
+340;Whiscash;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+341;Corphish;wild;6.02;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;8.04;3.57
+342;Crawdaunt;wild;6.08;Safe to Transfer;PokemonDB Catch Rate;;;6.08;0.00
+343;Baltoy;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+344;Claydol;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+345;Lileep;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+346;Cradily;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+347;Anorith;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+348;Armaldo;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+349;Feebas;wild;6.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;10.00;2.22
+350;Milotic;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+351;Castform;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+352;Kecleon;event-only;4.92;Never Transfer (Event Only);Enhanced Curated Data, PokemonDB Catch Rate;;2.00;7.84;1.74
+353;Shuppet;wild;6.41;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;8.82;3.92
+354;Banette;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+355;Duskull;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+356;Dusclops;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+357;Tropius;wild;5.42;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.84;2.61
+358;Chimecho;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+359;Absol;wild;1.59;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.18;0.26
+360;Wynaut;wild;3.95;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;4.90;1.63
+361;Snorunt;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+362;Glalie;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+363;Spheal;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+364;Sealeo;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+365;Walrein;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+366;Clamperl;wild;6.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;10.00;3.33
+367;Huntail;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+368;Gorebyss;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+369;Relicanth;wild;1.49;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;0.98;0.22
+370;Luvdisc;wild;6.41;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;8.82;3.92
+371;Bagon;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+372;Shelgon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+373;Salamence;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+374;Beldum;wild;1.06;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;0.12;0.03
+375;Metang;wild;0.12;Should Always Trade;PokemonDB Catch Rate;;;0.12;0.00
+376;Metagross;wild;0.12;Should Always Trade;PokemonDB Catch Rate;;;0.12;0.00
+377;Regirock;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+378;Regice;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+379;Registeel;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+380;Latias;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+381;Latios;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+382;Kyogre;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+383;Groudon;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+384;Rayquaza;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+385;Jirachi;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+386;Deoxys;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+387;Turtwig;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+388;Grotle;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+389;Torterra;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+390;Chimchar;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+391;Monferno;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+392;Infernape;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+393;Piplup;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+394;Prinplup;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+395;Empoleon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+396;Starly;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+397;Staravia;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+398;Staraptor;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+399;Bidoof;wild;9.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;9.00;10.00;10.00
+400;Bibarel;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+401;Kricketot;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+402;Kricketune;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+403;Shinx;wild;7.61;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;9.22;6.15
+404;Luxio;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+405;Luxray;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+406;Budew;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+407;Roserade;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+408;Cranidos;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+409;Rampardos;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+410;Shieldon;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+411;Bastiodon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+412;Burmy;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+413;Wormadam;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+414;Mothim;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+415;Combee;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+416;Vespiquen;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+417;Pachirisu;wild;7.84;Safe to Transfer;PokemonDB Catch Rate;;;7.84;0.00
+418;Buizel;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+419;Floatzel;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+420;Cherubi;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+421;Cherrim;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+422;Shellos;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+423;Gastrodon;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+424;Ambipom;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+425;Drifloon;wild;4.95;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;4.90;2.72
+426;Drifblim;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+427;Buneary;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+428;Lopunny;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+429;Mismagius;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+430;Honchkrow;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+431;Glameow;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+432;Purugly;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+433;Chingling;wild;3.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;4.71;1.05
+434;Stunky;wild;6.91;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;8.82;4.90
+435;Skuntank;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+436;Bronzor;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+437;Bronzong;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+438;Bonsly;wild;6.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;10.00;3.33
+439;Mime Jr.;wild;3.84;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;5.69;1.26
+440;Happiny;wild;3.55;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;5.10;1.13
+441;Chatot;event-only;1.09;Never Transfer (Event Only);Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.18;0.13
+442;Spiritomb;event-only;2.46;Never Transfer (Event Only);Enhanced Curated Data, PokemonDB Catch Rate;;1.00;3.92;0.44
+443;Gible;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+444;Gabite;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+445;Garchomp;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+446;Munchlax;wild;1.98;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.96;0.44
+447;Riolu;wild;2.47;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.94;0.65
+448;Lucario;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+449;Hippopotas;wild;5.49;Depends on Circumstances;PokemonDB Catch Rate;;;5.49;0.00
+450;Hippowdon;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+451;Skorupi;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+452;Drapion;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+453;Croagunk;wild;5.49;Depends on Circumstances;PokemonDB Catch Rate;;;5.49;0.00
+454;Toxicroak;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+455;Carnivine;wild;4.92;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;7.84;1.74
+456;Finneon;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+457;Lumineon;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+458;Mantyke;wild;1.99;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;0.98;0.33
+459;Snover;wild;5.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;4.71;3.14
+460;Abomasnow;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+461;Weavile;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+462;Magnezone;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+463;Lickilicky;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+464;Rhyperior;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+465;Tangrowth;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+466;Electivire;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+467;Magmortar;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+468;Togekiss;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+469;Yanmega;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+470;Leafeon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+471;Glaceon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+472;Gliscor;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+473;Mamoswine;wild;1.96;Should Always Trade;PokemonDB Catch Rate;;;1.96;0.00
+474;Porygon-Z;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+475;Gallade;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+476;Probopass;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+477;Dusknoir;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+478;Froslass;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+479;Rotom;event-only;1.88;Never Transfer (Event Only);Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+480;Uxie;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+481;Mesprit;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+482;Azelf;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+483;Dialga;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+484;Palkia;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+485;Heatran;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+486;Regigigas;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+487;Giratina;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+488;Cresselia;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+489;Phione;legendary;1.18;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.18;0.00
+490;Manaphy;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+491;Darkrai;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+492;Shaymin;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+493;Arceus;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+494;Victini;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+495;Snivy;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+496;Servine;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+497;Serperior;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+498;Tepig;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+499;Pignite;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+500;Emboar;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+501;Oshawott;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+502;Dewott;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+503;Samurott;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+503;Hisuian Samurott;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+504;Patrat;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+505;Watchog;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+506;Lillipup;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+507;Herdier;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+508;Stoutland;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+509;Purrloin;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+510;Liepard;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+511;Pansage;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+512;Simisage;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+513;Pansear;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+514;Simisear;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+515;Panpour;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+516;Simipour;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+517;Munna;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+518;Musharna;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+519;Pidove;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+520;Tranquill;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+521;Unfezant;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+522;Blitzle;wild;7.45;Safe to Transfer;PokemonDB Catch Rate;;;7.45;0.00
+523;Zebstrika;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+524;Roggenrola;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+525;Boldore;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+526;Gigalith;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+527;Woobat;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+528;Swoobat;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+529;Drilbur;wild;4.85;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;4.71;2.62
+530;Excadrill;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+531;Audino;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+532;Timburr;wild;5.53;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.06;3.14
+533;Gurdurr;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+534;Conkeldurr;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+535;Tympole;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+536;Palpitoad;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+537;Seismitoad;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+538;Throh;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+539;Sawk;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+540;Sewaddle;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+541;Swadloon;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+542;Leavanny;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+543;Venipede;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+544;Whirlipede;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+545;Scolipede;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+546;Cottonee;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+547;Whimsicott;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+548;Petilil;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+549;Lilligant;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+549;Hisuian Lilligant;wild;1.97;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;2.94;0.33
+550;Basculin;wild;2.99;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;0.98;0.54
+551;Sandile;wild;6.03;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.06;3.92
+552;Krokorok;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+553;Krookodile;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+554;Darumaka;wild;4.85;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;4.71;2.62
+554;Galarian Darumaka;wild;3.85;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;4.71;1.57
+555;Darmanitan;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+555;Galarian Darmanitan;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+556;Maractus;wild;6.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;10.00;2.22
+557;Dwebble;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+558;Crustle;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+559;Scraggy;wild;6.03;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.06;3.92
+560;Scrafty;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+561;Sigilyph;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+562;Yamask;wild;5.23;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.45;2.48
+562;Galarian Yamask;wild;5.23;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.45;2.48
+563;Cofagrigus;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+564;Tirtouga;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+565;Carracosta;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+566;Archen;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+567;Archeops;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+568;Trubbish;wild;6.73;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;7.45;4.97
+569;Garbodor;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+570;Zorua;wild;1.97;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;2.94;0.33
+570;Hisuian Zorua;wild;1.97;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;2.94;0.33
+571;Zoroark;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+571;Hisuian Zoroark;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+572;Minccino;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+573;Cinccino;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+574;Gothita;wild;6.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.84;4.36
+575;Gothorita;wild;3.92;Depends on Circumstances;PokemonDB Catch Rate;;;3.92;0.00
+576;Gothitelle;wild;1.96;Should Always Trade;PokemonDB Catch Rate;;;1.96;0.00
+577;Solosis;wild;6.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.84;4.36
+578;Duosion;wild;3.92;Depends on Circumstances;PokemonDB Catch Rate;;;3.92;0.00
+579;Reuniclus;wild;1.96;Should Always Trade;PokemonDB Catch Rate;;;1.96;0.00
+580;Ducklett;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+581;Swanna;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+582;Vanillite;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+583;Vanillish;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+584;Vanilluxe;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+585;Deerling;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+586;Sawsbuck;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+587;Emolga;wild;4.92;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;7.84;1.74
+588;Karrablast;wild;5.42;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.84;2.61
+589;Escavalier;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+590;Foongus;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+591;Amoonguss;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+592;Frillish;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+593;Jellicent;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+594;Alomomola;wild;2.47;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.94;0.65
+595;Joltik;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+596;Galvantula;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+597;Ferroseed;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+598;Ferrothorn;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+599;Klink;wild;4.55;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;5.10;2.27
+600;Klang;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+601;Klinklang;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+602;Tynamo;wild;4.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;7.45;1.66
+603;Eelektrik;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+604;Eelektross;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+605;Elgyem;wild;6.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;10.00;2.22
+606;Beheeyem;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+607;Litwick;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+608;Lampent;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+609;Chandelure;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+610;Axew;wild;1.97;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;2.94;0.33
+611;Fraxure;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+612;Haxorus;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+613;Cubchoo;wild;4.85;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;4.71;2.62
+614;Beartic;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+615;Cryogonal;wild;1.49;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;0.98;0.22
+616;Shelmet;wild;5.92;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.84;3.48
+617;Accelgor;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+618;Stunfisk;wild;2.47;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.94;0.65
+618;Galarian Stunfisk;wild;2.97;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;2.94;0.98
+619;Mienfoo;wild;6.03;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.06;3.92
+620;Mienshao;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+621;Druddigon;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+622;Golett;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+623;Golurk;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+624;Pawniard;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+625;Bisharp;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+626;Bouffalant;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+627;Rufflet;wild;4.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;7.45;1.66
+628;Braviary;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+628;Hisuian Braviary;wild;1.68;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;2.35;0.26
+629;Vullaby;wild;4.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;7.45;1.66
+630;Mandibuzz;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+631;Heatmor;wild;2.76;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;3.53;0.78
+632;Durant;wild;2.76;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;3.53;0.78
+633;Deino;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+634;Zweilous;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+635;Hydreigon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+636;Larvesta;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+637;Volcarona;wild;0.59;Should Always Trade;PokemonDB Catch Rate;;;0.59;0.00
+638;Cobalion;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+639;Terrakion;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+640;Virizion;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+641;Tornadus;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+642;Thundurus;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+643;Reshiram;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+644;Zekrom;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+645;Landorus;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+646;Kyurem;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+647;Keldeo;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+648;Meloetta;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+649;Genesect;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+650;Chespin;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+651;Quilladin;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+652;Chesnaught;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+653;Fennekin;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+654;Braixen;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+655;Delphox;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+656;Froakie;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+657;Frogadier;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+658;Greninja;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+659;Bunnelby;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+660;Diggersby;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+661;Fletchling;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+662;Fletchinder;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+663;Talonflame;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+664;Scatterbug;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+665;Spewpa;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+666;Vivillon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+667;Litleo;wild;6.81;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;8.63;4.79
+668;Pyroar;wild;2.55;Should Always Trade;PokemonDB Catch Rate;;;2.55;0.00
+669;Flabébé;wild;6.91;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;8.82;4.90
+670;Floette;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+671;Florges;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+672;Skiddo;wild;6.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.84;4.36
+673;Gogoat;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+674;Pancham;wild;6.31;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;8.63;3.84
+675;Pangoro;wild;2.55;Should Always Trade;PokemonDB Catch Rate;;;2.55;0.00
+676;Furfrou;wild;4.64;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;6.27;2.09
+677;Espurr;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+678;Meowstic;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+679;Honedge;wild;5.53;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.06;3.14
+680;Doublade;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+681;Aegislash;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+682;Spritzee;wild;5.92;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.84;3.48
+683;Aromatisse;wild;5.49;Depends on Circumstances;PokemonDB Catch Rate;;;5.49;0.00
+684;Swirlix;wild;5.92;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.84;3.48
+685;Slurpuff;wild;5.49;Depends on Circumstances;PokemonDB Catch Rate;;;5.49;0.00
+686;Inkay;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+687;Malamar;wild;3.14;Depends on Circumstances;PokemonDB Catch Rate;;;3.14;0.00
+688;Binacle;wild;4.85;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;4.71;2.62
+689;Barbaracle;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+690;Skrelp;wild;6.91;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;8.82;4.90
+691;Dragalge;wild;2.16;Should Always Trade;PokemonDB Catch Rate;;;2.16;0.00
+692;Clauncher;wild;6.91;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;8.82;4.90
+693;Clawitzer;wild;2.16;Should Always Trade;PokemonDB Catch Rate;;;2.16;0.00
+694;Helioptile;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+695;Heliolisk;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+696;Tyrunt;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+697;Tyrantrum;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+698;Amaura;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+699;Aurorus;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+700;Sylveon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+701;Hawlucha;wild;3.96;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;3.92;1.74
+702;Dedenne;wild;5.53;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.06;3.14
+703;Carbink;wild;2.68;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;2.35;0.78
+704;Goomy;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+705;Sliggoo;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+705;Hisuian Sliggoo;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+706;Goodra;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+706;Hisuian Goodra;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+707;Klefki;wild;3.47;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;2.94;1.31
+708;Phantump;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+709;Trevenant;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+710;Pumpkaboo;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+711;Gourgeist;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+712;Bergmite;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+713;Avalugg;wild;2.16;Should Always Trade;PokemonDB Catch Rate;;;2.16;0.00
+713;Hisuian Avalugg;wild;1.58;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;2.16;0.24
+714;Noibat;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+715;Noivern;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+716;Xerneas;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+717;Yveltal;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+718;Zygarde;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+719;Diancie;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+720;Hoopa;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+721;Volcanion;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+722;Rowlet;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+723;Dartrix;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+724;Decidueye;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+724;Hisuian Decidueye;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+725;Litten;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+726;Torracat;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+727;Incineroar;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+728;Popplio;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+729;Brionne;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+730;Primarina;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+731;Pikipek;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+732;Trumbeak;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+733;Toucannon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+734;Yungoos;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+735;Gumshoos;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+736;Grubbin;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+737;Charjabug;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+738;Vikavolt;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+739;Crabrawler;wild;6.41;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;8.82;3.92
+740;Crabominable;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+741;Oricorio;wild;2.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;1.76;0.78
+742;Cutiefly;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+743;Ribombee;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+744;Rockruff;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+745;Lycanroc;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+746;Wishiwashi;wild;3.18;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;2.35;1.04
+747;Mareanie;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+748;Toxapex;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+749;Mudbray;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+750;Mudsdale;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+751;Dewpider;wild;6.42;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.84;4.36
+752;Araquanid;wild;3.92;Depends on Circumstances;PokemonDB Catch Rate;;;3.92;0.00
+753;Fomantis;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+754;Lurantis;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+755;Morelull;wild;6.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;7.45;4.14
+756;Shiinotic;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+757;Salandit;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+758;Salazzle;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+759;Stufful;wild;5.25;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;5.49;3.05
+760;Bewear;wild;2.75;Should Always Trade;PokemonDB Catch Rate;;;2.75;0.00
+761;Bounsweet;wild;7.11;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;9.22;5.12
+762;Steenee;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+763;Tsareena;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+764;Comfey;wild;2.68;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;2.35;0.78
+765;Oranguru;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+766;Passimian;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+767;Wimpod;wild;3.76;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;3.53;1.57
+768;Golisopod;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+769;Sandygast;wild;4.75;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;5.49;2.44
+770;Palossand;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+771;Pyukumuku;wild;2.68;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;2.35;0.78
+772;Type: Null;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+773;Silvally;wild;0.12;Should Always Trade;PokemonDB Catch Rate;;;0.12;0.00
+774;Minior;event-only;2.09;Never Transfer (Event Only);Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.18;0.39
+775;Komala;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+776;Turtonator;wild;2.37;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.75;0.61
+777;Togedemaru;wild;5.53;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.06;3.14
+778;Mimikyu;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+779;Bruxish;wild;3.57;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;3.14;1.40
+780;Drampa;wild;2.37;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;2.75;0.61
+781;Dhelmise;wild;1.49;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;0.98;0.22
+782;Jangmo-o;wild;1.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;1.00;1.76;0.20
+783;Hakamo-o;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+784;Kommo-o;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+785;Tapu Koko;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+786;Tapu Lele;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+787;Tapu Bulu;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+788;Tapu Fini;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+789;Cosmog;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+790;Cosmoem;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+791;Solgaleo;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+792;Lunala;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+793;Necrozma;legendary;10.00;Never Transfer (Legendary);PokemonDB Catch Rate;;;10.00;0.00
+794;Magearna;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+795;Marshadow;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+803;Poipole;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+804;Naganadel;legendary;1.76;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.76;0.00
+805;Stakataka;legendary;1.18;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.18;0.00
+806;Blacephalon;legendary;1.18;Never Transfer (Legendary);PokemonDB Catch Rate;;;1.18;0.00
+807;Zeraora;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+808;Meltan;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+809;Melmetal;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+810;Grookey;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+811;Thwackey;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+812;Rillaboom;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+813;Scorbunny;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+814;Raboot;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+815;Cinderace;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+816;Sobble;wild;3.88;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;1.76;1.17
+817;Drizzile;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+818;Inteleon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+819;Skwovet;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+820;Greedent;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+821;Rookidee;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+822;Corvisquire;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+823;Corviknight;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+824;Blipbug;wild;9.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;8.00;10.00;8.89
+825;Dottler;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+826;Orbeetle;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+827;Nickit;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+828;Thievul;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+829;Gossifleur;wild;7.23;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;7.45;5.79
+830;Eldegoss;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+831;Wooloo;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+832;Dubwool;wild;4.98;Depends on Circumstances;PokemonDB Catch Rate;;;4.98;0.00
+833;Chewtle;wild;8.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;7.00;10.00;7.78
+834;Drednaw;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+835;Yamper;wild;8.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;6.00;10.00;6.67
+836;Boltund;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+837;Rolycoly;wild;10.00;Safe to Transfer;PokemonDB Catch Rate;;;10.00;0.00
+838;Carkol;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+839;Coalossal;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+840;Applin;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+841;Flapple;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+842;Appletun;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+843;Silicobra;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+844;Sandaconda;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+845;Cramorant;wild;2.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;1.76;0.78
+846;Arrokuda;wild;7.50;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;5.00;10.00;5.56
+847;Barraskewda;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+848;Toxel;wild;3.47;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;2.94;1.31
+849;Toxtricity;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+850;Sizzlipede;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+851;Centiskorch;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+852;Clobbopus;wild;5.53;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.06;3.14
+853;Grapploct;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+854;Sinistea;wild;4.35;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;4.71;2.09
+855;Polteageist;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+856;Hatenna;wild;6.61;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;9.22;4.10
+857;Hattrem;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+858;Hatterene;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+859;Impidimp;wild;7.00;Safe to Transfer;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;10.00;4.44
+860;Morgrem;wild;4.71;Depends on Circumstances;PokemonDB Catch Rate;;;4.71;0.00
+861;Grimmsnarl;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+862;Obstagoon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+863;Perrserker;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+864;Cursola;wild;1.18;Should Always Trade;PokemonDB Catch Rate;;;1.18;0.00
+865;Sirfetch'd;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+866;Mr. Rime;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+867;Runerigus;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+868;Milcery;wild;5.42;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.84;2.61
+869;Alcremie;wild;3.92;Depends on Circumstances;PokemonDB Catch Rate;;;3.92;0.00
+870;Falinks;wild;2.38;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.76;0.59
+871;Pincurchin;wild;3.47;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;2.94;1.31
+872;Snom;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+873;Frosmoth;wild;2.94;Should Always Trade;PokemonDB Catch Rate;;;2.94;0.00
+874;Stonjourner;wild;2.35;Should Always Trade;PokemonDB Catch Rate;;;2.35;0.00
+875;Eiscue;wild;2.68;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;2.35;0.78
+876;Indeedee;wild;2.09;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;1.18;0.39
+877;Morpeko;wild;5.03;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;3.00;7.06;2.35
+878;Cufant;wild;5.73;Depends on Circumstances;Enhanced Curated Data, PokemonDB Catch Rate;;4.00;7.45;3.31
+879;Copperajah;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
+880;Dracozolt;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+881;Arctozolt;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+882;Dracovish;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+883;Arctovish;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+884;Duraludon;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+885;Dreepy;wild;1.88;Should Always Trade;Enhanced Curated Data, PokemonDB Catch Rate;;2.00;1.76;0.39
+886;Drakloak;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+887;Dragapult;wild;1.76;Should Always Trade;PokemonDB Catch Rate;;;1.76;0.00
+888;Zacian;legendary;0.39;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.39;0.00
+889;Zamazenta;legendary;0.39;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.39;0.00
+890;Eternatus;legendary;10.00;Never Transfer (Legendary);PokemonDB Catch Rate;;;10.00;0.00
+891;Kubfu;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+892;Urshifu;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+893;Zarude;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+894;Regieleki;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+895;Regidrago;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+896;Glastrier;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+897;Spectrier;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+898;Calyrex;legendary;0.12;Never Transfer (Legendary);PokemonDB Catch Rate;;;0.12;0.00
+980;Paldean Clodsire;wild;3.53;Depends on Circumstances;PokemonDB Catch Rate;;;3.53;0.00
