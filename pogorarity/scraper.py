@@ -572,8 +572,6 @@ class EnhancedRarityScraper:
                 average_score = inferred_score
                 recommendation = self.get_trading_recommendation(
                     average_score, spawn_type)
-                rarity_scores['Inferred'] = inferred_score
-                data_sources.append('Inferred')
                 pokemon_inferred += 1
 
             # Create PokemonRarity object
@@ -722,7 +720,7 @@ class EnhancedRarityScraper:
         logger.info(f"Exporting enhanced data to {filename}...")
 
         sources = ['Structured Spawn Data', 'Enhanced Curated Data',
-                   'PokemonDB Catch Rate', 'Inferred']
+                   'PokemonDB Catch Rate']
 
         rows = []
         for pokemon in sorted(pokemon_data, key=lambda x: x.number):
