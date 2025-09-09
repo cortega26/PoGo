@@ -32,11 +32,32 @@ def generation_from_number(num: int) -> int:
 
 
 def rarity_band(score: float) -> str:
-    if score < 1:
+    """Map a numeric rarity score to a human-friendly rarity band.
+
+    The underlying data uses higher scores to indicate more common
+    Pokémon. Previously this function treated lower scores as more
+    common, which inverted the rarity bands (e.g. ubiquitous Pokémon
+    like Caterpie were marked "Very Rare"). The thresholds below now
+    reflect the correct ordering where larger scores correspond to more
+    common Pokémon.
+
+    Parameters
+    ----------
+    score:
+        A floating point rarity score from 0 (rarest) to 10 (most
+        common).
+
+    Returns
+    -------
+    str
+        One of "Very Rare", "Rare", "Uncommon", or "Common".
+    """
+
+    if score >= 3:
         return "Common"
-    if score < 2:
+    if score >= 2:
         return "Uncommon"
-    if score < 3:
+    if score >= 1:
         return "Rare"
     return "Very Rare"
 
