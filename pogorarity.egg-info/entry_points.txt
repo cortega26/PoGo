@@ -1,0 +1,2 @@
+[console_scripts]
+pokemon-rarity = pogorarity.cli:main

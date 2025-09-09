@@ -11,6 +11,9 @@ dependencies = [
 [project.scripts]
 pokemon-rarity = "pogorarity.cli:main"
 
+[tool.setuptools.packages.find]
+include = ["pogorarity"]
+
 [build-system]
 requires = ["setuptools>=61"]
 build-backend = "setuptools.build_meta"

@@ -1,0 +1,17 @@
+README.md
+pyproject.toml
+pogorarity/__init__.py
+pogorarity/cli.py
+pogorarity/models.py
+pogorarity/scraper.py
+pogorarity.egg-info/PKG-INFO
+pogorarity.egg-info/SOURCES.txt
+pogorarity.egg-info/dependency_links.txt
+pogorarity.egg-info/entry_points.txt
+pogorarity.egg-info/requires.txt
+pogorarity.egg-info/top_level.txt
+tests/test_integration.py
+tests/test_models.py
+tests/test_parser.py
+tests/test_safe_request.py
+tests/test_slugify.py

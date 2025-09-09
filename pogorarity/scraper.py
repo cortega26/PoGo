@@ -5,8 +5,14 @@ Fixes categorization bugs and adds multiple reliable data sources
 """
 
 import json
+import os
 
-from .models import PokemonRarity, DataSourceReport
+try:
+    # Try relative import (when run as module)
+    from .models import PokemonRarity, DataSourceReport
+except ImportError:
+    # Fall back to absolute import (when run directly)
+    from models import PokemonRarity, DataSourceReport
 import requests
 import pandas as pd
 import time
@@ -68,6 +74,9 @@ class EnhancedRarityScraper:
             logger.error("Failed to load Pokémon list: %s", e)
             self.pokemon_name_set = set()
 
+        # Output directory for CSV export
+        self.output_dir: Optional[str] = None
+
     def safe_request(
         self,
         url: str,
@@ -110,7 +119,8 @@ class EnhancedRarityScraper:
                     )
                     wait += random.uniform(0, self.delay)
                     self.metrics["errors"] += 1
-                    log_data.update({"event": "rate_limited", "wait": round(wait, 2)})
+                    log_data.update(
+                        {"event": "rate_limited", "wait": round(wait, 2)})
                     logger.warning(json.dumps(log_data))
                     time.sleep(wait)
                     backoff *= 2
@@ -703,6 +713,11 @@ class EnhancedRarityScraper:
 
     def export_to_csv(self, pokemon_data: List[PokemonRarity], filename: str = 'pokemon_rarity_analysis_enhanced.csv'):
         """Export with enhanced data source information"""
+        if self.output_dir:
+            os.makedirs(self.output_dir, exist_ok=True)
+            filename = os.path.join(
+                self.output_dir, 'pokemon_rarity_analysis_enhanced.csv')
+
         logger.info(f"Exporting enhanced data to {filename}...")
 
         sources = ['Structured Spawn Data', 'Enhanced Curated Data',

@@ -4,15 +4,21 @@ from typing import Optional
 import argparse
 import logging
 
-from .scraper import EnhancedRarityScraper
+try:
+    # Try relative import (when run as module)
+    from .scraper import EnhancedRarityScraper
+except ImportError:
+    # Fall back to absolute import (when run directly)
+    from scraper import EnhancedRarityScraper
 
 logger = logging.getLogger(__name__)
 
 
-def main(limit: Optional[int] = None, dry_run: bool = False) -> None:
+def main(limit: Optional[int] = None, dry_run: bool = False, output_dir: Optional[str] = None) -> None:
     """Run the rarity scraper with an optional PokemonDB limit."""
     scraper = EnhancedRarityScraper()
     scraper.scrape_limit = limit
+    scraper.output_dir = output_dir
 
     try:
         pokemon_data = scraper.aggregate_data()
@@ -45,5 +51,11 @@ if __name__ == "__main__":
         action="store_true",
         help="Run the scraper without writing CSV output",
     )
+    parser.add_argument(
+        "--output-dir",
+        type=str,
+        default=None,
+        help="Directory to save the CSV output file",
+    )
     args = parser.parse_args()
-    main(limit=args.limit, dry_run=args.dry_run)
+    main(limit=args.limit, dry_run=args.dry_run, output_dir=args.output_dir)
