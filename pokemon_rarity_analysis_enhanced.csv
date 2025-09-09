@@ -1,187 +1,187 @@
 Number,Name,Spawn_Type,Average_Rarity_Score,Recommendation,Data_Sources,GamePress_v2_Score,Pokemon_GO_Hub_Score,Pokemon_GO_API_Score,Enhanced_Curated_Data_Score,Inferred_Score
-1,Bulbasaur,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-2,Ivysaur,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-3,Venusaur,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-4,Charmander,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-5,Charmeleon,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-6,Charizard,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-7,Squirtle,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-8,Wartortle,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-9,Blastoise,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-10,Caterpie,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-11,Metapod,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-12,Butterfree,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-13,Weedle,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-14,Kakuna,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-15,Beedrill,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-16,Pidgey,wild,10,Safe to Transfer,Enhanced Curated Data,,,,10,
-17,Pidgeotto,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-18,Pidgeot,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-19,Rattata,wild,9,Safe to Transfer,Enhanced Curated Data,,,,9,
+1,Bulbasaur,wild,3.17,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+2,Ivysaur,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+3,Venusaur,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+4,Charmander,wild,3.06,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+5,Charmeleon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+6,Charizard,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+7,Squirtle,wild,3.15,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+8,Wartortle,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+9,Blastoise,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+10,Caterpie,wild,4.76,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
+11,Metapod,evolution-only,0.09,Evaluate for Evolution,Structured Spawn Data,,,,,
+12,Butterfree,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+13,Weedle,wild,5.78,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
+14,Kakuna,evolution-only,0.22,Evaluate for Evolution,Structured Spawn Data,,,,,
+15,Beedrill,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
+16,Pidgey,wild,9.0,Safe to Transfer,"Structured Spawn Data, Enhanced Curated Data",,,,10,
+17,Pidgeotto,evolution-only,0.51,Evaluate for Evolution,Structured Spawn Data,,,,,
+18,Pidgeot,evolution-only,0.07,Evaluate for Evolution,Structured Spawn Data,,,,,
+19,Rattata,wild,7.76,Safe to Transfer,"Structured Spawn Data, Enhanced Curated Data",,,,9,
 19,Alolan Rattata,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-20,Raticate,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+20,Raticate,evolution-only,0.2,Evaluate for Evolution,Structured Spawn Data,,,,,
 20,Alolan Raticate,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-21,Spearow,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-22,Fearow,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-23,Ekans,wild,6.0,Safe to Transfer,Inferred,,,,,6.0
-24,Arbok,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-25,Pikachu,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-26,Raichu,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+21,Spearow,wild,4.68,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+22,Fearow,evolution-only,0.07,Evaluate for Evolution,Structured Spawn Data,,,,,
+23,Ekans,wild,1.14,Should Always Trade,Structured Spawn Data,,,,,
+24,Arbok,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+25,Pikachu,wild,3.05,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+26,Raichu,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
 26,Alolan Raichu,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-27,Sandshrew,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
+27,Sandshrew,wild,3.28,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
 27,Alolan Sandshrew,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-28,Sandslash,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+28,Sandslash,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
 28,Alolan Sandslash,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
 29,Nidoran♀,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-30,Nidorina,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-31,Nidoqueen,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+30,Nidorina,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+31,Nidoqueen,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 32,Nidoran♂,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-33,Nidorino,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-34,Nidoking,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-35,Clefairy,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-36,Clefable,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-37,Vulpix,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
+33,Nidorino,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+34,Nidoking,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+35,Clefairy,wild,2.23,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+36,Clefable,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+37,Vulpix,wild,2.56,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,5,
 37,Alolan Vulpix,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-38,Ninetales,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+38,Ninetales,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
 38,Alolan Ninetales,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-39,Jigglypuff,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-40,Wigglytuff,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-41,Zubat,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-42,Golbat,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-43,Oddish,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-44,Gloom,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-45,Vileplume,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-46,Paras,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-47,Parasect,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-48,Venonat,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-49,Venomoth,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-50,Diglett,wild,6.0,Safe to Transfer,Inferred,,,,,6.0
+39,Jigglypuff,wild,2.1,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+40,Wigglytuff,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+41,Zubat,wild,5.63,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
+42,Golbat,evolution-only,0.21,Evaluate for Evolution,Structured Spawn Data,,,,,
+43,Oddish,wild,3.75,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+44,Gloom,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
+45,Vileplume,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+46,Paras,wild,4.09,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+47,Parasect,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+48,Venonat,wild,4.07,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+49,Venomoth,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+50,Diglett,wild,0.2,Should Always Trade,Structured Spawn Data,,,,,
 50,Alolan Diglett,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-51,Dugtrio,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+51,Dugtrio,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 51,Alolan Dugtrio,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-52,Meowth,wild,6.0,Safe to Transfer,Inferred,,,,,6.0
+52,Meowth,wild,0.43,Should Always Trade,Structured Spawn Data,,,,,
 52,Alolan Meowth,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
 52,Galarian Meowth,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-53,Persian,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+53,Persian,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 53,Alolan Persian,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-54,Psyduck,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-55,Golduck,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-56,Mankey,wild,6.0,Safe to Transfer,Inferred,,,,,6.0
-57,Primeape,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-58,Growlithe,wild,6.0,Safe to Transfer,Inferred,,,,,6.0
-59,Arcanine,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-60,Poliwag,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-61,Poliwhirl,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-62,Poliwrath,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-63,Abra,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-64,Kadabra,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-65,Alakazam,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-66,Machop,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-67,Machoke,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-68,Machamp,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-69,Bellsprout,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-70,Weepinbell,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-71,Victreebel,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-72,Tentacool,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-73,Tentacruel,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-74,Geodude,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
+54,Psyduck,wild,4.13,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+55,Golduck,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+56,Mankey,wild,0.46,Should Always Trade,Structured Spawn Data,,,,,
+57,Primeape,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+58,Growlithe,wild,0.46,Should Always Trade,Structured Spawn Data,,,,,
+59,Arcanine,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+60,Poliwag,wild,3.55,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+61,Poliwhirl,evolution-only,0.07,Evaluate for Evolution,Structured Spawn Data,,,,,
+62,Poliwrath,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+63,Abra,wild,3.1,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+64,Kadabra,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+65,Alakazam,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+66,Machop,wild,3.12,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+67,Machoke,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+68,Machamp,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+69,Bellsprout,wild,3.79,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+70,Weepinbell,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+71,Victreebel,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+72,Tentacool,wild,3.7,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+73,Tentacruel,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+74,Geodude,wild,3.3,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
 74,Alolan Geodude,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-75,Graveler,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+75,Graveler,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
 75,Alolan Graveler,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-76,Golem,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+76,Golem,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
 76,Alolan Golem,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-77,Ponyta,wild,6.0,Safe to Transfer,Inferred,,,,,6.0
+77,Ponyta,wild,0.26,Should Always Trade,Structured Spawn Data,,,,,
 77,Galarian Ponyta,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-78,Rapidash,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+78,Rapidash,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 78,Galarian Rapidash,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-79,Slowpoke,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
+79,Slowpoke,wild,2.76,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,5,
 79,Galarian Slowpoke,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-80,Slowbro,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+80,Slowbro,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
 80,Galarian Slowbro,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-81,Magnemite,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-82,Magneton,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-83,Farfetch'd,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
+81,Magnemite,wild,2.18,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+82,Magneton,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+83,Farfetch'd,wild,1.51,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
 83,Galarian Farfetch'd,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-84,Doduo,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-85,Dodrio,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-86,Seel,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-87,Dewgong,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-88,Grimer,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
+84,Doduo,wild,3.13,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+85,Dodrio,evolution-only,0.11,Evaluate for Evolution,Structured Spawn Data,,,,,
+86,Seel,wild,3.07,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+87,Dewgong,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+88,Grimer,wild,2.01,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
 88,Alolan Grimer,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-89,Muk,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+89,Muk,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
 89,Alolan Muk,wild,4.0,Depends on Circumstances,Inferred,,,,,4.0
-90,Shellder,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-91,Cloyster,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-92,Gastly,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-93,Haunter,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-94,Gengar,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-95,Onix,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-96,Drowzee,wild,5,Depends on Circumstances,Enhanced Curated Data,,,,5,
-97,Hypno,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-98,Krabby,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
-99,Kingler,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-100,Voltorb,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
+90,Shellder,wild,2.13,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+91,Cloyster,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+92,Gastly,wild,4.2,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
+93,Haunter,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
+94,Gengar,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+95,Onix,wild,1.52,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+96,Drowzee,wild,3.3,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,5,
+97,Hypno,evolution-only,0.05,Evaluate for Evolution,Structured Spawn Data,,,,,
+98,Krabby,wild,3.53,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,6,
+99,Kingler,evolution-only,0.03,Evaluate for Evolution,Structured Spawn Data,,,,,
+100,Voltorb,wild,2.16,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
 100,Hisuian Voltorb,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-101,Electrode,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+101,Electrode,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 101,Hisuian Electrode,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-102,Exeggcute,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-103,Exeggutor,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+102,Exeggcute,wild,2.19,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+103,Exeggutor,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 103,Alolan Exeggutor,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-104,Cubone,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-105,Marowak,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+104,Cubone,wild,2.15,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+105,Marowak,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 105,Alolan Marowak,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-106,Hitmonlee,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-107,Hitmonchan,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-108,Lickitung,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-109,Koffing,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-110,Weezing,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+106,Hitmonlee,wild,1.5,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+107,Hitmonchan,wild,1.51,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+108,Lickitung,wild,1.5,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+109,Koffing,wild,2.05,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+110,Weezing,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
 110,Galarian Weezing,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-111,Rhyhorn,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-112,Rhydon,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-113,Chansey,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-114,Tangela,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-115,Kangaskhan,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-116,Horsea,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-117,Seadra,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-118,Goldeen,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-119,Seaking,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-120,Staryu,wild,7,Safe to Transfer,Enhanced Curated Data,,,,7,
-121,Starmie,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-122,Mr. Mime,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
+111,Rhyhorn,wild,2.16,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+112,Rhydon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+113,Chansey,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+114,Tangela,wild,2.06,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+115,Kangaskhan,wild,1.5,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+116,Horsea,wild,3.78,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+117,Seadra,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+118,Goldeen,wild,4.54,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
+119,Seaking,evolution-only,0.04,Evaluate for Evolution,Structured Spawn Data,,,,,
+120,Staryu,wild,3.99,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,7,
+121,Starmie,evolution-only,0.02,Evaluate for Evolution,Structured Spawn Data,,,,,
+122,Mr. Mime,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
 122,Galarian Mr. Mime,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-123,Scyther,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-124,Jynx,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-125,Electabuzz,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-126,Magmar,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-127,Pinsir,wild,4,Depends on Circumstances,Enhanced Curated Data,,,,4,
-128,Tauros,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
+123,Scyther,wild,1.53,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+124,Jynx,wild,1.59,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+125,Electabuzz,wild,2.02,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+126,Magmar,wild,2.02,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+127,Pinsir,wild,2.25,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,4,
+128,Tauros,wild,1.53,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
 128,Paldean Tauros,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-129,Magikarp,wild,9,Safe to Transfer,Enhanced Curated Data,,,,9,
-130,Gyarados,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-131,Lapras,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-132,Ditto,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-133,Eevee,wild,8,Safe to Transfer,Enhanced Curated Data,,,,8,
-134,Vaporeon,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-135,Jolteon,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-136,Flareon,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-137,Porygon,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-138,Omanyte,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-139,Omastar,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-140,Kabuto,wild,3,Depends on Circumstances,Enhanced Curated Data,,,,3,
-141,Kabutops,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-142,Aerodactyl,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-143,Snorlax,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-144,Articuno,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
+129,Magikarp,wild,5.7,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,9,
+130,Gyarados,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+131,Lapras,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+132,Ditto,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+133,Eevee,wild,4.69,Depends on Circumstances,"Structured Spawn Data, Enhanced Curated Data",,,,8,
+134,Vaporeon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+135,Jolteon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+136,Flareon,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+137,Porygon,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+138,Omanyte,wild,1.53,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+139,Omastar,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+140,Kabuto,wild,1.52,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,3,
+141,Kabutops,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+142,Aerodactyl,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+143,Snorlax,wild,1.0,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+144,Articuno,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
 144,Galarian Articuno,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-145,Zapdos,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
+145,Zapdos,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
 145,Galarian Zapdos,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-146,Moltres,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
+146,Moltres,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
 146,Galarian Moltres,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-147,Dratini,wild,2,Should Always Trade,Enhanced Curated Data,,,,2,
-148,Dragonair,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-149,Dragonite,evolution-only,3.0,Evaluate for Evolution,Inferred,,,,,3.0
-150,Mewtwo,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
-151,Mew,legendary,0.0,Never Transfer (Legendary),Inferred,,,,,0.0
+147,Dratini,wild,1.07,Should Always Trade,"Structured Spawn Data, Enhanced Curated Data",,,,2,
+148,Dragonair,evolution-only,0.01,Evaluate for Evolution,Structured Spawn Data,,,,,
+149,Dragonite,evolution-only,0.0,Evaluate for Evolution,Structured Spawn Data,,,,,
+150,Mewtwo,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
+151,Mew,legendary,0.0,Never Transfer (Legendary),Structured Spawn Data,,,,,
 152,Chikorita,wild,6,Safe to Transfer,Enhanced Curated Data,,,,6,
 153,Bayleef,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
 154,Meganium,wild,5.5,Depends on Circumstances,Inferred,,,,,5.5
