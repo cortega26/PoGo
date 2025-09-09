@@ -7,6 +7,7 @@ import pandas as pd
 import streamlit as st
 
 from pogorarity.health import check_cache
+from pogorarity.aggregator import SOURCE_WEIGHTS
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
@@ -22,6 +23,12 @@ GENERATION_RANGES = [
     (810, 905, 8),
     (906, 1010, 9),
 ]
+
+SOURCE_COLS = {
+    "Structured Spawn Data": "Structured_Spawn_Data_Score",
+    "Enhanced Curated Data": "Enhanced_Curated_Data_Score",
+    "PokemonDB Catch Rate": "PokemonDB_Catch_Rate_Score",
+}
 
 
 def generation_from_number(num: int) -> int:
@@ -70,7 +77,9 @@ def rarity_band(score: float) -> str:
 
 @st.cache_data
 def load_data() -> pd.DataFrame:
-    cols = [
+    """Load rarity data and augment with generation and rarity band."""
+
+    base_cols = [
         "Number",
         "Name",
         "Spawn_Type",
@@ -81,11 +90,26 @@ def load_data() -> pd.DataFrame:
         "Enhanced_Curated_Data_Score",
         "PokemonDB_Catch_Rate_Score",
     ]
+    optional_cols = [
+        "Weighted_Average_Rarity_Score",
+        "Confidence",
+    ]
+
+    header = pd.read_csv(
+        DATA_FILE,
+        sep=";",
+        decimal=",",
+        nrows=0,
+        encoding="utf-8",
+    ).columns
+    usecols = [c for c in base_cols if c in header]
+    usecols.extend(c for c in optional_cols if c in header)
+
     df = pd.read_csv(
         DATA_FILE,
         sep=";",
         decimal=",",
-        usecols=cols,
+        usecols=usecols,
         encoding="utf-8",
     )
     df["Generation"] = df["Number"].apply(generation_from_number)
@@ -169,19 +193,36 @@ def main() -> None:
         "Recommendation",
         "Average_Rarity_Score",
     ]
+    if "Weighted_Average_Rarity_Score" in result.columns:
+        display_cols.append("Weighted_Average_Rarity_Score")
+    if "Confidence" in result.columns:
+        display_cols.append("Confidence")
     st.dataframe(result[display_cols])
 
     for _, row in result.iterrows():
         with st.expander(f"Why {row['Name']}?"):
-            st.write("Sources:", row["Data_Sources"])
-            st.write("Confidence:", row["Average_Rarity_Score"])
-            st.write(
-                {
-                    "Structured": row["Structured_Spawn_Data_Score"],
-                    "Curated": row["Enhanced_Curated_Data_Score"],
-                    "Catch Rate": row["PokemonDB_Catch_Rate_Score"],
-                }
-            )
+            sources = str(row.get("Data_Sources", "") or "").strip()
+            if not sources:
+                st.info(
+                    "No direct data available; rarity score inferred from heuristics."
+                )
+            else:
+                st.write("Sources:", sources)
+
+            weighted_avg = row.get("Weighted_Average_Rarity_Score")
+            if weighted_avg is not None and not pd.isna(weighted_avg):
+                st.write("Weighted Average:", weighted_avg)
+            st.write("Average Score:", row["Average_Rarity_Score"])
+
+            confidence = row.get("Confidence")
+            if confidence is not None and not pd.isna(confidence):
+                st.write("Confidence:", confidence)
+
+            for source, col in SOURCE_COLS.items():
+                score = row.get(col)
+                if score is not None and not pd.isna(score):
+                    weight = SOURCE_WEIGHTS.get(source, 1.0)
+                    st.write(f"{source}: {score} (weight {weight})")
 
 
 if __name__ == "__main__":
