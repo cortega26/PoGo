@@ -11,7 +11,6 @@ import re
 from bs4 import BeautifulSoup
 from typing import Dict, List, Tuple, Optional
 import json
-import csv
 from dataclasses import dataclass
 from urllib.parse import urljoin, urlparse
 from pathlib import Path
@@ -26,7 +25,7 @@ logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s",
     handlers=[
-        logging.FileHandler(LOG_FILE),
+        logging.FileHandler(LOG_FILE, mode='w'),
         logging.StreamHandler(),
     ],
 )
@@ -151,97 +150,6 @@ class EnhancedRarityScraper:
         raise requests.RequestException(
             f"Failed to fetch {url} after {retries} attempts"
         )
-
-    def scrape_gamepress_v2(self) -> Tuple[Dict[str, float], DataSourceReport]:
-        """Scrape Pokemon rarity data from new GamePress v2 site"""
-        logger.info("Attempting to scrape GamePress v2...")
-        rarity_data = {}
-
-        try:
-            # Try new GamePress URLs
-            urls_to_try = [
-                # Primary site; legacy domains consistently return 404
-                "https://pogo.gamepress.gg/pokemon-list",
-            ]
-
-            response = None
-            working_url = None
-
-            for url in urls_to_try:
-                try:
-                    logger.info(f"Trying URL: {url}")
-                    response = self.safe_request(url)
-                    working_url = url
-                    break
-                except Exception as e:
-                    logger.info(f"URL {url} failed: {e}")
-                    continue
-
-            if not response:
-                raise Exception("All GamePress URLs failed")
-
-            soup = BeautifulSoup(response.content, 'html.parser')
-
-            # Look for Pokemon data in various formats
-            pokemon_found = 0
-
-            # Try to find Pokemon in tables
-            tables = soup.find_all('table')
-            for table in tables:
-                rows = table.find_all('tr')
-                for row in rows:
-                    cells = row.find_all(['td', 'th'])
-                    if len(cells) >= 2:
-                        # Look for Pokemon names in cells
-                        for i, cell in enumerate(cells):
-                            text = cell.get_text().strip()
-                            if self.is_pokemon_name(text) and i + 1 < len(cells):
-                                # Look for rarity info in adjacent cells
-                                for j in range(i + 1, len(cells)):
-                                    rarity_text = cells[j].get_text().strip()
-                                    if self.contains_rarity_info(rarity_text):
-                                        score = self.normalize_rarity_score(
-                                            rarity_text, 'GamePress')
-                                        rarity_data[text] = score
-                                        pokemon_found += 1
-                                        break
-
-            # Try to find Pokemon in lists/divs
-            pokemon_elements = soup.find_all(['div', 'span', 'a'], string=re.compile(
-                r'(Pikachu|Charizard|Blastoise|Venusaur)'))
-            for elem in pokemon_elements:
-                parent = elem.parent
-                if parent:
-                    name = elem.get_text().strip()
-                    # Look for rarity info in siblings or children
-                    siblings = parent.find_all(['span', 'div', 'td'])
-                    for sibling in siblings:
-                        rarity_text = sibling.get_text().strip()
-                        if self.contains_rarity_info(rarity_text):
-                            score = self.normalize_rarity_score(
-                                rarity_text, 'GamePress')
-                            rarity_data[name] = score
-                            pokemon_found += 1
-                            break
-
-            if pokemon_found == 0:
-                logger.warning(
-                    "No Pokemon data found in new structure from %s", working_url
-                )
-                report = DataSourceReport(
-                    "GamePress v2", 0, False,
-                    f"No data found at {working_url}"
-                )
-            else:
-                report = DataSourceReport("GamePress v2", len(rarity_data), True)
-                logger.info(
-                    f"Successfully scraped {len(rarity_data)} Pokemon from GamePress v2")
-
-        except Exception as e:
-            logger.error(f"GamePress v2 scraping failed: {e}")
-            report = DataSourceReport("GamePress v2", 0, False, str(e))
-
-        return rarity_data, report
 
     def scrape_pokemon_go_hub(self) -> Tuple[Dict[str, float], DataSourceReport]:
         """Scrape Pokemon data from Pokemon GO Hub"""
@@ -657,11 +565,8 @@ class EnhancedRarityScraper:
         structured_data, structured_report = self.scrape_structured_spawn_data()
         api_data, api_report = self.scrape_pogo_api_data()
         curated_data, curated_report = self.get_curated_spawn_data()
-        gamepress_data, gp_report = self.scrape_gamepress_v2()
-        # Pokemon GO Hub currently serves a Cloudflare challenge page which is
-        # difficult to scrape reliably without a full browser.  Temporarily
-        # skip this source to avoid repeated 403 errors.
-        # hub_data, hub_report = self.scrape_pokemon_go_hub()
+        # GamePress scraping currently fails due to site changes. Skip this
+        # source until a reliable method is available.
         serebii_data, serebii_report = self.scrape_serebii_rarity(limit=limit)
         pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate(limit=limit)
 
@@ -670,7 +575,6 @@ class EnhancedRarityScraper:
             structured_report,
             api_report,
             curated_report,
-            gp_report,
             serebii_report,
             pokemondb_report,
         ]
@@ -679,7 +583,6 @@ class EnhancedRarityScraper:
             'Structured Spawn Data': structured_data,
             'Pokemon GO API': api_data,
             'Enhanced Curated Data': curated_data,
-            'GamePress v2': gamepress_data,
             'Serebii': serebii_data,
             'PokemonDB Catch Rate': pokemondb_data,
         }
@@ -867,34 +770,29 @@ class EnhancedRarityScraper:
         """Export with enhanced data source information"""
         logger.info(f"Exporting enhanced data to {filename}...")
 
-        with open(filename, 'w', newline='', encoding='utf-8') as csvfile:
-            fieldnames = ['Number', 'Name', 'Spawn_Type', 'Average_Rarity_Score', 'Recommendation', 'Data_Sources'] + \
-                [f'{source}_Score' for source in ['GamePress_v2', 'Pokemon_GO_Hub',
-                                                  'Pokemon_GO_API', 'Enhanced_Curated_Data', 'Inferred']]
+        sources = ['Pokemon GO API', 'Enhanced Curated Data', 'Serebii',
+                   'PokemonDB Catch Rate', 'Inferred']
 
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
-            writer.writeheader()
+        rows = []
+        for pokemon in sorted(pokemon_data, key=lambda x: x.number):
+            row = {
+                'Number': pokemon.number,
+                'Name': pokemon.name,
+                'Spawn_Type': pokemon.spawn_type,
+                'Average_Rarity_Score': round(pokemon.average_score, 2),
+                'Recommendation': pokemon.recommendation,
+                'Data_Sources': ', '.join(pokemon.data_sources)
+            }
 
-            for pokemon in sorted(pokemon_data, key=lambda x: x.number):
-                row = {
-                    'Number': pokemon.number,
-                    'Name': pokemon.name,
-                    'Spawn_Type': pokemon.spawn_type,
-                    'Average_Rarity_Score': round(pokemon.average_score, 2),
-                    'Recommendation': pokemon.recommendation,
-                    'Data_Sources': ', '.join(pokemon.data_sources)
-                }
+            for source in sources:
+                score = pokemon.rarity_scores.get(source)
+                col_name = f'{source.replace(" ", "_")}_Score'
+                row[col_name] = round(score, 2) if score is not None else None
 
-                # Add individual source scores
-                for source in ['GamePress v2', 'Pokemon GO Hub', 'Pokemon GO API', 'Enhanced Curated Data', 'Inferred']:
-                    score = pokemon.rarity_scores.get(source, '')
-                    if score != '':
-                        row[f'{source.replace(" ", "_")}_Score'] = round(
-                            score, 2)
-                    else:
-                        row[f'{source.replace(" ", "_")}_Score'] = ''
+            rows.append(row)
 
-                writer.writerow(row)
+        df = pd.DataFrame(rows)
+        df.to_csv(filename, index=False, sep=';', float_format='%.2f', decimal=',', encoding='utf-8')
 
         logger.info(
             f"Successfully exported {len(pokemon_data)} Pokemon to {filename}")
