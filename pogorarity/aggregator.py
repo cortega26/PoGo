@@ -12,6 +12,7 @@ from .sources import (
     silph_road,
     game_master,
 )
+from .thresholds import COMMON, UNCOMMON
 
 logger = logging.getLogger(__name__)
 
@@ -87,11 +88,8 @@ def get_trading_recommendation(score: float, spawn_type: str) -> str:
 
     Scores are on a 0--10 scale where higher numbers represent more common
     Pokémon.  The same numeric ranges are used by :func:`app.rarity_band` to
-    display rarity bands.  The ranges are:
-
-    - ``score < 4``  -> "Keep or Trade Sparingly"
-    - ``4 <= score < 7`` -> "Depends on Circumstances"
-    - ``score >= 7`` -> "Safe to Transfer"
+    display rarity bands.  Thresholds are defined in
+    :mod:`pogorarity.thresholds`.
 
     Special spawn types take precedence over the numeric score.
     """
@@ -102,9 +100,9 @@ def get_trading_recommendation(score: float, spawn_type: str) -> str:
         return "Never Transfer (Event Only)"
     if spawn_type == "evolution-only":
         return "Evaluate for Evolution"
-    if score >= 7:
+    if score >= COMMON:
         return "Safe to Transfer"
-    if score >= 4:
+    if score >= UNCOMMON:
         return "Depends on Circumstances"
     return "Keep or Trade Sparingly"
 
