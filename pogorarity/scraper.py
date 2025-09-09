@@ -81,6 +81,15 @@ class EnhancedRarityScraper:
             logger.error("Failed to load Pokémon list: %s", e)
             self.pokemon_name_set = set()
 
+        # Load rarity inference rules from configuration
+        rules_path = Path(__file__).resolve().parent.parent / "data" / "infer_missing_rarity_rules.json"
+        try:
+            with open(rules_path) as f:
+                self.rarity_rules = json.load(f)
+        except Exception as e:
+            logger.error("Failed to load rarity rules: %s", e)
+            self.rarity_rules = {}
+
         # Output directory for CSV export
         self.output_dir: Optional[str] = None
 
@@ -610,26 +619,24 @@ class EnhancedRarityScraper:
         elif spawn_type == 'evolution-only':
             return 3.0
 
-        # For wild spawning Pokemon, use enhanced rules
-        pseudo_legendaries = ['Dratini', 'Larvitar', 'Bagon', 'Beldum',
-                              'Gible', 'Axew', 'Deino', 'Goomy', 'Jangmo-o', 'Dreepy']
-        if pokemon_name in pseudo_legendaries:
-            return 1.5
+        # For wild spawning Pokemon, use configuration-driven rules
+        rules = self.rarity_rules
 
-        starter_patterns = ['Bulbasaur', 'Charmander', 'Squirtle', 'Chikorita', 'Cyndaquil', 'Totodile',
-                            'Treecko', 'Torchic', 'Mudkip', 'Turtwig', 'Chimchar', 'Piplup',
-                            'Snivy', 'Tepig', 'Oshawott', 'Chespin', 'Fennekin', 'Froakie',
-                            'Rowlet', 'Litten', 'Popplio', 'Grookey', 'Scorbunny', 'Sobble']
-        if pokemon_name in starter_patterns:
-            return 6.0
+        pseudo_legendaries = rules.get("pseudo_legendaries", {})
+        if pokemon_name in pseudo_legendaries.get("pokemon", []):
+            return pseudo_legendaries.get("score", 0.0)
 
-        very_common = ['Pidgey', 'Rattata', 'Caterpie',
-                       'Weedle', 'Bidoof', 'Patrat', 'Lillipup']
-        if pokemon_name in very_common:
-            return 8.5
+        starters = rules.get("starters", {})
+        if pokemon_name in starters.get("pokemon", []):
+            return starters.get("score", 0.0)
 
-        if any(region in pokemon_name for region in ['Alolan', 'Galarian', 'Hisuian', 'Paldean']):
-            return 4.0
+        very_common = rules.get("very_common", {})
+        if pokemon_name in very_common.get("pokemon", []):
+            return very_common.get("score", 0.0)
+
+        regional_forms = rules.get("regional_forms", {})
+        if any(region in pokemon_name for region in regional_forms.get("regions", [])):
+            return regional_forms.get("score", 0.0)
 
         # Generation-based defaults with enhanced logic
         if pokemon_number <= 151:
