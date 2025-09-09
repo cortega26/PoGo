@@ -16,6 +16,7 @@ from dataclasses import dataclass
 from urllib.parse import urljoin, urlparse
 from pathlib import Path
 import logging
+import random
 
 # Configure logging
 logging.basicConfig(level=logging.INFO,
@@ -53,13 +54,32 @@ class EnhancedRarityScraper:
         # being courteous to external sites.
         self.delay = 1
         self.data_source_reports = []
+        try:
+            self.pokemon_name_set = {
+                name.lower() for name, _ in self.get_comprehensive_pokemon_list()
+            }
+        except Exception as e:
+            logger.error("Failed to load Pokémon list: %s", e)
+            self.pokemon_name_set = set()
 
     def safe_request(self, url: str, retries: int = 3) -> requests.Response:
         """Make a safe HTTP request with retries and error handling"""
         for attempt in range(retries):
             try:
-                time.sleep(self.delay)
                 response = self.session.get(url, timeout=15)
+                if response.status_code == 429:
+                    retry_after = response.headers.get("Retry-After")
+                    wait = (
+                        int(retry_after)
+                        if retry_after and retry_after.isdigit()
+                        else self.delay * (2 ** attempt)
+                    )
+                    wait += random.uniform(0, self.delay)
+                    logger.warning(
+                        "Rate limited by %s, sleeping for %.2f seconds", url, wait
+                    )
+                    time.sleep(wait)
+                    continue
                 response.raise_for_status()
                 return response
             except requests.RequestException as e:
@@ -67,7 +87,11 @@ class EnhancedRarityScraper:
                     f"Request to {url} failed (attempt {attempt + 1}): {e}")
                 if attempt == retries - 1:
                     raise
-                time.sleep(self.delay * (attempt + 1))
+                wait = self.delay * (2 ** attempt) + random.uniform(0, self.delay)
+                time.sleep(wait)
+        raise requests.RequestException(
+            f"Failed to fetch {url} after {retries} attempts"
+        )
 
     def scrape_gamepress_v2(self) -> Tuple[Dict[str, float], DataSourceReport]:
         """Scrape Pokemon rarity data from new GamePress v2 site"""
@@ -367,18 +391,11 @@ class EnhancedRarityScraper:
         return rarity_data, report
 
     def is_pokemon_name(self, text: str) -> bool:
-        """Check if text looks like a Pokemon name"""
-        if not text or len(text) < 3:
+        """Check if text is a known Pokemon name"""
+        if not text:
             return False
 
-        # Simple heuristics for Pokemon names
-        known_pokemon = [
-            'Pikachu', 'Charizard', 'Blastoise', 'Venusaur', 'Pidgey', 'Rattata',
-            'Caterpie', 'Weedle', 'Bidoof', 'Magikarp', 'Eevee', 'Gastly'
-        ]
-
-        return (text in known_pokemon or
-                (text[0].isupper() and text[1:].islower() and len(text) <= 15))
+        return text.strip().lower() in self.pokemon_name_set
 
     def contains_rarity_info(self, text: str) -> bool:
         """Check if text contains rarity information"""
@@ -437,121 +454,19 @@ class EnhancedRarityScraper:
         """Get enhanced curated spawn data with fixed categorization"""
         logger.info("Loading enhanced curated spawn data...")
 
-        # Same data as before but we'll fix the categorization separately
-        spawn_data = {
-            # Very Common (8-10)
-            'Pidgey': 10, 'Rattata': 9, 'Magikarp': 9, 'Bidoof': 9,
-            'Caterpie': 8, 'Weedle': 8, 'Zubat': 8, 'Sentret': 8,
-            'Hoothoot': 8, 'Zigzagoon': 8, 'Wurmple': 8, 'Starly': 8,
-            'Patrat': 8, 'Lillipup': 8, 'Pidove': 8, 'Bunnelby': 8,
-            'Fletchling': 8, 'Yungoos': 8, 'Pikipek': 8, 'Skwovet': 8,
-            'Rookidee': 8, 'Blipbug': 8, 'Goldeen': 8, 'Eevee': 8,
-            'Gastly': 8,
-
-            # Common (6-7)
-            'Bulbasaur': 6, 'Charmander': 6, 'Squirtle': 6, 'Pikachu': 6,
-            'Chikorita': 6, 'Cyndaquil': 6, 'Totodile': 6, 'Treecko': 6,
-            'Torchic': 6, 'Mudkip': 6, 'Turtwig': 6, 'Chimchar': 6,
-            'Piplup': 6, 'Snivy': 6, 'Tepig': 6, 'Oshawott': 6,
-            'Chespin': 6, 'Fennekin': 6, 'Froakie': 6, 'Rowlet': 6,
-            'Litten': 6, 'Popplio': 6, 'Grookey': 6, 'Scorbunny': 6,
-            'Sobble': 6, 'Machop': 6, 'Geodude': 6, 'Abra': 6,
-            'Psyduck': 7, 'Paras': 7, 'Venonat': 7, 'Bellsprout': 7,
-            'Oddish': 7, 'Tentacool': 7, 'Spearow': 7, 'Ledyba': 7,
-            'Spinarak': 7, 'Natu': 7, 'Marill': 7, 'Hoppip': 7,
-            'Wooper': 7, 'Swablu': 7, 'Barboach': 7, 'Taillow': 7,
-            'Wingull': 7, 'Whismur': 7, 'Wooloo': 7, 'Gossifleur': 7,
-            'Chewtle': 7, 'Nickit': 6, 'Yamper': 6,
-
-            # Uncommon (4-5)
-            'Sandshrew': 6, 'Nidoran♀': 6, 'Nidoran♂': 6, 'Clefairy': 4,
-            'Vulpix': 5, 'Jigglypuff': 4, 'Poliwag': 6, 'Slowpoke': 5,
-            'Magnemite': 4, 'Farfetch\'d': 3, 'Doduo': 6, 'Seel': 6,
-            'Grimer': 4, 'Shellder': 4, 'Onix': 3, 'Drowzee': 5,
-            'Krabby': 6, 'Voltorb': 4, 'Exeggcute': 4, 'Cubone': 4,
-            'Hitmonlee': 3, 'Hitmonchan': 3, 'Lickitung': 3, 'Koffing': 4,
-            'Rhyhorn': 4, 'Chansey': 2, 'Tangela': 4, 'Kangaskhan': 3,
-            'Horsea': 7, 'Staryu': 7, 'Scyther': 3, 'Jynx': 3,
-            'Electabuzz': 4, 'Magmar': 4, 'Pinsir': 4, 'Tauros': 3,
-            'Lapras': 2, 'Ditto': 2, 'Porygon': 2, 'Omanyte': 3,
-            'Kabuto': 3, 'Aerodactyl': 2, 'Snorlax': 2,
-
-            # Rare (1-3)
-            'Dratini': 2, 'Larvitar': 2, 'Bagon': 2, 'Beldum': 2,
-            'Gible': 1, 'Axew': 1, 'Deino': 1, 'Goomy': 2,
-            'Jangmo-o': 1, 'Dreepy': 2, 'Cranidos': 2, 'Shieldon': 2,
-            'Unown': 1, 'Spiritomb': 1, 'Rotom': 2, 'Larvesta': 1,
-            'Riolu': 2, 'Zorua': 1,
-
-            # Additional Pokemon with appropriate scores
-            'Mareep': 4, 'Aipom': 4, 'Yanma': 4, 'Snubbull': 4,
-            'Teddiursa': 4, 'Slugma': 4, 'Swinub': 4, 'Remoraid': 4,
-            'Houndour': 4, 'Phanpy': 4, 'Poochyena': 6, 'Lotad': 6,
-            'Seedot': 6, 'Ralts': 5, 'Shroomish': 6, 'Makuhita': 6,
-            'Aron': 5, 'Meditite': 6, 'Electrike': 6, 'Plusle': 5,
-            'Minun': 5, 'Roselia': 5, 'Gulpin': 6, 'Carvanha': 6,
-            'Wailmer': 6, 'Numel': 6, 'Cacnea': 6, 'Zangoose': 3,
-            'Seviper': 3, 'Lunatone': 3, 'Solrock': 3, 'Corphish': 4,
-            'Baltoy': 4, 'Lileep': 3, 'Anorith': 3, 'Feebas': 2,
-            'Castform': 3, 'Kecleon': 2, 'Shuppet': 4, 'Duskull': 4,
-            'Tropius': 3, 'Chimecho': 2, 'Absol': 2, 'Wynaut': 3,
-            'Snorunt': 4, 'Spheal': 4, 'Clamperl': 3, 'Relicanth': 2,
-            'Luvdisc': 4, 'Kricketot': 6, 'Shinx': 6, 'Buizel': 6,
-            'Cherubi': 5, 'Shellos': 6, 'Drifloon': 5, 'Buneary': 6,
-            'Glameow': 5, 'Chingling': 2, 'Stunky': 5, 'Bronzor': 5,
-            'Bonsly': 3, 'Mime Jr.': 2, 'Happiny': 2, 'Chatot': 1,
-            'Munchlax': 2, 'Carnivine': 2, 'Finneon': 6, 'Mantyke': 3,
-            'Snover': 6, 'Roggenrola': 6, 'Woobat': 6, 'Drilbur': 5,
-            'Audino': 4, 'Timburr': 4, 'Tympole': 6, 'Throh': 3,
-            'Sawk': 3, 'Sewaddle': 5, 'Venipede': 5, 'Cottonee': 5,
-            'Petilil': 5, 'Basculin': 5, 'Sandile': 5, 'Darumaka': 5,
-            'Maractus': 2, 'Dwebble': 5, 'Scraggy': 5, 'Sigilyph': 2,
-            'Yamask': 3, 'Tirtouga': 2, 'Archen': 2, 'Trubbish': 6,
-            'Minccino': 5, 'Gothita': 5, 'Solosis': 5, 'Ducklett': 5,
-            'Vanillite': 5, 'Deerling': 5, 'Emolga': 2, 'Karrablast': 3,
-            'Foongus': 5, 'Frillish': 5, 'Alomomola': 2, 'Joltik': 5,
-            'Ferroseed': 5, 'Klink': 4, 'Tynamo': 2, 'Elgyem': 2,
-            'Litwick': 5, 'Cubchoo': 5, 'Cryogonal': 2, 'Shelmet': 4,
-            'Stunfisk': 2, 'Mienfoo': 5, 'Druddigon': 2, 'Golett': 4,
-            'Pawniard': 4, 'Bouffalant': 2, 'Rufflet': 2, 'Vullaby': 2,
-            'Heatmor': 2, 'Durant': 2, 'Litleo': 5, 'Flabébé': 5,
-            'Skiddo': 5, 'Pancham': 4, 'Furfrou': 3, 'Espurr': 5,
-            'Honedge': 4, 'Spritzee': 4, 'Swirlix': 4, 'Inkay': 4,
-            'Binacle': 5, 'Skrelp': 5, 'Clauncher': 5, 'Helioptile': 5,
-            'Tyrunt': 3, 'Amaura': 3, 'Hawlucha': 4, 'Dedenne': 4,
-            'Carbink': 3, 'Klefki': 4, 'Phantump': 4, 'Pumpkaboo': 4,
-            'Bergmite': 5, 'Noibat': 4, 'Grubbin': 5, 'Crabrawler': 4,
-            'Oricorio': 4, 'Cutiefly': 5, 'Rockruff': 5, 'Wishiwashi': 4,
-            'Mareanie': 4, 'Mudbray': 5, 'Dewpider': 5, 'Fomantis': 5,
-            'Morelull': 5, 'Salandit': 4, 'Stufful': 5, 'Bounsweet': 5,
-            'Comfey': 3, 'Oranguru': 3, 'Passimian': 3, 'Wimpod': 4,
-            'Sandygast': 4, 'Pyukumuku': 3, 'Minior': 3, 'Komala': 3,
-            'Turtonator': 2, 'Togedemaru': 4, 'Mimikyu': 3, 'Bruxish': 4,
-            'Drampa': 2, 'Dhelmise': 2, 'Applin': 4, 'Silicobra': 5,
-            'Cramorant': 4, 'Arrokuda': 5, 'Toxel': 4, 'Sizzlipede': 4,
-            'Clobbopus': 4, 'Sinistea': 4, 'Hatenna': 4, 'Impidimp': 4,
-            'Milcery': 3, 'Falinks': 3, 'Pincurchin': 4, 'Snom': 4,
-            'Eiscue': 3, 'Indeedee': 3, 'Morpeko': 3, 'Cufant': 4,
-
-            # Regional Forms
-            'Alolan Rattata': 6, 'Alolan Sandshrew': 4, 'Alolan Vulpix': 4,
-            'Alolan Diglett': 5, 'Alolan Meowth': 5, 'Alolan Geodude': 6,
-            'Alolan Grimer': 4, 'Alolan Exeggutor': 2, 'Alolan Marowak': 2,
-            'Galarian Meowth': 4, 'Galarian Ponyta': 3, 'Galarian Slowpoke': 4,
-            'Galarian Farfetch\'d': 3, 'Galarian Weezing': 2, 'Galarian Mr. Mime': 3,
-            'Galarian Corsola': 3, 'Galarian Zigzagoon': 6, 'Galarian Darumaka': 3,
-            'Galarian Yamask': 3, 'Galarian Stunfisk': 3, 'Hisuian Voltorb': 4,
-            'Hisuian Qwilfish': 3, 'Hisuian Sneasel': 2, 'Hisuian Zorua': 1,
-            'Hisuian Braviary': 1, 'Hisuian Sliggoo': 1, 'Hisuian Goodra': 1,
-            'Hisuian Avalugg': 1, 'Hisuian Decidueye': 1, 'Hisuian Typhlosion': 1,
-            'Hisuian Samurott': 1, 'Hisuian Lilligant': 1, 'Hisuian Electrode': 2,
-            'Hisuian Zoroark': 1, 'Paldean Tauros': 2, 'Paldean Wooper': 5
-        }
-
-        report = DataSourceReport(
-            "Enhanced Curated Data", len(spawn_data), True)
-        logger.info(
-            f"Loaded {len(spawn_data)} Pokemon spawn rates from enhanced curated data")
+        data_path = Path(__file__).parent / "data" / "curated_spawn_data.json"
+        try:
+            with open(data_path, encoding="utf-8") as f:
+                spawn_data = json.load(f)
+            report = DataSourceReport(
+                "Enhanced Curated Data", len(spawn_data), True)
+            logger.info(
+                f"Loaded {len(spawn_data)} Pokemon spawn rates from enhanced curated data")
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            logger.error(f"Curated spawn data load failed: {e}")
+            spawn_data = {}
+            report = DataSourceReport(
+                "Enhanced Curated Data", 0, False, str(e))
 
         return spawn_data, report
 
