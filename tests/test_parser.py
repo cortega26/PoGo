@@ -1,5 +1,5 @@
 from pathlib import Path
-from PoGo_rarity import EnhancedRarityScraper
+from pogorarity import EnhancedRarityScraper
 
 def test_parse_catch_rate_from_fixture():
     scraper = EnhancedRarityScraper()

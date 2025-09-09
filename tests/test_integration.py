@@ -1,4 +1,4 @@
-from PoGo_rarity import EnhancedRarityScraper
+from pogorarity import EnhancedRarityScraper
 
 def test_pokemondb_integration_small_set():
     scraper = EnhancedRarityScraper()

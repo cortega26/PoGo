@@ -1,4 +1,4 @@
-from PoGo_rarity import EnhancedRarityScraper
+from pogorarity import EnhancedRarityScraper
 
 def test_slugify_handles_regional_forms_and_punctuation():
     scraper = EnhancedRarityScraper()

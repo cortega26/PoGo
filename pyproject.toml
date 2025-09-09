@@ -1,0 +1,16 @@
+[project]
+name = "pogorarity"
+version = "0.1.0"
+dependencies = [
+    "requests",
+    "pandas",
+    "beautifulsoup4",
+]
+
+[project.scripts]
+pokemon-rarity = "pogorarity.cli:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
