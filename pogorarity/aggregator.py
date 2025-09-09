@@ -4,7 +4,14 @@ from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 
 from .models import DataSourceReport, PokemonRarity
-from .sources import curated_spawn, pokemondb, structured_spawn, pokeapi, silph_road
+from .sources import (
+    curated_spawn,
+    pokemondb,
+    structured_spawn,
+    pokeapi,
+    silph_road,
+    game_master,
+)
 
 logger = logging.getLogger(__name__)
 
@@ -14,6 +21,8 @@ SOURCE_WEIGHTS = {
     "PokemonDB Catch Rate": 2.0,
     "PokeAPI Capture Rate": 2.0,
     "Silph Road Spawn Tier": 0.5,
+    "Game Master Spawn Weight": 1.0,
+    "Game Master Capture Rate": 2.0,
 }
 
 RULES_PATH = Path(__file__).resolve().parent.parent / "data" / "infer_missing_rarity_rules.json"
@@ -167,24 +176,36 @@ def aggregate_data(
         limit=limit, metrics=metrics
     )
     silph_data, silph_report = silph_road.scrape_spawn_tiers(metrics=metrics)
-
-    sources = {
-        "Structured Spawn Data": structured_data,
-        "Enhanced Curated Data": curated_data,
-        "PokemonDB Catch Rate": pokemondb_data,
-        "PokeAPI Capture Rate": pokeapi_data,
-        "Silph Road Spawn Tier": silph_data,
-    }
+    gm_capture_data, gm_spawn_data, gm_reports = game_master.scrape(metrics=metrics)
 
     results: List[PokemonRarity] = []
     for pokemon_name, pokemon_number in pokemon_list:
         rarity_scores: Dict[str, float] = {}
         data_sources: List[str] = []
         spawn_type = categorize_pokemon_spawn_type(pokemon_name, pokemon_number)
-        for source_name, source_data in sources.items():
-            if pokemon_name in source_data:
-                rarity_scores[source_name] = source_data[pokemon_name]
-                data_sources.append(source_name)
+        if pokemon_name in gm_spawn_data:
+            rarity_scores["Game Master Spawn Weight"] = gm_spawn_data[pokemon_name]
+            data_sources.append("Game Master Spawn Weight")
+        else:
+            if pokemon_name in structured_data:
+                rarity_scores["Structured Spawn Data"] = structured_data[pokemon_name]
+                data_sources.append("Structured Spawn Data")
+            if pokemon_name in curated_data:
+                rarity_scores["Enhanced Curated Data"] = curated_data[pokemon_name]
+                data_sources.append("Enhanced Curated Data")
+        if pokemon_name in silph_data:
+            rarity_scores["Silph Road Spawn Tier"] = silph_data[pokemon_name]
+            data_sources.append("Silph Road Spawn Tier")
+        if pokemon_name in gm_capture_data:
+            rarity_scores["Game Master Capture Rate"] = gm_capture_data[pokemon_name]
+            data_sources.append("Game Master Capture Rate")
+        else:
+            if pokemon_name in pokemondb_data:
+                rarity_scores["PokemonDB Catch Rate"] = pokemondb_data[pokemon_name]
+                data_sources.append("PokemonDB Catch Rate")
+            if pokemon_name in pokeapi_data:
+                rarity_scores["PokeAPI Capture Rate"] = pokeapi_data[pokemon_name]
+                data_sources.append("PokeAPI Capture Rate")
         if rarity_scores:
             total_weight = sum(SOURCE_WEIGHTS.get(src, 1.0) for src in rarity_scores)
             weighted = sum(
@@ -214,5 +235,6 @@ def aggregate_data(
         pokemondb_report,
         pokeapi_report,
         silph_report,
+        *gm_reports,
     ]
     return results, reports
