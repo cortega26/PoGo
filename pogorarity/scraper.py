@@ -4,6 +4,7 @@ Enhanced Pokemon GO Rarity Aggregator
 Fixes categorization bugs and adds multiple reliable data sources
 """
 
+from models import PokemonRarity, DataSourceReport
 import requests
 import pandas as pd
 import time
@@ -28,9 +29,6 @@ logging.basicConfig(
     ],
 )
 logger = logging.getLogger(__name__)
-
-
-from .models import PokemonRarity, DataSourceReport
 
 
 class EnhancedRarityScraper:
@@ -127,7 +125,8 @@ class EnhancedRarityScraper:
                 )
                 if attempt == retries - 1:
                     raise
-                wait = self.delay * (2 ** attempt) + random.uniform(0, self.delay)
+                wait = self.delay * (2 ** attempt) + \
+                    random.uniform(0, self.delay)
                 time.sleep(wait)
         raise requests.RequestException(
             f"Failed to fetch {url} after {retries} attempts"
@@ -255,7 +254,8 @@ class EnhancedRarityScraper:
 
         except Exception as e:
             logger.error(f"Structured spawn data fetch failed: {e}")
-            report = DataSourceReport("Structured Spawn Data", 0, False, str(e))
+            report = DataSourceReport(
+                "Structured Spawn Data", 0, False, str(e))
 
         return rarity_data, report
 
@@ -352,7 +352,8 @@ class EnhancedRarityScraper:
         """Get enhanced curated spawn data with fixed categorization"""
         logger.info("Loading enhanced curated spawn data...")
 
-        data_path = Path(__file__).parent / "data" / "curated_spawn_data.json"
+        data_path = Path(__file__).parent.parent / \
+            "data" / "curated_spawn_data.json"
         try:
             with open(data_path, encoding="utf-8") as f:
                 spawn_data = json.load(f)
@@ -461,7 +462,8 @@ class EnhancedRarityScraper:
         # Collect data from all sources
         structured_data, structured_report = self.scrape_structured_spawn_data()
         curated_data, curated_report = self.get_curated_spawn_data()
-        pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate(limit=limit)
+        pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate(
+            limit=limit)
 
         # Store reports for later display
         self.data_source_reports = [
@@ -601,7 +603,8 @@ class EnhancedRarityScraper:
 
     def get_comprehensive_pokemon_list(self) -> List[Tuple[str, int]]:
         """Get complete Pokemon list for all generations from data file"""
-        data_path = Path(__file__).resolve().parent.parent / "data" / "pokemon_list.json"
+        data_path = Path(__file__).resolve().parent.parent / \
+            "data" / "pokemon_list.json"
         try:
             with open(data_path, encoding="utf-8") as f:
                 data = json.load(f)
@@ -681,7 +684,8 @@ class EnhancedRarityScraper:
             rows.append(row)
 
         df = pd.DataFrame(rows)
-        df.to_csv(filename, index=False, sep=';', float_format='%.2f', decimal=',', encoding='utf-8')
+        df.to_csv(filename, index=False, sep=';',
+                  float_format='%.2f', decimal=',', encoding='utf-8')
 
         logger.info(
             f"Successfully exported {len(pokemon_data)} Pokemon to {filename}")
@@ -790,5 +794,3 @@ class EnhancedRarityScraper:
             success_rate,
             avg_latency,
         )
-
-

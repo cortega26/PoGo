@@ -2,7 +2,7 @@
 
 from typing import Optional
 import argparse
-from .scraper import EnhancedRarityScraper
+from scraper import EnhancedRarityScraper
 import logging
 
 logger = logging.getLogger(__name__)
@@ -40,4 +40,3 @@ if __name__ == "__main__":
     )
     args = parser.parse_args()
     main(limit=args.limit)
-
