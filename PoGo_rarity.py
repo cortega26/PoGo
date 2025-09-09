@@ -18,6 +18,7 @@ from pathlib import Path
 import logging
 import random
 import argparse
+import uuid
 
 # Configure logging
 LOG_FILE = Path(__file__).with_name("pogo_debug.log")
@@ -67,6 +68,12 @@ class EnhancedRarityScraper:
         # result in a very large number of HTTP requests so tests may override
         # this value with a smaller integer.
         self.scrape_limit: Optional[int] = None
+        # simple metrics for observability
+        self.metrics = {
+            "requests": 0,
+            "errors": 0,
+            "latencies": []
+        }
         try:
             self.pokemon_name_set = {
                 name.lower() for name, _ in self.get_comprehensive_pokemon_list()
@@ -76,11 +83,21 @@ class EnhancedRarityScraper:
             self.pokemon_name_set = set()
 
     def safe_request(self, url: str, retries: int = 3) -> requests.Response:
-        """Make a safe HTTP request with retries and error handling"""
+        """Make a safe HTTP request with retries, structured logging and metrics"""
         for attempt in range(retries):
+            request_id = uuid.uuid4().hex[:8]
+            start = time.time()
             try:
                 response = self.session.get(url, timeout=15)
-                if response.status_code == 429:
+                latency = time.time() - start
+                status = response.status_code
+                logger.info(
+                    "request url=%s status=%s attempt=%d latency=%.2f request_id=%s",
+                    url, status, attempt + 1, latency, request_id,
+                )
+                self.metrics["requests"] += 1
+                self.metrics["latencies"].append(latency)
+                if status == 429:
                     retry_after = response.headers.get("Retry-After")
                     wait = (
                         int(retry_after)
@@ -88,16 +105,33 @@ class EnhancedRarityScraper:
                         else self.delay * (2 ** attempt)
                     )
                     wait += random.uniform(0, self.delay)
+                    self.metrics["errors"] += 1
                     logger.warning(
-                        "Rate limited by %s, sleeping for %.2f seconds", url, wait
+                        "Rate limited by %s, sleeping for %.2f seconds",
+                        url, wait,
                     )
                     time.sleep(wait)
                     continue
+                if status in {403, 404}:
+                    self.metrics["errors"] += 1
+                    response.raise_for_status()
                 response.raise_for_status()
                 return response
             except requests.RequestException as e:
+                latency = time.time() - start
+                if isinstance(e, requests.HTTPError) and getattr(e.response, "status_code", None) in {403, 404}:
+                    logger.warning(
+                        "request_error url=%s attempt=%d error=%s latency=%.2f request_id=%s",
+                        url, attempt + 1, e, latency, request_id,
+                    )
+                    raise
+                self.metrics["requests"] += 1
+                self.metrics["errors"] += 1
+                self.metrics["latencies"].append(latency)
                 logger.warning(
-                    f"Request to {url} failed (attempt {attempt + 1}): {e}")
+                    "request_error url=%s attempt=%d error=%s latency=%.2f request_id=%s",
+                    url, attempt + 1, e, latency, request_id,
+                )
                 if attempt == retries - 1:
                     raise
                 wait = self.delay * (2 ** attempt) + random.uniform(0, self.delay)
@@ -303,30 +337,18 @@ class EnhancedRarityScraper:
         logger.info("Attempting to scrape Pokemon Database...")
         rarity_data: Dict[str, float] = {}
 
-        def slugify(name: str) -> str:
-            slug = name.lower()
-            slug = (slug.replace('♀', '-f').replace('♂', '-m')
-                        .replace("'", '').replace('.', '')
-                        .replace('é', 'e').replace(' ', '-'))
-            return slug
-
         try:
             pokemon_list = self.get_comprehensive_pokemon_list()
             if limit is not None:
                 pokemon_list = pokemon_list[:limit]
             for name, _ in pokemon_list:
-                url = f"https://pokemondb.net/pokedex/{slugify(name)}"
+                url = f"https://pokemondb.net/pokedex/{self.slugify_name(name)}"
                 try:
                     response = self.safe_request(url)
-                    soup = BeautifulSoup(response.content, 'html.parser')
-                    th = soup.find('th', string=re.compile('Catch rate', re.I))
-                    if th:
-                        td = th.find_next('td')
-                        match = re.search(r'(\d+)', td.get_text())
-                        if match:
-                            catch_rate = int(match.group(1))
-                            score = min(10.0, catch_rate / 25.5)
-                            rarity_data[name] = score
+                    catch_rate = self.parse_pokemondb_catch_rate(response.text)
+                    if catch_rate is not None:
+                        score = min(10.0, catch_rate / 25.5)
+                        rarity_data[name] = score
                 except Exception:
                     continue
 
@@ -431,6 +453,35 @@ class EnhancedRarityScraper:
 
         text_lower = text.lower()
         return any(keyword in text_lower for keyword in rarity_keywords)
+
+    def slugify_name(self, name: str) -> str:
+        """Convert Pokémon names to PokemonDB slugs, handling regional forms"""
+        slug = name.lower()
+        for prefix in ("alolan", "galarian", "hisuian", "paldean"):
+            if slug.startswith(prefix + " "):
+                slug = slug[len(prefix) + 1:]
+                break
+        slug = (
+            slug.replace('♀', '-f')
+                .replace('♂', '-m')
+                .replace(':', '')
+                .replace("'", '')
+                .replace('.', '')
+                .replace('é', 'e')
+                .replace(' ', '-')
+        )
+        return slug
+
+    def parse_pokemondb_catch_rate(self, html: str) -> Optional[int]:
+        """Extract catch rate value from a PokemonDB HTML page"""
+        soup = BeautifulSoup(html, 'html.parser')
+        th = soup.find('th', string=re.compile('Catch rate', re.I))
+        if th:
+            td = th.find_next('td')
+            match = re.search(r'(\d+)', td.get_text())
+            if match:
+                return int(match.group(1))
+        return None
 
     def normalize_rarity_score(self, rarity_text: str, source: str) -> float:
         """Convert different rarity classifications to 0-10 scale"""
@@ -916,6 +967,22 @@ class EnhancedRarityScraper:
             percentage = (count / len(pokemon_data)) * 100
             print(f"Pokemon with {source}: {count} ({percentage:.1f}%)")
 
+    def report_metrics(self):
+        """Log simple request metrics"""
+        total = self.metrics["requests"]
+        errors = self.metrics["errors"]
+        avg_latency = (
+            sum(self.metrics["latencies"]) / total if total else 0
+        )
+        success_rate = ((total - errors) / total * 100) if total else 0
+        logger.info(
+            "Request metrics: total=%d errors=%d success_rate=%.1f%% avg_latency=%.2fs",
+            total,
+            errors,
+            success_rate,
+            avg_latency,
+        )
+
 
 def main(limit: Optional[int] = None):
     """Main execution function
@@ -941,6 +1008,9 @@ def main(limit: Optional[int] = None):
 
         # Generate enhanced summary report
         scraper.generate_summary_report(pokemon_data)
+
+        # Log request metrics
+        scraper.report_metrics()
 
         print(f"\n🎉 Enhanced analysis complete! Check 'pokemon_rarity_analysis_enhanced.csv' for full results.")
         print(f"✨ Key improvements: Fixed categorization bugs, added multiple data sources, enhanced reporting")
