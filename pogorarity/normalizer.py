@@ -24,6 +24,7 @@ class Encounter(BaseModel):
     rarity: Rarity
     spawn_rate: float | None = None
     source: str | None = None
+    form: str | None = None
 
     model_config = ConfigDict(extra="ignore")
 
@@ -50,11 +51,17 @@ class Encounter(BaseModel):
     @field_validator("spawn_rate", mode="before")
     @classmethod
     def _coerce_spawn_rate(cls, value: object) -> float | object:
+        """Convert percentage strings to floats and validate format."""
         if isinstance(value, str):
             v = value.strip()
-            if v.endswith("%"):
+            if not v:
+                raise ValueError("spawn_rate cannot be empty")
+            if not v.endswith("%"):
+                raise ValueError("spawn_rate strings must end with %")
+            try:
                 return float(v[:-1]) / 100.0
-            return float(v)
+            except ValueError as exc:  # pragma: no cover - pydantic wraps message
+                raise ValueError("invalid spawn_rate percentage") from exc
         return value
 
 
@@ -65,14 +72,14 @@ def normalize_encounters(rows: Iterable[dict]) -> Tuple[List[Encounter], List[st
     """
     normalized: List[Encounter] = []
     errors: List[str] = []
-    seen: set[str] = set()
+    seen: set[Tuple[str, str]] = set()
     for row in rows:
         try:
             record = Encounter.model_validate(row)
         except ValidationError as exc:
             errors.append(str(exc))
             continue
-        key = record.pokemon_name.lower()
+        key = (record.pokemon_name.lower(), (record.form or "").lower())
         if key in seen:
             continue
         seen.add(key)

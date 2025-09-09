@@ -40,3 +40,21 @@ def test_pokemondb_out_of_range(caplog):
         )
     assert "outside expected range" in caplog.text
     assert result["Pidgey"] == 10.0
+
+
+def test_structured_spawn_discard_out_of_range(caplog):
+    data = [
+        {"name": "Pikachu", "spawn_chance": 5},
+        {"name": "Mewtwo", "spawn_chance": 25},
+    ]
+    with caplog.at_level(logging.WARNING):
+        result = scrape_structured_spawn_data(
+            data,
+            expected_min=0,
+            expected_max=20,
+            auto_scale=False,
+            on_out_of_range="discard",
+        )
+    assert "outside expected range" in caplog.text
+    assert "Discarding" in caplog.text
+    assert result == {"Pikachu": pytest.approx(2.5)}
