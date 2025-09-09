@@ -1,5 +1,5 @@
 import pytest
-from pogorarity import EnhancedRarityScraper
+from pogorarity.aggregator import infer_missing_rarity
 
 
 @pytest.mark.parametrize(
@@ -13,5 +13,4 @@ from pogorarity import EnhancedRarityScraper
     ],
 )
 def test_infer_missing_rarity(name, number, spawn_type, expected):
-    scraper = EnhancedRarityScraper()
-    assert scraper.infer_missing_rarity(name, number, spawn_type) == expected
+    assert infer_missing_rarity(name, number, spawn_type) == expected

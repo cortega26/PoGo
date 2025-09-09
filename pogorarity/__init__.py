@@ -1,7 +1,14 @@
 """pogorarity package."""
 
-from .scraper import EnhancedRarityScraper
-from .models import PokemonRarity, DataSourceReport, RarityRecord
+from .aggregator import (
+    aggregate_data,
+    categorize_pokemon_spawn_type,
+    get_comprehensive_pokemon_list,
+    get_trading_recommendation,
+    infer_missing_rarity,
+)
+from .helpers import safe_request, slugify_name
+from .models import DataSourceReport, PokemonRarity, RarityRecord
 from .adapters import (
     get_go_hub_records,
     get_pokemondb_records,
@@ -13,7 +20,13 @@ from .adapters import (
 from .normalizer import Encounter, Rarity, normalize_encounters
 
 __all__ = [
-    "EnhancedRarityScraper",
+    "aggregate_data",
+    "categorize_pokemon_spawn_type",
+    "get_comprehensive_pokemon_list",
+    "get_trading_recommendation",
+    "infer_missing_rarity",
+    "safe_request",
+    "slugify_name",
     "PokemonRarity",
     "DataSourceReport",
     "RarityRecord",

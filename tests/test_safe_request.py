@@ -1,8 +1,9 @@
 import json
 
+import json
 import requests
 
-from pogorarity import EnhancedRarityScraper
+from pogorarity.helpers import safe_request
 
 
 class DummyResponse:
@@ -13,7 +14,7 @@ class DummyResponse:
 
 
 def test_safe_request_retries_with_backoff(monkeypatch):
-    scraper = EnhancedRarityScraper()
+    session = requests.Session()
 
     calls = {"count": 0}
 
@@ -24,25 +25,24 @@ def test_safe_request_retries_with_backoff(monkeypatch):
         return DummyResponse()
 
     sleeps = []
-    monkeypatch.setattr(scraper.session, "get", fake_get)
-    monkeypatch.setattr("pogorarity.scraper.time.sleep", lambda s: sleeps.append(s))
-    monkeypatch.setattr("pogorarity.scraper.random.uniform", lambda a, b: 0)
-    scraper.delay = 1
+    monkeypatch.setattr(session, "get", fake_get)
+    monkeypatch.setattr("pogorarity.helpers.time.sleep", lambda s: sleeps.append(s))
+    monkeypatch.setattr("pogorarity.helpers.random.uniform", lambda a, b: 0)
 
-    response = scraper.safe_request("http://example.com", retries=2)
+    response = safe_request("http://example.com", retries=2, session=session, delay=1)
 
     assert response.status_code == 200
     assert sleeps == [1]
 
 
 def test_safe_request_logs_json(monkeypatch, caplog):
-    scraper = EnhancedRarityScraper()
+    session = requests.Session()
 
-    monkeypatch.setattr(scraper.session, "get", lambda url, timeout: DummyResponse())
-    monkeypatch.setattr("pogorarity.scraper.random.uniform", lambda a, b: 0)
+    monkeypatch.setattr(session, "get", lambda url, timeout: DummyResponse())
+    monkeypatch.setattr("pogorarity.helpers.random.uniform", lambda a, b: 0)
 
     with caplog.at_level("INFO"):
-        scraper.safe_request("http://example.com", retries=1)
+        safe_request("http://example.com", retries=1, session=session)
 
     log = caplog.records[0].msg
     data = json.loads(log)
