@@ -1,3 +1,4 @@
+from datetime import datetime
 from typing import Dict, List, Optional
 
 from pydantic import BaseModel
@@ -22,4 +23,14 @@ class DataSourceReport(BaseModel):
     pokemon_count: int
     success: bool
     error_message: Optional[str] = None
+
+
+class RarityRecord(BaseModel):
+    """Normalized rarity information for a single Pokémon from one source."""
+
+    pokemon_name: str
+    rarity: float
+    source: str
+    confidence: float
+    timestamp: datetime
 
