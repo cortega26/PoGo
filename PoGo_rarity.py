@@ -48,7 +48,9 @@ class EnhancedRarityScraper:
             'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
         })
         self.pokemon_data = {}
-        self.delay = 2  # Respectful delay between requests
+        # Reduce delay slightly to keep runtime reasonable while still
+        # being courteous to external sites.
+        self.delay = 1
         self.data_source_reports = []
 
     def safe_request(self, url: str, retries: int = 3) -> requests.Response:
@@ -211,46 +213,110 @@ class EnhancedRarityScraper:
 
         return rarity_data, report
 
+    def scrape_serebii_rarity(self, limit: int = 15) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Scrape rarity hints from Serebii's Pokemon GO pages"""
+        logger.info("Attempting to scrape Serebii data...")
+        rarity_data: Dict[str, float] = {}
+
+        try:
+            pokemon_list = self.get_comprehensive_pokemon_list()[:limit]
+            for name, number in pokemon_list:
+                url = f"https://www.serebii.net/pokemongo/pokemon/{number:03d}.shtml"
+                try:
+                    response = self.safe_request(url)
+                    text = response.text.lower()
+
+                    score = None
+                    if 'event only' in text or 'event-exclusive' in text:
+                        score = 0.0
+                    elif 'field research' in text or 'special research' in text:
+                        score = 1.0
+                    elif 'rare' in text and 'very rare' not in text:
+                        score = 3.0
+                    elif 'uncommon' in text:
+                        score = 5.0
+                    elif 'common' in text:
+                        score = 7.0
+
+                    if score is not None:
+                        rarity_data[name] = score
+                except Exception:
+                    continue
+
+            report = DataSourceReport("Serebii", len(rarity_data), True)
+            logger.info(
+                f"Successfully scraped {len(rarity_data)} Pokemon from Serebii")
+
+        except Exception as e:
+            logger.error(f"Serebii scraping failed: {e}")
+            report = DataSourceReport("Serebii", 0, False, str(e))
+
+        return rarity_data, report
+
+    def scrape_pokemondb_catch_rate(self, limit: int = 15) -> Tuple[Dict[str, float], DataSourceReport]:
+        """Scrape catch rates from Pokemon Database"""
+        logger.info("Attempting to scrape Pokemon Database...")
+        rarity_data: Dict[str, float] = {}
+
+        def slugify(name: str) -> str:
+            slug = name.lower()
+            slug = (slug.replace('♀', '-f').replace('♂', '-m')
+                        .replace("'", '').replace('.', '')
+                        .replace('é', 'e').replace(' ', '-'))
+            return slug
+
+        try:
+            pokemon_list = self.get_comprehensive_pokemon_list()[:limit]
+            for name, _ in pokemon_list:
+                url = f"https://pokemondb.net/pokedex/{slugify(name)}"
+                try:
+                    response = self.safe_request(url)
+                    soup = BeautifulSoup(response.content, 'html.parser')
+                    th = soup.find('th', string=re.compile('Catch rate', re.I))
+                    if th:
+                        td = th.find_next('td')
+                        match = re.search(r'(\d+)', td.get_text())
+                        if match:
+                            catch_rate = int(match.group(1))
+                            score = min(10.0, catch_rate / 25.5)
+                            rarity_data[name] = score
+                except Exception:
+                    continue
+
+            report = DataSourceReport(
+                "PokemonDB Catch Rate", len(rarity_data), True)
+            logger.info(
+                f"Successfully scraped {len(rarity_data)} Pokemon from PokemonDB")
+
+        except Exception as e:
+            logger.error(f"PokemonDB scraping failed: {e}")
+            report = DataSourceReport("PokemonDB Catch Rate", 0, False, str(e))
+
+        return rarity_data, report
+
     def scrape_pogo_api_data(self) -> Tuple[Dict[str, float], DataSourceReport]:
         """Attempt to get data from Pokemon GO API or community APIs"""
         logger.info("Attempting to get Pokemon GO API data...")
         rarity_data = {}
 
         try:
-            # Try community-maintained APIs (these may require API keys or be rate-limited)
-            api_urls = [
-                "https://pogoapi.net/api/v1/pokemon_stats.json",
-                "https://api.pokemongo.live/v1/pokemon",
-                "https://pogo-api.firebaseio.com/pokemon.json"
-            ]
+            url = "https://pogoapi.net/api/v1/pokemon_rarity.json"
+            response = self.safe_request(url)
+            data = response.json()
 
-            for url in api_urls:
-                try:
-                    logger.info(f"Trying API: {url}")
-                    response = self.safe_request(url)
+            rarity_map = {
+                'Legendary': 0.0,
+                'Mythic': 0.0,
+                'Ultra beast': 2.0,
+                'Standard': 7.0
+            }
 
-                    # Try to parse as JSON
-                    if 'json' in url.lower():
-                        data = response.json()
-                        if isinstance(data, dict):
-                            for pokemon_id, pokemon_data in data.items():
-                                if isinstance(pokemon_data, dict):
-                                    name = pokemon_data.get(
-                                        'name', pokemon_data.get('pokemon_name', ''))
-                                    spawn_rate = pokemon_data.get(
-                                        'spawn_rate', pokemon_data.get('rarity', 0))
-
-                                    if name and spawn_rate:
-                                        # Convert spawn rate to our 0-10 scale
-                                        if isinstance(spawn_rate, (int, float)):
-                                            normalized_score = min(
-                                                10, max(0, spawn_rate * 10))
-                                            rarity_data[name] = normalized_score
-                    break
-
-                except Exception as e:
-                    logger.info(f"API {url} failed: {e}")
-                    continue
+            for category, entries in data.items():
+                score = rarity_map.get(category, 5.0)
+                for entry in entries:
+                    name = entry.get('pokemon_name')
+                    if name:
+                        rarity_data[name] = score
 
             report = DataSourceReport("Pokemon GO API", len(
                 rarity_data), len(rarity_data) > 0)
@@ -576,18 +642,30 @@ class EnhancedRarityScraper:
         structured_data, structured_report = self.scrape_structured_spawn_data()
         api_data, api_report = self.scrape_pogo_api_data()
         curated_data, curated_report = self.get_curated_spawn_data()
+        gamepress_data, gp_report = self.scrape_gamepress_v2()
+        hub_data, hub_report = self.scrape_pokemon_go_hub()
+        serebii_data, serebii_report = self.scrape_serebii_rarity()
+        pokemondb_data, pokemondb_report = self.scrape_pokemondb_catch_rate()
 
         # Store reports for later display
         self.data_source_reports = [
             structured_report,
             api_report,
             curated_report,
+            gp_report,
+            hub_report,
+            serebii_report,
+            pokemondb_report,
         ]
 
         sources = {
             'Structured Spawn Data': structured_data,
             'Pokemon GO API': api_data,
             'Enhanced Curated Data': curated_data,
+            'GamePress v2': gamepress_data,
+            'Pokemon GO Hub': hub_data,
+            'Serebii': serebii_data,
+            'PokemonDB Catch Rate': pokemondb_data,
         }
 
         # Get comprehensive Pokemon list (same as before)
