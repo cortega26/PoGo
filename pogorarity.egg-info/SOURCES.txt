@@ -3,7 +3,13 @@ pyproject.toml
 pogorarity/__init__.py
 pogorarity/cli.py
 pogorarity/models.py
-pogorarity/scraper.py
+pogorarity/aggregator.py
+pogorarity/helpers.py
+pogorarity/reporting.py
+pogorarity/sources/__init__.py
+pogorarity/sources/pokemondb.py
+pogorarity/sources/structured_spawn.py
+pogorarity/sources/curated_spawn.py
 pogorarity.egg-info/PKG-INFO
 pogorarity.egg-info/SOURCES.txt
 pogorarity.egg-info/dependency_links.txt
@@ -15,3 +21,4 @@ tests/test_models.py
 tests/test_parser.py
 tests/test_safe_request.py
 tests/test_slugify.py
+tests/test_infer_missing_rarity.py

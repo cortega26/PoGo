@@ -8,6 +8,7 @@ from typing import List, Optional
 import requests
 from bs4 import BeautifulSoup
 
+from .helpers import slugify_name
 from .models import RarityRecord
 
 RATE_LIMIT = 1.0
@@ -116,12 +117,6 @@ def parse_structured_spawn_data(text: str, timestamp: Optional[datetime] = None)
                 )
             )
     return records
-
-
-def slugify_name(name: str) -> str:
-    slug = name.lower().replace("♀", "-f").replace("♂", "-m")
-    slug = slug.replace(":", "").replace("'", "").replace(".", "")
-    return slug.replace("é", "e").replace(" ", "-")
 
 
 def parse_pokemondb_page(name: str, html: str, timestamp: Optional[datetime] = None) -> Optional[RarityRecord]:

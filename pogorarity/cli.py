@@ -10,14 +10,18 @@ from pathlib import Path
 from datetime import datetime
 import uuid
 
-import pandas as pd
-
 try:  # pragma: no cover - runtime import
     from .normalizer import normalize_encounters
-    from .scraper import EnhancedRarityScraper
 except ImportError:  # pragma: no cover
     from normalizer import normalize_encounters
-    from scraper import EnhancedRarityScraper
+
+from .aggregator import aggregate_data
+from .reporting import (
+    export_to_csv,
+    generate_summary_report,
+    report_data_source_quality,
+    report_metrics,
+)
 
 logger = logging.getLogger(__name__)
 RUN_LOG = Path(__file__).with_name("run_log.jsonl")
@@ -44,10 +48,6 @@ def _run(
         }
     )
 
-    scraper = EnhancedRarityScraper()
-    scraper.scrape_limit = limit
-    scraper.output_dir = output_dir
-
     if validate_only:
         raw_rows = [
             {"pokemon_name": f"Test{i}", "rarity": 5.0} for i in range(limit or 1)
@@ -65,8 +65,9 @@ def _run(
         return
 
     try:
-        pokemon_data = scraper.aggregate_data()
-        scraper.report_data_source_quality()
+        metrics = {"requests": 0, "errors": 0, "latencies": []}
+        pokemon_data, reports = aggregate_data(limit=limit, metrics=metrics)
+        report_data_source_quality(reports)
         rows = len(pokemon_data)
 
         raw_rows = [
@@ -78,17 +79,10 @@ def _run(
             print(f"{len(errors)} schema errors.")
 
         if not dry_run:
-            df = pd.DataFrame([r.model_dump() for r in normalized])
-            filename = "pokemon_rarity_analysis_enhanced.csv"
-            if output_dir:
-                Path(output_dir).mkdir(parents=True, exist_ok=True)
-                path = Path(output_dir) / filename
-            else:
-                path = Path(filename)
-            df.to_csv(path, index=False)
+            export_to_csv(pokemon_data, output_dir=output_dir)
 
-        scraper.generate_summary_report(pokemon_data)
-        scraper.report_metrics()
+        generate_summary_report(pokemon_data)
+        report_metrics(metrics)
         _log_run(
             {
                 "run_id": run_id,
