@@ -4,14 +4,15 @@ Enhanced Pokemon GO Rarity Aggregator
 Fixes categorization bugs and adds multiple reliable data sources
 """
 
-from models import PokemonRarity, DataSourceReport
+import json
+
+from .models import PokemonRarity, DataSourceReport
 import requests
 import pandas as pd
 import time
 import re
 from bs4 import BeautifulSoup
 from typing import Dict, List, Tuple, Optional
-import json
 from urllib.parse import urljoin, urlparse
 from pathlib import Path
 import logging
@@ -67,14 +68,21 @@ class EnhancedRarityScraper:
             logger.error("Failed to load Pokémon list: %s", e)
             self.pokemon_name_set = set()
 
-    def safe_request(self, url: str, retries: int = 3, session: Optional[requests.Session] = None) -> requests.Response:
-        """Make a safe HTTP request with retries, structured logging and metrics.
+    def safe_request(
+        self,
+        url: str,
+        retries: int = 3,
+        session: Optional[requests.Session] = None,
+    ) -> requests.Response:
+        """Make a safe HTTP request with retries, exponential backoff and JSON logs.
 
         ``session`` allows callers to provide an alternative ``requests.Session``
         instance with custom headers or cookies.  When ``None`` the scraper's
         default session is used.
         """
+
         sess = session or self.session
+        backoff = self.delay
         for attempt in range(retries):
             request_id = uuid.uuid4().hex[:8]
             start = time.time()
@@ -82,10 +90,15 @@ class EnhancedRarityScraper:
                 response = sess.get(url, timeout=15)
                 latency = time.time() - start
                 status = response.status_code
-                logger.info(
-                    "request url=%s status=%s attempt=%d latency=%.2f request_id=%s",
-                    url, status, attempt + 1, latency, request_id,
-                )
+                log_data = {
+                    "event": "request",
+                    "url": url,
+                    "status": status,
+                    "attempt": attempt + 1,
+                    "latency": round(latency, 2),
+                    "request_id": request_id,
+                }
+                logger.info(json.dumps(log_data))
                 self.metrics["requests"] += 1
                 self.metrics["latencies"].append(latency)
                 if status == 429:
@@ -93,15 +106,14 @@ class EnhancedRarityScraper:
                     wait = (
                         int(retry_after)
                         if retry_after and retry_after.isdigit()
-                        else self.delay * (2 ** attempt)
+                        else backoff
                     )
                     wait += random.uniform(0, self.delay)
                     self.metrics["errors"] += 1
-                    logger.warning(
-                        "Rate limited by %s, sleeping for %.2f seconds",
-                        url, wait,
-                    )
+                    log_data.update({"event": "rate_limited", "wait": round(wait, 2)})
+                    logger.warning(json.dumps(log_data))
                     time.sleep(wait)
+                    backoff *= 2
                     continue
                 if status in {403, 404}:
                     self.metrics["errors"] += 1
@@ -110,24 +122,25 @@ class EnhancedRarityScraper:
                 return response
             except requests.RequestException as e:
                 latency = time.time() - start
-                if isinstance(e, requests.HTTPError) and getattr(e.response, "status_code", None) in {403, 404}:
-                    logger.warning(
-                        "request_error url=%s attempt=%d error=%s latency=%.2f request_id=%s",
-                        url, attempt + 1, e, latency, request_id,
-                    )
-                    raise
                 self.metrics["requests"] += 1
                 self.metrics["errors"] += 1
                 self.metrics["latencies"].append(latency)
-                logger.warning(
-                    "request_error url=%s attempt=%d error=%s latency=%.2f request_id=%s",
-                    url, attempt + 1, e, latency, request_id,
-                )
+                log_data = {
+                    "event": "request_error",
+                    "url": url,
+                    "attempt": attempt + 1,
+                    "error": str(e),
+                    "latency": round(latency, 2),
+                    "request_id": request_id,
+                }
+                logger.warning(json.dumps(log_data))
+                if isinstance(e, requests.HTTPError) and getattr(e.response, "status_code", None) in {403, 404}:
+                    raise
                 if attempt == retries - 1:
                     raise
-                wait = self.delay * (2 ** attempt) + \
-                    random.uniform(0, self.delay)
+                wait = backoff + random.uniform(0, self.delay)
                 time.sleep(wait)
+                backoff *= 2
         raise requests.RequestException(
             f"Failed to fetch {url} after {retries} attempts"
         )
@@ -184,13 +197,22 @@ class EnhancedRarityScraper:
                     if pokemon.lower() in response.text.lower():
                         rarity_data[pokemon] = 8.0
 
-            report = DataSourceReport("Pokemon GO Hub", len(rarity_data), True)
+            report = DataSourceReport(
+                source_name="Pokemon GO Hub",
+                pokemon_count=len(rarity_data),
+                success=True,
+            )
             logger.info(
                 f"Successfully scraped {len(rarity_data)} Pokemon from Pokemon GO Hub")
 
         except Exception as e:
             logger.error(f"Pokemon GO Hub scraping failed: {e}")
-            report = DataSourceReport("Pokemon GO Hub", 0, False, str(e))
+            report = DataSourceReport(
+                source_name="Pokemon GO Hub",
+                pokemon_count=0,
+                success=False,
+                error_message=str(e),
+            )
 
         return rarity_data, report
 
@@ -215,13 +237,21 @@ class EnhancedRarityScraper:
                     continue
 
             report = DataSourceReport(
-                "PokemonDB Catch Rate", len(rarity_data), True)
+                source_name="PokemonDB Catch Rate",
+                pokemon_count=len(rarity_data),
+                success=True,
+            )
             logger.info(
                 f"Successfully scraped {len(rarity_data)} Pokemon from PokemonDB")
 
         except Exception as e:
             logger.error(f"PokemonDB scraping failed: {e}")
-            report = DataSourceReport("PokemonDB Catch Rate", 0, False, str(e))
+            report = DataSourceReport(
+                source_name="PokemonDB Catch Rate",
+                pokemon_count=0,
+                success=False,
+                error_message=str(e),
+            )
 
         return rarity_data, report
 
@@ -247,7 +277,9 @@ class EnhancedRarityScraper:
                         continue
 
             report = DataSourceReport(
-                "Structured Spawn Data", len(rarity_data), len(rarity_data) > 0
+                source_name="Structured Spawn Data",
+                pokemon_count=len(rarity_data),
+                success=len(rarity_data) > 0,
             )
             if len(rarity_data) == 0:
                 report.error_message = "No spawn data found"
@@ -255,7 +287,11 @@ class EnhancedRarityScraper:
         except Exception as e:
             logger.error(f"Structured spawn data fetch failed: {e}")
             report = DataSourceReport(
-                "Structured Spawn Data", 0, False, str(e))
+                source_name="Structured Spawn Data",
+                pokemon_count=0,
+                success=False,
+                error_message=str(e),
+            )
 
         return rarity_data, report
 
@@ -358,14 +394,21 @@ class EnhancedRarityScraper:
             with open(data_path, encoding="utf-8") as f:
                 spawn_data = json.load(f)
             report = DataSourceReport(
-                "Enhanced Curated Data", len(spawn_data), True)
+                source_name="Enhanced Curated Data",
+                pokemon_count=len(spawn_data),
+                success=True,
+            )
             logger.info(
                 f"Loaded {len(spawn_data)} Pokemon spawn rates from enhanced curated data")
         except (FileNotFoundError, json.JSONDecodeError) as e:
             logger.error(f"Curated spawn data load failed: {e}")
             spawn_data = {}
             report = DataSourceReport(
-                "Enhanced Curated Data", 0, False, str(e))
+                source_name="Enhanced Curated Data",
+                pokemon_count=0,
+                success=False,
+                error_message=str(e),
+            )
 
         return spawn_data, report
 

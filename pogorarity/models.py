@@ -1,9 +1,11 @@
-from dataclasses import dataclass
 from typing import Dict, List, Optional
 
+from pydantic import BaseModel
 
-@dataclass
-class PokemonRarity:
+
+class PokemonRarity(BaseModel):
+    """Validated representation of aggregated rarity data for a Pokémon."""
+
     name: str
     number: int
     rarity_scores: Dict[str, float]
@@ -13,8 +15,9 @@ class PokemonRarity:
     spawn_type: str
 
 
-@dataclass
-class DataSourceReport:
+class DataSourceReport(BaseModel):
+    """Information about the success of scraping a particular data source."""
+
     source_name: str
     pokemon_count: int
     success: bool

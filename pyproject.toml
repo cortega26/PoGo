@@ -5,6 +5,7 @@ dependencies = [
     "requests",
     "pandas",
     "beautifulsoup4",
+    "pydantic",
 ]
 
 [project.scripts]

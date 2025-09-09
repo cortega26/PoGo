@@ -2,13 +2,14 @@
 
 from typing import Optional
 import argparse
-from scraper import EnhancedRarityScraper
 import logging
+
+from .scraper import EnhancedRarityScraper
 
 logger = logging.getLogger(__name__)
 
 
-def main(limit: Optional[int] = None) -> None:
+def main(limit: Optional[int] = None, dry_run: bool = False) -> None:
     """Run the rarity scraper with an optional PokemonDB limit."""
     scraper = EnhancedRarityScraper()
     scraper.scrape_limit = limit
@@ -16,7 +17,8 @@ def main(limit: Optional[int] = None) -> None:
     try:
         pokemon_data = scraper.aggregate_data()
         scraper.report_data_source_quality()
-        scraper.export_to_csv(pokemon_data)
+        if not dry_run:
+            scraper.export_to_csv(pokemon_data)
         scraper.generate_summary_report(pokemon_data)
         scraper.report_metrics()
         print(
@@ -38,5 +40,10 @@ if __name__ == "__main__":
         default=None,
         help="Limit number of Pokemon scraped from PokemonDB for testing",
     )
+    parser.add_argument(
+        "--dry-run",
+        action="store_true",
+        help="Run the scraper without writing CSV output",
+    )
     args = parser.parse_args()
-    main(limit=args.limit)
+    main(limit=args.limit, dry_run=args.dry_run)
