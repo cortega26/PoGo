@@ -22,8 +22,11 @@ flowchart LR
   end
   A --> S[Scraper]
   S -->|HTTP| PokeDB[PokemonDB]
-  S -->|HTTP| GOHub[GO Hub]
+  S -->|HTTP| PokeAPI[PokeAPI]
+  S -->|HTTP| Silph[Silph Road]
   S -->|HTTP| Structured[Structured JSON]
+  S -->|HTTP| GMSpawn[Game Master Spawn]
+  S -->|HTTP| GMCapture[Game Master Capture]
   S -->|reads| Curated[(Curated JSON)]
   S -->|writes| CSV[(analysis CSV)]
   B -->|reads| CSV
