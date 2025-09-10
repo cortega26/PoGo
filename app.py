@@ -12,7 +12,7 @@ from pogorarity.config import load_config, apply_config
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
 
-GENERATION_RANGES = [
+DEFAULT_GENERATION_RANGES = [
     (1, 151, 1),
     (152, 251, 2),
     (252, 386, 3),
@@ -23,6 +23,10 @@ GENERATION_RANGES = [
     (810, 905, 8),
     (906, 1010, 9),
 ]
+
+CONFIG = load_config()
+GENERATION_RANGES = CONFIG.get("generation_ranges", DEFAULT_GENERATION_RANGES)
+st.set_page_config(page_title="Pokémon Rarity", layout="wide")
 
 SOURCE_COLS = {
     "Structured Spawn Data": "Structured_Spawn_Data_Score",
@@ -127,26 +131,23 @@ def apply_filters(
     rarity: Optional[str] = None,
     search: Optional[str] = None,
 ) -> pd.DataFrame:
-    result = df
+    mask = pd.Series(True, index=df.index)
     if species:
-        result = result[result["Name"].isin(species)]
+        mask &= df["Name"].isin(species)
     if generation:
-        result = result[result["Generation"] == generation]
+        mask &= df["Generation"] == generation
     if rarity:
-        result = result[result["Rarity_Band"] == rarity]
+        mask &= df["Rarity_Band"] == rarity
     if search:
-        result = result[result["Name"].str.contains(search, case=False)]
-    return result
+        mask &= df["Name"].str.contains(search, case=False)
+    return df[mask]
 
 
 def main() -> None:
-    st.markdown(
-        "<h1 style='text-align: center; color: white;'>Pokémon Rarity Recommendations</h1>",
-        unsafe_allow_html=True,
-    )
+    st.title("Pokémon Rarity Recommendations")
+    st.divider()
 
-    config = load_config()
-    apply_config(config)
+    apply_config(CONFIG)
 
     run_info = load_run_log()
     health_info = check_cache()
@@ -167,19 +168,59 @@ def main() -> None:
     st.sidebar.write(f"Last updated: {health_info['last_updated']}")
 
 
-    st.sidebar.header("Filters")
-    species = st.sidebar.multiselect("Species", sorted(df["Name"].unique()))
-    generation = st.sidebar.selectbox(
-        "Generation", ["All"] + sorted(df["Generation"].unique())
-    )
-    rarity = st.sidebar.selectbox(
-        "Rarity Band", ["All"] + sorted(df["Rarity_Band"].unique())
-    )
-    search = st.sidebar.text_input("Search")
+    with st.sidebar.expander("Filters", expanded=True):
+        with st.form("filters"):
+            preset = st.selectbox(
+                "Preset",
+                ["None", "Rare Pokémon"],
+                help="Quickly apply a common filter preset",
+            )
+            species = st.multiselect(
+                "Species",
+                sorted(df["Name"].unique()),
+                key="species",
+                help="Limit results to selected Pokémon",
+            )
+            generation = st.selectbox(
+                "Generation",
+                ["All"] + sorted(df["Generation"].unique()),
+                key="generation",
+                help="Filter by Pokémon generation",
+            )
+            rarity = st.selectbox(
+                "Rarity Band",
+                ["All"] + sorted(df["Rarity_Band"].unique()),
+                key="rarity",
+                help="Filter by rarity band",
+            )
+            search = st.text_input(
+                "Search",
+                key="search",
+                help="Search by Pokémon name",
+            )
+            st.form_submit_button("Apply")
+        reset = st.button("Reset filters")
 
-    gen_val = generation if generation != "All" else None
-    rarity_val = rarity if rarity != "All" else None
-    result = apply_filters(df, species or None, gen_val, rarity_val, search or None)
+    if reset:
+        st.session_state.species = []
+        st.session_state.generation = "All"
+        st.session_state.rarity = "All"
+        st.session_state.search = ""
+        result = df
+    else:
+        gen_val = st.session_state.get("generation", "All")
+        rarity_val = st.session_state.get("rarity", "All")
+        if preset == "Rare Pokémon":
+            rarity_val = "Rare"
+        gen_val = gen_val if gen_val != "All" else None
+        rarity_val = rarity_val if rarity_val != "All" else None
+        result = apply_filters(
+            df,
+            st.session_state.get("species") or None,
+            gen_val,
+            rarity_val,
+            st.session_state.get("search") or None,
+        )
 
     if result.empty:
         st.warning("No Pokémon match the filters.")
@@ -197,6 +238,14 @@ def main() -> None:
     if "Confidence" in result.columns:
         display_cols.append("Confidence")
     st.dataframe(result[display_cols], use_container_width=True)
+    csv = result.to_csv(index=False).encode("utf-8")
+    st.download_button(
+        label="Download results",
+        data=csv,
+        file_name="rarity_results.csv",
+        mime="text/csv",
+    )
+    st.divider()
 
     selected_name = st.selectbox(
         "Select a Pokémon for details",
