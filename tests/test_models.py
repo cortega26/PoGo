@@ -11,6 +11,8 @@ def test_pokemon_rarity_validation():
         number=1,
         rarity_scores={"source": 1.0},
         average_score=1.0,
+        weighted_average=1.0,
+        confidence=0.9,
         recommendation="Keep",
         data_sources=["source"],
         spawn_type="wild",
@@ -23,6 +25,8 @@ def test_pokemon_rarity_validation():
             number="not-a-number",
             rarity_scores={},
             average_score=1.0,
+            weighted_average=1.0,
+            confidence=0.9,
             recommendation="Keep",
             data_sources=[],
             spawn_type="wild",
@@ -52,3 +56,4 @@ def test_rarity_record_validation():
             confidence=0.9,
             timestamp=datetime.utcnow(),
         )
+

@@ -72,6 +72,8 @@ def export_to_csv(
             "Name": pokemon.name,
             "Spawn_Type": pokemon.spawn_type,
             "Average_Rarity_Score": round(pokemon.average_score, 2),
+            "Weighted_Average_Rarity_Score": round(pokemon.weighted_average, 2),
+            "Confidence": round(pokemon.confidence, 2),
             "Recommendation": pokemon.recommendation,
             "Data_Sources": ", ".join(pokemon.data_sources),
         }

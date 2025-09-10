@@ -165,7 +165,12 @@ def aggregate_data(
         loaded = _load_weights(weights_path)
         if loaded:
             weight_map = loaded
-    weight_map = weight_map or SOURCE_WEIGHTS
+    weight_map = weight_map or {}
+    # Merge custom weights with defaults to ensure all sources are represented
+    merged_weights = SOURCE_WEIGHTS.copy()
+    merged_weights.update(weight_map)
+    weight_map = merged_weights
+    max_possible_weight = sum(weight_map.values())
     results: List[PokemonRarity] = []
     for pokemon_name, pokemon_number in pokemon_list:
         rarity_scores: Dict[str, float] = {}
@@ -199,12 +204,18 @@ def aggregate_data(
             weighted = sum(
                 rarity_scores[src] * weight_map.get(src, 1.0) for src in rarity_scores
             )
-            average_score = weighted / total_weight
+            weighted_average = weighted / total_weight
+            average_score = weighted_average
+            confidence = (
+                total_weight / max_possible_weight if max_possible_weight else 0.0
+            )
             recommendation = get_trading_recommendation(average_score, spawn_type)
         else:
             average_score = infer_missing_rarity(
                 pokemon_name, pokemon_number, spawn_type
             )
+            weighted_average = average_score
+            confidence = 0.0
             recommendation = get_trading_recommendation(average_score, spawn_type)
         results.append(
             PokemonRarity(
@@ -212,6 +223,8 @@ def aggregate_data(
                 number=pokemon_number,
                 rarity_scores=rarity_scores,
                 average_score=average_score,
+                weighted_average=weighted_average,
+                confidence=confidence,
                 recommendation=recommendation,
                 data_sources=data_sources,
                 spawn_type=spawn_type,
