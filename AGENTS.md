@@ -110,4 +110,17 @@ Output: `/workspace/pokemon_rarity_analysis_enhanced.csv`
 - **Dashboards**: TODO add metrics dashboard.
 - **Incidents**: capture logs, revert to last known good commit, notify maintainers.
 
+## Release Workflow
+
+- Follow [Semantic Versioning](https://semver.org/) in the form `MAJOR.MINOR.PATCH`.
+- Bump versions in:
+  - `pyproject.toml` (`[project] version`)
+  - `CHANGELOG.md` (add a dated entry under the new version)
+- Release steps:
+  1. Ensure `main` is green and tests pass.
+  2. Update the version and changelog files above.
+  3. Commit with message `chore: release vX.Y.Z`.
+  4. Tag the commit `vX.Y.Z` and push commits and tags.
+  5. Publish a GitHub release referencing the tag.
+
 Refer to [README.md](README.md) for project overview and manual commands.
