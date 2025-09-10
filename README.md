@@ -52,6 +52,29 @@ scores are combined using a weighted average:
 Weights can be customised by passing a JSON file to the CLI with
 `--weights-file`.
 
+### Normalisation Details
+
+| Source | Raw Range | Mapping |
+| --- | --- | --- |
+| Structured Spawn Data | spawn_chance `0–20` | `score = 10 * spawn_chance / 20` |
+| Enhanced Curated Data | already `0–10` | `score = value` |
+| PokemonDB Catch Rate | catch rate `0–255` | `score = 10 * catch_rate / 255` |
+| PokeAPI Capture Rate | capture_rate `0–255` | `score = 10 * capture_rate / 255` |
+| Silph Road Spawn Tier | tier `1–5` | `score = 10 - 10 * (tier - 1) / 4` |
+
+When no source provides a score, heuristics in
+[data/infer_missing_rarity_rules.json](data/infer_missing_rarity_rules.json)
+assign defaults:
+
+- **Pseudo-legendaries** – `1.5`
+- **Starters** – `6.0`
+- **Very common early-route species** – `8.5`
+- **Regional forms** – `4.0`
+
+> **Note**: Silph Road spawn tier data is crowdsourced and may skew toward
+> regions with more active contributors. These heuristics are coarse and may
+> misclassify Pokémon with unusual availability.
+
 The resulting `Average_Rarity_Score` feeds two threshold sets:
 
 - Rarity bands: `<2` Very Rare, `2–4` Rare, `4–7` Uncommon, `≥7` Common.
@@ -70,15 +93,6 @@ configurable ``common`` and ``uncommon`` thresholds:
 
 Threshold values live under the ``thresholds`` key in ``config.json`` and are
 surfaced in the Streamlit sidebar.
-
-When no source provides a score, inference rules in
-[data/infer_missing_rarity_rules.json](data/infer_missing_rarity_rules.json)
-assign default values for specific groups such as pseudo-legendaries or
-starters.
-
-> **Note**: Silph Road spawn tier data is crowdsourced and may skew toward
-> regions with more active contributors, so regional availability is not
-> guaranteed.
 
 ## Quickstart
 
