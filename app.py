@@ -169,12 +169,13 @@ def main() -> None:
 
 
     with st.sidebar.expander("Filters", expanded=True):
+        reset = st.button("Reset filters")
+        if reset:
+            st.session_state.species = []
+            st.session_state.generation = "All"
+            st.session_state.rarity = "All"
+            st.session_state.search = ""
         with st.form("filters"):
-            preset = st.selectbox(
-                "Preset",
-                ["None", "Rare Pokémon"],
-                help="Quickly apply a common filter preset",
-            )
             species = st.multiselect(
                 "Species",
                 sorted(df["Name"].unique()),
@@ -199,19 +200,12 @@ def main() -> None:
                 help="Search by Pokémon name",
             )
             st.form_submit_button("Apply")
-        reset = st.button("Reset filters")
 
     if reset:
-        st.session_state.species = []
-        st.session_state.generation = "All"
-        st.session_state.rarity = "All"
-        st.session_state.search = ""
         result = df
     else:
         gen_val = st.session_state.get("generation", "All")
         rarity_val = st.session_state.get("rarity", "All")
-        if preset == "Rare Pokémon":
-            rarity_val = "Rare"
         gen_val = gen_val if gen_val != "All" else None
         rarity_val = rarity_val if rarity_val != "All" else None
         result = apply_filters(
