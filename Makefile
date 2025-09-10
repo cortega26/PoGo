@@ -1,4 +1,4 @@
-.PHONY: dev test build run
+.PHONY: dev test build run lock
 
 dev:
 	pip install -r requirements.lock
@@ -11,4 +11,7 @@ build:
 	docker build -t pokemon-rarity .
 
 run:
-	pokemon-rarity --limit 1 --dry-run
+        pokemon-rarity --limit 1 --dry-run
+
+lock:
+	pip-compile --extra=dev --output-file=requirements.lock pyproject.toml

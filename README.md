@@ -211,11 +211,21 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 | Streamlit port in use | Another service on 8501 | `streamlit run app.py --server.port 8502` |
 | CLI runs too long | Scraping full Pokédex | Use `--limit` during development |
 
+## Updating dependencies
+
+Add new packages to `pyproject.toml` and regenerate the lockfile:
+
+```bash
+make lock
+```
+
+Commit both `pyproject.toml` and `requirements.lock`. CI will fail if the lockfile is outdated.
+
 ## Contributing
 
 1. Fork and clone the repo.
 2. Install dependencies: `pip install -r requirements.lock && pip install -e .[dev]`.
-3. If you change dependencies, regenerate `requirements.lock` via `pip-compile pyproject.toml --output-file=requirements.lock`.
+3. If you change dependencies, run `make lock` to update `requirements.lock`.
 4. Create a feature branch from `main`.
 5. Run tests and lint before committing.
 6. Submit a pull request and mention maintainers.
