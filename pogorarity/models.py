@@ -11,6 +11,8 @@ class PokemonRarity(BaseModel):
     number: int
     rarity_scores: Dict[str, float]
     average_score: float
+    weighted_average: float
+    confidence: float
     recommendation: str
     data_sources: List[str]
     spawn_type: str
