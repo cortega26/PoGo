@@ -93,6 +93,8 @@ configurable ``common`` and ``uncommon`` thresholds:
 
 Threshold values live under the ``thresholds`` key in ``config.json`` and are
 surfaced in the Streamlit sidebar.
+The ``generation_ranges`` list can also be adjusted there to map Pokédex
+numbers to game generations.
 
 ## Quickstart
 

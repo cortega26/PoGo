@@ -13,5 +13,16 @@
     "Game Master Spawn Weight": 1.0,
     "Game Master Capture Rate": 2.0
   },
-  "spawn_types_path": "data/spawn_types.json"
+  "spawn_types_path": "data/spawn_types.json",
+  "generation_ranges": [
+    [1, 151, 1],
+    [152, 251, 2],
+    [252, 386, 3],
+    [387, 493, 4],
+    [494, 649, 5],
+    [650, 721, 6],
+    [722, 809, 7],
+    [810, 905, 8],
+    [906, 1010, 9]
+  ]
 }
