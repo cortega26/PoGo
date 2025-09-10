@@ -7,10 +7,19 @@ from ..models import DataSourceReport
 logger = logging.getLogger(__name__)
 
 
-def scrape(metrics: Optional[Dict[str, float]] = None) -> Tuple[Dict[str, float], DataSourceReport]:
+def scrape(
+    metrics: Optional[Dict[str, float]] = None,
+    *,
+    expected_min: float = 0.0,
+    expected_max: float = 20.0,
+    auto_scale: bool = False,
+    on_out_of_range: str = "clamp",
+) -> Tuple[Dict[str, float], DataSourceReport]:
     """Fetch spawn rates from a public JSON dataset."""
+    from ..scaling import scale_records
+
     logger.info("Fetching structured spawn data...")
-    rarity_data: Dict[str, float] = {}
+    records = []
     url = "https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json"
     try:
         response = safe_request(url, metrics=metrics)
@@ -20,11 +29,16 @@ def scrape(metrics: Optional[Dict[str, float]] = None) -> Tuple[Dict[str, float]
             spawn_chance = entry.get("spawn_chance")
             if name and spawn_chance is not None:
                 try:
-                    chance = float(spawn_chance)
-                    score = min(10.0, max(0.0, chance / 2.0))
-                    rarity_data[name] = score
+                    records.append((name, float(spawn_chance)))
                 except (TypeError, ValueError):
                     continue
+        rarity_data = scale_records(
+            records,
+            expected_min,
+            expected_max,
+            auto_scale,
+            on_out_of_range=on_out_of_range,
+        )
         report = DataSourceReport(
             source_name="Structured Spawn Data",
             pokemon_count=len(rarity_data),
@@ -40,4 +54,5 @@ def scrape(metrics: Optional[Dict[str, float]] = None) -> Tuple[Dict[str, float]
             success=False,
             error_message=str(e),
         )
+        rarity_data = {}
     return rarity_data, report

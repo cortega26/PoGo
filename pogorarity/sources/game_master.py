@@ -17,18 +17,27 @@ def _format_name(pokemon_id: str) -> str:
 
 def scrape(
     metrics: Optional[Dict[str, float]] = None,
+    *,
+    capture_expected_min: float = 0.0,
+    capture_expected_max: float = 1.0,
+    spawn_expected_min: float = 0.0,
+    spawn_expected_max: Optional[float] = None,
+    auto_scale_spawn: bool = False,
+    on_out_of_range: str = "clamp",
 ) -> Tuple[Dict[str, float], Dict[str, float], List[DataSourceReport]]:
     """Parse Game Master data for capture rates and spawn weights.
 
     Returns two dictionaries mapping Pokémon names to 0--10 rarity scores:
     one for ``base_capture_rate`` and one for ``spawnWeight``.  Missing values
-    are ignored.  The spawn weights are normalised relative to the maximum
-    weight encountered in the file.
+    are ignored.  ``spawn_expected_max`` defaults to the maximum observed weight
+    when not provided.
     """
 
+    from ..scaling import scale_records
+
     logger.info("Fetching Game Master data...")
-    capture_rates: Dict[str, float] = {}
-    spawn_weights_raw: Dict[str, float] = {}
+    capture_records: List[Tuple[str, float]] = []
+    spawn_records: List[Tuple[str, float]] = []
     try:
         response = safe_request(GAME_MASTER_URL, metrics=metrics)
         data = response.json()
@@ -49,7 +58,7 @@ def scrape(
                 or pokemon_settings.get("baseCaptureRate")
             )
             if isinstance(base_capture, (int, float)):
-                capture_rates[name] = max(0.0, min(10.0, float(base_capture) * 10.0))
+                capture_records.append((name, float(base_capture)))
             spawn_weight = (
                 pokemon_settings.get("spawnWeight")
                 or pokemon_settings.get("spawn_weight")
@@ -57,12 +66,26 @@ def scrape(
                 or encounter.get("spawn_weight")
             )
             if isinstance(spawn_weight, (int, float)):
-                spawn_weights_raw[name] = float(spawn_weight)
-        max_weight = max(spawn_weights_raw.values(), default=0.0)
-        spawn_weights: Dict[str, float] = {}
-        if max_weight > 0:
-            for name, weight in spawn_weights_raw.items():
-                spawn_weights[name] = (weight / max_weight) * 10.0
+                spawn_records.append((name, float(spawn_weight)))
+        capture_rates = scale_records(
+            capture_records,
+            capture_expected_min,
+            capture_expected_max,
+            False,
+            on_out_of_range=on_out_of_range,
+        )
+        spawn_max = (
+            spawn_expected_max
+            if spawn_expected_max is not None
+            else max((v for _, v in spawn_records), default=0.0)
+        )
+        spawn_weights = scale_records(
+            spawn_records,
+            spawn_expected_min,
+            spawn_max,
+            auto_scale_spawn,
+            on_out_of_range=on_out_of_range,
+        )
         capture_report = DataSourceReport(
             source_name="Game Master Capture Rate",
             pokemon_count=len(capture_rates),
