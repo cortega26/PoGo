@@ -107,6 +107,7 @@ surfaced in the Streamlit sidebar.
 ```bash
 git clone <repo>
 cd <repo>
+pip install -r requirements.lock
 pip install -e .
 ```
 
@@ -199,11 +200,11 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 
 | Issue | Cause | Fix |
 |---|---|---|
-| ModuleNotFoundError | Dependencies missing | `pip install -e .` |
+| ModuleNotFoundError | Dependencies missing | `pip install -r requirements.lock && pip install -e .` |
 | HTTP 429 errors | Rate limiting by external sites | Re-run later; scraper backs off automatically |
 | CSV not generated | `--dry-run` used or path unwritable | Remove `--dry-run` or set `--output-dir` |
 | Streamlit shows blank table | CSV missing | Run scraper first |
-| Tests fail to import requests | Dependencies missing | `pip install -e .` |
+| Tests fail to import requests | Dependencies missing | `pip install -r requirements.lock && pip install -e .` |
 | Markdown lint fails | `markdownlint-cli` not installed | `npm install -g markdownlint-cli` |
 | Network timeouts | External sites slow | Increase `--limit` slowly or retry |
 | Permission denied writing CSV | Output directory protected | Use a writable path |
@@ -213,9 +214,11 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 ## Contributing
 
 1. Fork and clone the repo.
-2. Create a feature branch from `main`.
-3. Run tests and lint before committing.
-4. Submit a pull request and mention maintainers.
+2. Install dependencies: `pip install -r requirements.lock && pip install -e .[dev]`.
+3. If you change dependencies, regenerate `requirements.lock` via `pip-compile pyproject.toml --output-file=requirements.lock`.
+4. Create a feature branch from `main`.
+5. Run tests and lint before committing.
+6. Submit a pull request and mention maintainers.
 
 See [AGENTS.md](AGENTS.md) for automation details.
 
