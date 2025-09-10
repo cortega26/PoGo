@@ -55,10 +55,21 @@ Weights can be customised by passing a JSON file to the CLI with
 The resulting `Average_Rarity_Score` feeds two threshold sets:
 
 - Rarity bands: `<2` Very Rare, `2–4` Rare, `4–7` Uncommon, `≥7` Common.
-- Trading recommendations: score `<4` → "Keep or Trade Sparingly", `4–7` →
-  "Depends on Circumstances", `≥7` → "Safe to Transfer". Legendary,
-  event-only, and evolution-only species override these thresholds with
-  conservative recommendations.
+- Trading recommendations: see Recommendation Criteria below.
+
+### Recommendation Criteria
+
+`get_trading_recommendation` compares a Pokémon's average score against the
+configurable ``common`` and ``uncommon`` thresholds:
+
+- score `≥ common` → **Safe to Transfer**
+- ``uncommon`` ≤ score `< common` → **Depends on Circumstances**
+- score `< uncommon` → **Keep or Trade Sparingly**
+- spawn type `legendary` or `event-only` → **Never Transfer**
+- spawn type `evolution-only` → **Evaluate for Evolution**
+
+Threshold values live under the ``thresholds`` key in ``config.json`` and are
+surfaced in the Streamlit sidebar.
 
 When no source provides a score, inference rules in
 [data/infer_missing_rarity_rules.json](data/infer_missing_rarity_rules.json)
