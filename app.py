@@ -145,15 +145,7 @@ def main() -> None:
         unsafe_allow_html=True,
     )
 
-    st.sidebar.header("Configuration")
-    uploaded = st.sidebar.file_uploader("Config JSON", type="json")
-    if uploaded is not None:
-        try:
-            config = json.load(uploaded)
-        except Exception:
-            config = {}
-    else:
-        config = load_config()
+    config = load_config()
     apply_config(config)
 
     run_info = load_run_log()
@@ -174,12 +166,6 @@ def main() -> None:
     st.sidebar.write(f"Cache fresh: {health_info['cache_fresh']}")
     st.sidebar.write(f"Last updated: {health_info['last_updated']}")
 
-    st.sidebar.subheader("Applied Parameters")
-    st.sidebar.write("Thresholds:")
-    st.sidebar.json(thresholds.get_thresholds())
-    st.sidebar.write("Spawn types file:", aggregator.SPAWN_TYPES_PATH)
-    st.sidebar.write("Weights:")
-    st.sidebar.json(aggregator.SOURCE_WEIGHTS)
 
     st.sidebar.header("Filters")
     species = st.sidebar.multiselect("Species", sorted(df["Name"].unique()))
@@ -210,54 +196,59 @@ def main() -> None:
         display_cols.append("Weighted_Average_Rarity_Score")
     if "Confidence" in result.columns:
         display_cols.append("Confidence")
-    st.dataframe(result[display_cols])
+    st.dataframe(result[display_cols], use_container_width=True)
 
-    for _, row in result.iterrows():
-        with st.expander(f"Why {row['Name']}?"):
-            sources = str(row.get("Data_Sources", "") or "").strip()
-            if not sources:
-                st.info(
-                    "No direct data available; rarity score inferred from heuristics."
-                )
-            else:
-                st.write("Sources:", sources)
-            spawn_type = row.get("Spawn_Type", "wild")
-            st.write("Spawn Type:", spawn_type)
-
-            weighted_avg = row.get("Weighted_Average_Rarity_Score")
-            if weighted_avg is not None and not pd.isna(weighted_avg):
-                st.write("Weighted Average:", weighted_avg)
-            st.write("Average Score:", row["Average_Rarity_Score"])
-
-            confidence = row.get("Confidence")
-            if confidence is not None and not pd.isna(confidence):
-                st.write("Confidence:", confidence)
-
-            thresh = thresholds.get_thresholds()
-            st.caption(
-                "Score thresholds – Common ≥ {common}, Uncommon ≥ {uncommon}, "
-                "Rare ≥ {rare}".format(**thresh)
+    selected_name = st.selectbox(
+        "Select a Pokémon for details",
+        result["Name"].unique(),
+    )
+    if st.button("Show Details"):
+        row = result[result["Name"] == selected_name].iloc[0]
+        sources = str(row.get("Data_Sources", "") or "").strip()
+        if not sources:
+            st.info(
+                "No direct data available; rarity score inferred from heuristics."
             )
-            if spawn_type in {"legendary", "event-only", "evolution-only"}:
-                st.warning("Spawn type override applied; recommendation may ignore thresholds.")
+        else:
+            st.write("Sources:", sources)
+        spawn_type = row.get("Spawn_Type", "wild")
+        st.write("Spawn Type:", spawn_type)
 
-            contrib_rows = []
-            total_weight = 0.0
-            for source, col in SOURCE_COLS.items():
-                score = row.get(col)
-                if score is not None and not pd.isna(score):
-                    weight = aggregator.SOURCE_WEIGHTS.get(source, 1.0)
-                    contrib_rows.append(
-                        {"Source": source, "Score": score, "Weight": weight}
-                    )
-                    total_weight += weight
-            if contrib_rows:
-                contrib_df = pd.DataFrame(contrib_rows)
-                if total_weight:
-                    contrib_df["Contribution"] = (
-                        contrib_df["Score"] * contrib_df["Weight"]
-                    ) / total_weight
-                st.table(contrib_df)
+        weighted_avg = row.get("Weighted_Average_Rarity_Score")
+        if weighted_avg is not None and not pd.isna(weighted_avg):
+            st.write("Weighted Average:", weighted_avg)
+        st.write("Average Score:", row["Average_Rarity_Score"])
+
+        confidence = row.get("Confidence")
+        if confidence is not None and not pd.isna(confidence):
+            st.write("Confidence:", confidence)
+
+        thresh = thresholds.get_thresholds()
+        st.caption(
+            "Score thresholds – Common ≥ {common}, Uncommon ≥ {uncommon}, "
+            "Rare ≥ {rare}".format(**thresh)
+        )
+        if spawn_type in {"legendary", "event-only", "evolution-only"}:
+            st.warning(
+                "Spawn type override applied; recommendation may ignore thresholds."
+            )
+
+        contrib_rows = []
+        total_weight = 0.0
+        for source, col in SOURCE_COLS.items():
+            score = row.get(col)
+            if score is not None and not pd.isna(score):
+                weight = aggregator.SOURCE_WEIGHTS.get(source, 1.0)
+                contrib_rows.append({"Source": source, "Score": score, "Weight": weight})
+                total_weight += weight
+        if contrib_rows:
+            contrib_df = pd.DataFrame(contrib_rows)
+            if total_weight:
+                contrib_df["Contribution"] = (
+                    contrib_df["Score"] * contrib_df["Weight"]
+                ) / total_weight
+            st.table(contrib_df)
+        st.caption(f"Spawn types file: {aggregator.SPAWN_TYPES_PATH}")
 
 
 if __name__ == "__main__":
