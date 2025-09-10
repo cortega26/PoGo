@@ -8,7 +8,7 @@ COPY requirements.lock pyproject.toml ./
 RUN pip install --upgrade pip \
     && pip wheel --wheel-dir /wheels -r requirements.lock
 COPY . .
-RUN pip wheel --wheel-dir /wheels .
+RUN pip wheel --wheel-dir /wheels --no-deps .
 
 FROM python:3.12-slim
 WORKDIR /app
