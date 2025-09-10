@@ -31,13 +31,15 @@ flowchart LR
 
 ## Scoring Model
 
-The pipeline aggregates rarity information from five sources:
+The pipeline aggregates rarity information from seven sources:
 
 - Structured Spawn Data
 - Enhanced Curated Data
 - PokemonDB Catch Rate
 - PokeAPI Capture Rate
 - Silph Road Spawn Tier (community reported)
+- Game Master Spawn Weight
+- Game Master Capture Rate
 
 Each source's raw spawn chance or catch rate is normalised onto a 0–10
 scale where 0 denotes the rarest encounters and 10 the most common. The
@@ -48,6 +50,12 @@ scores are combined using a weighted average:
 - PokemonDB Catch Rate – weight 2.0
 - PokeAPI Capture Rate – weight 2.0
 - Silph Road Spawn Tier – weight 0.5
+- Game Master Spawn Weight – weight 1.0
+- Game Master Capture Rate – weight 2.0
+
+The resulting CSV includes `Weighted_Average_Rarity_Score` and
+`Confidence` columns. Confidence indicates what fraction of the total
+possible weight contributed data for a given Pokémon.
 
 Weights can be customised by passing a JSON file to the CLI with
 `--weights-file`.
@@ -61,6 +69,8 @@ Weights can be customised by passing a JSON file to the CLI with
 | PokemonDB Catch Rate | catch rate `0–255` | `score = 10 * catch_rate / 255` |
 | PokeAPI Capture Rate | capture_rate `0–255` | `score = 10 * capture_rate / 255` |
 | Silph Road Spawn Tier | tier `1–5` | `score = 10 - 10 * (tier - 1) / 4` |
+| Game Master Capture Rate | base_capture_rate `0–1` | `score = 10 * base_capture_rate` |
+| Game Master Spawn Weight | spawnWeight `0–max` | `score = 10 * spawnWeight / max_weight` |
 
 When no source provides a score, heuristics in
 [data/infer_missing_rarity_rules.json](data/infer_missing_rarity_rules.json)
@@ -122,6 +132,9 @@ pokemon-rarity --limit 5 --dry-run
 # quick one-minute demo
 pokemon-rarity --limit 1 --dry-run
 
+# schema validation without writing a CSV
+pokemon-rarity --limit 5 --validate-only
+
 # customise source weighting
 pokemon-rarity --weights-file weights.example.json --dry-run
 
@@ -175,8 +188,8 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 
 ## Deployment
 
-- **Docker**: TODO create Dockerfile.
-- **Kubernetes**: build an image and expose the Streamlit port 8501; mount output directory for CSVs.
+- **Docker**: Build with `docker build -t pokemon-rarity .` and run `docker run --rm pokemon-rarity --limit 1 --dry-run`.
+- **Kubernetes**: build the container image and expose the Streamlit port 8501; mount output directory for CSVs.
 - Run migrations or seeds: not applicable.
 
 ## Testing & QA
