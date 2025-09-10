@@ -175,7 +175,8 @@ def main() -> None:
     st.sidebar.write(f"Last updated: {health_info['last_updated']}")
 
     st.sidebar.subheader("Applied Parameters")
-    st.sidebar.write("Thresholds:", thresholds.get_thresholds())
+    st.sidebar.write("Thresholds:")
+    st.sidebar.json(thresholds.get_thresholds())
     st.sidebar.write("Spawn types file:", aggregator.SPAWN_TYPES_PATH)
     st.sidebar.write("Weights:")
     st.sidebar.json(aggregator.SOURCE_WEIGHTS)
@@ -220,6 +221,8 @@ def main() -> None:
                 )
             else:
                 st.write("Sources:", sources)
+            spawn_type = row.get("Spawn_Type", "wild")
+            st.write("Spawn Type:", spawn_type)
 
             weighted_avg = row.get("Weighted_Average_Rarity_Score")
             if weighted_avg is not None and not pd.isna(weighted_avg):
@@ -230,11 +233,31 @@ def main() -> None:
             if confidence is not None and not pd.isna(confidence):
                 st.write("Confidence:", confidence)
 
+            thresh = thresholds.get_thresholds()
+            st.caption(
+                "Score thresholds – Common ≥ {common}, Uncommon ≥ {uncommon}, "
+                "Rare ≥ {rare}".format(**thresh)
+            )
+            if spawn_type in {"legendary", "event-only", "evolution-only"}:
+                st.warning("Spawn type override applied; recommendation may ignore thresholds.")
+
+            contrib_rows = []
+            total_weight = 0.0
             for source, col in SOURCE_COLS.items():
                 score = row.get(col)
                 if score is not None and not pd.isna(score):
                     weight = aggregator.SOURCE_WEIGHTS.get(source, 1.0)
-                    st.write(f"{source}: {score} (weight {weight})")
+                    contrib_rows.append(
+                        {"Source": source, "Score": score, "Weight": weight}
+                    )
+                    total_weight += weight
+            if contrib_rows:
+                contrib_df = pd.DataFrame(contrib_rows)
+                if total_weight:
+                    contrib_df["Contribution"] = (
+                        contrib_df["Score"] * contrib_df["Weight"]
+                    ) / total_weight
+                st.table(contrib_df)
 
 
 if __name__ == "__main__":
