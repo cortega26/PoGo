@@ -284,13 +284,20 @@ def main() -> None:
         disabled=[col for col in display_cols if col != "Caught"],
     )
     if not edited_df["Caught"].equals(display_df["Caught"]):
-        for name, marked in edited_df[["Name", "Caught"]].itertuples(index=False):
-            if marked:
-                caught_set.add(name)
+        # Reload the latest caught set to avoid losing updates when multiple
+        # reruns are triggered in quick succession by checkbox edits.
+        current_set = set(st.session_state.get("caught_set", set()))
+        for name, old, new in zip(
+            display_df["Name"], display_df["Caught"], edited_df["Caught"]
+        ):
+            if old == new:
+                continue
+            if new:
+                current_set.add(name)
             else:
-                caught_set.discard(name)
-        save_caught(caught_set)
-        st.session_state.caught_set = caught_set
+                current_set.discard(name)
+        save_caught(current_set)
+        st.session_state.caught_set = current_set
     csv = edited_df.to_csv(index=False).encode("utf-8")
     st.download_button(
         label="Download results",
