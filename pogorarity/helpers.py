@@ -3,11 +3,45 @@ import json
 import random
 import time
 import uuid
-from typing import Any, Dict, Optional
+from pathlib import Path
+from typing import Any, Dict, Optional, Set
 
 import requests
 
 logger = logging.getLogger(__name__)
+
+FAVORITES_DIR = Path.home() / ".pogorarity"
+FAVORITES_FILE = FAVORITES_DIR / "favorites.json"
+
+
+def load_favorites() -> Set[int]:
+    """Load the set of favorited Pokédex numbers from disk."""
+    if FAVORITES_FILE.exists():
+        try:
+            data = json.loads(FAVORITES_FILE.read_text(encoding="utf-8"))
+            return {int(n) for n in data}
+        except json.JSONDecodeError:
+            return set()
+    return set()
+
+
+def save_favorites(favorites: Set[int]) -> None:
+    """Persist the set of favorited Pokédex numbers."""
+    FAVORITES_DIR.mkdir(parents=True, exist_ok=True)
+    FAVORITES_FILE.write_text(
+        json.dumps(sorted(favorites)), encoding="utf-8"
+    )
+
+
+def toggle_favorite(number: int) -> Set[int]:
+    """Toggle a Pokémon's favorite status and return the updated set."""
+    favorites = load_favorites()
+    if number in favorites:
+        favorites.remove(number)
+    else:
+        favorites.add(number)
+    save_favorites(favorites)
+    return favorites
 
 
 def slugify_name(name: str) -> str:
