@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 from typing import List, Optional
 from urllib.parse import quote
+import logging
 
 import pandas as pd
 import streamlit as st
@@ -19,6 +20,8 @@ DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
 CAUGHT_DIR = Path.home() / ".pogorarity"
 CAUGHT_FILE = CAUGHT_DIR / "caught_pokemon.json"
+
+logger = logging.getLogger(__name__)
 
 DEFAULT_GENERATION_RANGES = [
     (1, 151, 1),
@@ -191,8 +194,18 @@ def apply_caught_edits(
         else:
             current_set.discard(name)
 
-    save_caught(current_set)
+    version = st.session_state.get("selection_version", 0) + 1
+    st.session_state.selection_version = version
     st.session_state.caught_set = current_set
+    logger.info(
+        "selection_version=%s caught_sample=%s",
+        version,
+        sorted(list(current_set))[:5],
+    )
+    save_caught(current_set)
+    if st.session_state.selection_version > version:
+        logger.info("selection_version advanced during save; rewriting")
+        save_caught(st.session_state.caught_set)
 
 
 def apply_filters(
@@ -252,6 +265,7 @@ def main() -> None:
     thresholds_sig = tuple(thresholds.get_thresholds().values())
     df = load_data(thresholds_sig)
     caught_set = st.session_state.setdefault("caught_set", load_caught())
+    st.session_state.setdefault("selection_version", 0)
     favorites_set = st.session_state.setdefault("favorites_set", load_favorites())
 
     st.sidebar.header("Status")
