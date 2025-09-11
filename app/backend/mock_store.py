@@ -8,6 +8,7 @@ from app.diag.tracer import trace
 
 _store_ids: Set[int] = set()
 _store_ver: int = 0
+_store_lock = threading.Lock()
 
 
 def reset() -> None:
@@ -24,8 +25,10 @@ def persist(ids: Iterable[int], ver: int, delay: bool = True) -> threading.Threa
         if delay:
             maybe_sleep()
         global _store_ids, _store_ver
-        _store_ids = set(ids)
-        _store_ver = ver
+        with _store_lock:
+            if ver > _store_ver:
+                _store_ids = set(ids)
+                _store_ver = ver
         trace("persist_ok", ver=ver, size=len(ids))
 
     t = threading.Thread(target=_commit)

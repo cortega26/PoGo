@@ -1,6 +1,6 @@
 [project]
 name = "pogorarity"
-version = "0.1.11"
+version = "0.1.12"
 requires-python = ">=3.10"
 description = "A tool to determine the rarity of Pokemon in Pokemon Go."
 dependencies = [
