@@ -2,6 +2,8 @@ from pathlib import Path
 
 import pandas as pd
 import streamlit as st
+import threading
+import time
 
 import app
 
@@ -62,4 +64,33 @@ def test_apply_caught_edits_many_rows():
         original = edited
 
     assert st.session_state.caught_set == set(names[:10])
+
+
+def test_apply_caught_edits_race_condition(monkeypatch):
+    st.session_state.clear()
+    st.session_state.caught_set = set()
+
+    saved = {}
+
+    def slow_save(caught: set[str]) -> None:
+        time.sleep(0.1)
+        saved["caught"] = set(caught)
+
+    monkeypatch.setattr(app, "save_caught", slow_save)
+
+    df = pd.DataFrame({"Name": ["Bulbasaur", "Chikorita"], "Caught": [False, False]})
+    edited1 = df.copy()
+    edited1.loc[0, "Caught"] = True
+
+    thread = threading.Thread(target=app.apply_caught_edits, args=(df, edited1))
+    thread.start()
+    time.sleep(0.01)
+
+    edited2 = df.copy()
+    edited2.loc[1, "Caught"] = True
+    app.apply_caught_edits(df, edited2)
+    thread.join()
+
+    assert st.session_state.caught_set == {"Bulbasaur", "Chikorita"}
+    assert saved["caught"] == {"Bulbasaur", "Chikorita"}
 

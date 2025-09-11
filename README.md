@@ -212,6 +212,10 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 - Tests use fixtures under `tests/fixtures`.
 - Coverage: TODO add coverage tooling.
 
+### Rapid toggle reproduction
+
+Run `streamlit run tests/rapid_toggle_e2e.py` to simulate 20 fast caught selections and verify that earlier choices remain checked.
+
 ## Observability
 
 - Request logs are written to `pogorarity/pogo_debug.log`.
