@@ -1,6 +1,6 @@
 import pandas as pd
 
-from app import load_data, apply_filters
+from app import load_data, apply_filters, make_share_links
 from pogorarity.helpers import load_favorites, save_favorites
 
 def test_load_data_has_gen_and_rarity():
@@ -76,3 +76,14 @@ def test_apply_filters_favorites_only(tmp_path, monkeypatch):
     favorites = load_favorites()
     filtered = apply_filters(df, favorites_set=favorites, favorites_only=True)
     assert list(filtered["Name"]) == ["Bulbasaur"]
+
+
+def test_make_share_links():
+    df = pd.DataFrame(
+        {
+            "Name": ["Bulbasaur", "Chikorita", "Treecko"],
+            "Average_Rarity_Score": [1.0, 2.0, 3.0],
+        }
+    )
+    links = make_share_links(df)
+    assert "twitter.com/intent/tweet" in links.get("twitter", "")

@@ -1,6 +1,7 @@
 from pathlib import Path
 import json
 from typing import List, Optional
+from urllib.parse import quote
 
 import pandas as pd
 import streamlit as st
@@ -8,7 +9,11 @@ import streamlit as st
 from pogorarity.health import check_cache
 from pogorarity import aggregator, thresholds
 from pogorarity.config import load_config, apply_config
-from pogorarity.helpers import load_favorites, save_favorites
+from pogorarity.helpers import (
+    load_favorites,
+    save_favorites,
+    top_three_summary,
+)
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
@@ -71,6 +76,13 @@ def rarity_band(score: float) -> str:
             return label
     # Fallback, though SCORE_BANDS should cover all scores
     return thresholds.SCORE_BANDS[-1][1]
+
+
+def make_share_links(df: pd.DataFrame) -> dict[str, str]:
+    """Generate share URLs for the rarest Pokémon in ``df``."""
+    summary = top_three_summary(df)
+    encoded = quote(summary)
+    return {"twitter": f"https://twitter.com/intent/tweet?text={encoded}"}
 
 
 @st.cache_data
@@ -400,6 +412,8 @@ def main() -> None:
         file_name="rarity_results.csv",
         mime="text/csv",
     )
+    for platform, url in make_share_links(result).items():
+        st.markdown(f"[Share on {platform.capitalize()}]({url})")
     st.divider()
 
     selected_name = st.selectbox(

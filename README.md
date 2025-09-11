@@ -154,6 +154,11 @@ The Streamlit UI lets you mark Pokémon as caught directly in the results table
 or from the detail view. You can also filter the table by caught status.
 Progress is stored locally in `~/.pogorarity/caught_pokemon.json`.
 
+### Sharing results
+
+After filtering the table you can use the generated links to share a short
+summary of the rarest Pokémon.
+
 ## Configuration
 
 | Flag | Type | Default | Required | Description |

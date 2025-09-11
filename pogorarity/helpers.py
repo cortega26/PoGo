@@ -6,6 +6,7 @@ import uuid
 from pathlib import Path
 from typing import Any, Dict, Optional, Set
 
+import pandas as pd
 import requests
 
 logger = logging.getLogger(__name__)
@@ -50,6 +51,27 @@ def slugify_name(name: str) -> str:
     slug = slug.replace(":", "").replace("'", "").replace(".", "")
     slug = slug.replace("alolan ", "").replace("galarian ", "")
     return slug.replace("é", "e").replace(" ", "-")
+
+
+def top_three_summary(df: pd.DataFrame) -> str:
+    """Return a short summary of the three rarest Pokémon in ``df``.
+
+    Parameters
+    ----------
+    df:
+        DataFrame containing at least ``Name`` and ``Average_Rarity_Score``
+        columns.
+
+    Returns
+    -------
+    str
+        A sentence listing the top three rare Pokémon for sharing.
+    """
+
+    top = df.nsmallest(3, "Average_Rarity_Score")["Name"].tolist()
+    if not top:
+        return "No Pokémon found"
+    return f"Rarest Pokémon: {', '.join(top)}"
 
 
 def safe_request(
