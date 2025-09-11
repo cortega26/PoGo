@@ -9,13 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.3] - 2025-09-13
+## [0.1.3] - 2025-09-11
 
 ### Fixed
 
 - Prevent checkboxes from resetting when marking multiple Pokémon as caught in quick succession.
 
-## [0.1.2] - 2025-09-12
+## [0.1.2] - 2025-09-11
 
 ### Fixed
 
@@ -28,7 +28,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Track caught Pokémon in the UI.
 - Add Pokémon type and region filters.
 
-## [0.1.0] - 2025-09-10
+## [0.1.0] - 2024-09-10
 
 ### Added
 
