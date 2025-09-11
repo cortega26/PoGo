@@ -20,3 +20,18 @@ def test_apply_filters_generation_and_rarity():
     assert list(filtered["Name"]) == ["Bulbasaur"]
     filtered = apply_filters(df, rarity="Common")
     assert list(filtered["Name"]) == ["Chikorita"]
+
+
+def test_apply_filters_caught_status():
+    df = pd.DataFrame(
+        {
+            "Name": ["Bulbasaur", "Chikorita"],
+            "Generation": [1, 2],
+            "Rarity_Band": ["Rare", "Common"],
+        }
+    )
+    caught = {"Bulbasaur"}
+    filtered = apply_filters(df, caught_set=caught, caught=True)
+    assert list(filtered["Name"]) == ["Bulbasaur"]
+    filtered = apply_filters(df, caught_set=caught, caught=False)
+    assert list(filtered["Name"]) == ["Chikorita"]
