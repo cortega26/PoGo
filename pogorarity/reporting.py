@@ -64,6 +64,7 @@ def export_to_csv(
         "Structured Spawn Data",
         "Enhanced Curated Data",
         "PokemonDB Catch Rate",
+        "PokeAPI Capture Rate",
     ]
     rows = []
     for pokemon in sorted(pokemon_data, key=lambda x: x.number):
@@ -76,6 +77,8 @@ def export_to_csv(
             "Confidence": round(pokemon.confidence, 2),
             "Recommendation": pokemon.recommendation,
             "Data_Sources": ", ".join(pokemon.data_sources),
+            "Type": ", ".join(pokemon.types) if pokemon.types else None,
+            "Region": ", ".join(pokemon.regions) if pokemon.regions else None,
         }
         for source in sources:
             score = pokemon.rarity_scores.get(source)

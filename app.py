@@ -33,6 +33,7 @@ SOURCE_COLS = {
     "Structured Spawn Data": "Structured_Spawn_Data_Score",
     "Enhanced Curated Data": "Enhanced_Curated_Data_Score",
     "PokemonDB Catch Rate": "PokemonDB_Catch_Rate_Score",
+    "PokeAPI Capture Rate": "PokeAPI_Capture_Rate_Score",
 }
 
 
@@ -85,9 +86,12 @@ def load_data(_thresholds_sig: Optional[tuple] = None) -> pd.DataFrame:
         "Average_Rarity_Score",
         "Recommendation",
         "Data_Sources",
+        "Type",
+        "Region",
         "Structured_Spawn_Data_Score",
         "Enhanced_Curated_Data_Score",
         "PokemonDB_Catch_Rate_Score",
+        "PokeAPI_Capture_Rate_Score",
     ]
     optional_cols = [
         "Weighted_Average_Rarity_Score",
@@ -111,6 +115,10 @@ def load_data(_thresholds_sig: Optional[tuple] = None) -> pd.DataFrame:
         usecols=usecols,
         encoding="utf-8",
     )
+    if "Type" not in df.columns:
+        df["Type"] = ""
+    if "Region" not in df.columns:
+        df["Region"] = ""
     df["Generation"] = df["Number"].apply(generation_from_number)
     df["Rarity_Band"] = df["Average_Rarity_Score"].apply(rarity_band)
     return df
@@ -178,6 +186,8 @@ def apply_filters(
     search: Optional[str] = None,
     caught_set: Optional[set[str]] = None,
     caught: Optional[bool] = None,
+    types: Optional[List[str]] = None,
+    regions: Optional[List[str]] = None,
 ) -> pd.DataFrame:
     mask = pd.Series(True, index=df.index)
     if species:
@@ -193,6 +203,20 @@ def apply_filters(
             mask &= df["Name"].isin(caught_set)
         else:
             mask &= ~df["Name"].isin(caught_set)
+    if types and "Type" in df.columns:
+        mask &= df["Type"].fillna("").apply(
+            lambda x: any(
+                t.lower() in [part.strip().lower() for part in x.split(",")]
+                for t in types
+            )
+        )
+    if regions and "Region" in df.columns:
+        mask &= df["Region"].fillna("").apply(
+            lambda x: any(
+                r.lower() in [part.strip().lower() for part in x.split(",")]
+                for r in regions
+            )
+        )
     return df[mask]
 
 
@@ -230,12 +254,50 @@ def main() -> None:
             st.session_state.rarity = "All"
             st.session_state.search = ""
             st.session_state.caught_filter = "All"
+            st.session_state.type = []
+            st.session_state.region = []
         with st.form("filters"):
             species = st.multiselect(
                 "Species",
                 sorted(df["Name"].unique()),
                 key="species",
                 help="Limit results to selected Pokémon",
+            )
+            type_options = (
+                sorted(
+                    {
+                        t.strip()
+                        for types in df.get("Type", pd.Series()).dropna()
+                        for t in str(types).split(",")
+                        if t.strip()
+                    }
+                )
+                if "Type" in df.columns
+                else []
+            )
+            region_options = (
+                sorted(
+                    {
+                        r.strip()
+                        for regions in df.get("Region", pd.Series()).dropna()
+                        for r in str(regions).split(",")
+                        if r.strip()
+                    }
+                )
+                if "Region" in df.columns
+                else []
+            )
+            st.multiselect(
+                "Type",
+                type_options,
+                key="type",
+                help="Filter by Pokémon type",
+            )
+            st.multiselect(
+                "Region",
+                region_options,
+                key="region",
+                help="Filter by region availability",
             )
             generation = st.selectbox(
                 "Generation",
@@ -279,6 +341,8 @@ def main() -> None:
             st.session_state.get("search") or None,
             caught_set,
             caught_bool,
+            st.session_state.get("type") or None,
+            st.session_state.get("region") or None,
         )
 
     if result.empty:
