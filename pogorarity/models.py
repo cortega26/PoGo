@@ -1,7 +1,7 @@
 from typing import Dict, List, Optional
 from datetime import datetime
 
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class PokemonRarity(BaseModel):
@@ -16,6 +16,8 @@ class PokemonRarity(BaseModel):
     recommendation: str
     data_sources: List[str]
     spawn_type: str
+    types: List[str] = Field(default_factory=list)
+    regions: List[str] = Field(default_factory=list)
 
 
 class DataSourceReport(BaseModel):

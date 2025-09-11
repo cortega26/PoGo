@@ -157,6 +157,8 @@ def aggregate_data(
     pokeapi_data, pokeapi_report = pokeapi.scrape_capture_rate(
         limit=limit, metrics=metrics
     )
+    pokeapi_types = getattr(pokeapi, "TYPES_DATA", {})
+    pokeapi_regions = getattr(pokeapi, "REGION_DATA", {})
     silph_data, silph_report = silph_road.scrape_spawn_tiers(metrics=metrics)
     gm_capture_data, gm_spawn_data, gm_reports = game_master.scrape(metrics=metrics)
 
@@ -228,6 +230,8 @@ def aggregate_data(
                 recommendation=recommendation,
                 data_sources=data_sources,
                 spawn_type=spawn_type,
+                types=pokeapi_types.get(pokemon_name, []),
+                regions=pokeapi_regions.get(pokemon_name, []),
             )
         )
     reports = [
