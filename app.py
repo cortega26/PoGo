@@ -142,6 +142,34 @@ def save_caught(caught: set[str]) -> None:
     )
 
 
+def apply_caught_edits(display_df: pd.DataFrame, editor_state: Optional[dict]) -> None:
+    """Update session state and storage based on data editor changes.
+
+    Parameters
+    ----------
+    display_df:
+        DataFrame currently shown in the editor.
+    editor_state:
+        ``st.session_state`` data for the editor, containing ``edited_rows``.
+    """
+
+    if not editor_state or not editor_state.get("edited_rows"):
+        return
+
+    current_set = set(st.session_state.get("caught_set", set()))
+    for row_idx, changes in editor_state["edited_rows"].items():
+        if "Caught" not in changes:
+            continue
+        name = display_df.iloc[int(row_idx)]["Name"]
+        if changes["Caught"]:
+            current_set.add(name)
+        else:
+            current_set.discard(name)
+
+    save_caught(current_set)
+    st.session_state.caught_set = current_set
+
+
 def apply_filters(
     df: pd.DataFrame,
     species: Optional[List[str]] = None,
@@ -282,22 +310,9 @@ def main() -> None:
             )
         },
         disabled=[col for col in display_cols if col != "Caught"],
+        key="caught_editor",
     )
-    if not edited_df["Caught"].equals(display_df["Caught"]):
-        # Reload the latest caught set to avoid losing updates when multiple
-        # reruns are triggered in quick succession by checkbox edits.
-        current_set = set(st.session_state.get("caught_set", set()))
-        for name, old, new in zip(
-            display_df["Name"], display_df["Caught"], edited_df["Caught"]
-        ):
-            if old == new:
-                continue
-            if new:
-                current_set.add(name)
-            else:
-                current_set.discard(name)
-        save_caught(current_set)
-        st.session_state.caught_set = current_set
+    apply_caught_edits(display_df, st.session_state.get("caught_editor"))
     csv = edited_df.to_csv(index=False).encode("utf-8")
     st.download_button(
         label="Download results",
