@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.7] - 2025-09-11
+
+### Fixed
+
+- Store caught Pokémon progress outside the app directory to prevent selection resets when marking multiple as caught rapidly.
+
 ## [0.1.6] - 2025-09-11
 
 ### Added

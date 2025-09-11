@@ -12,7 +12,8 @@ from pogorarity.helpers import load_favorites, save_favorites
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
-CAUGHT_FILE = Path(__file__).with_name("caught_pokemon.json")
+CAUGHT_DIR = Path.home() / ".pogorarity"
+CAUGHT_FILE = CAUGHT_DIR / "caught_pokemon.json"
 
 DEFAULT_GENERATION_RANGES = [
     (1, 151, 1),
@@ -146,6 +147,7 @@ def load_caught() -> set[str]:
 
 def save_caught(caught: set[str]) -> None:
     """Persist the caught Pokémon set to disk."""
+    CAUGHT_DIR.mkdir(parents=True, exist_ok=True)
     CAUGHT_FILE.write_text(
         json.dumps(sorted(caught)), encoding="utf-8"
     )
