@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.2] - 2025-09-12
+
+### Fixed
+
+- Make "Caught" column selectable in the Streamlit UI.
+
 ## [0.1.1] - 2025-09-11
 
 ### Added

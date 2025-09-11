@@ -150,9 +150,9 @@ cp config.example.json config.json  # edit values as desired
 
 ### Progress tracking
 
-The Streamlit UI lets you mark Pokémon as caught from the detail view and
-filter the table by caught status. Progress is stored locally in
-`caught_pokemon.json` alongside `app.py`.
+The Streamlit UI lets you mark Pokémon as caught directly in the results table
+or from the detail view. You can also filter the table by caught status.
+Progress is stored locally in `caught_pokemon.json` alongside `app.py`.
 
 ## Configuration
 

@@ -271,8 +271,27 @@ def main() -> None:
         display_cols.append("Weighted_Average_Rarity_Score")
     if "Confidence" in result.columns:
         display_cols.append("Confidence")
-    st.dataframe(result[display_cols], use_container_width=True)
-    csv = result.to_csv(index=False).encode("utf-8")
+    display_df = result[display_cols].copy()
+    edited_df = st.data_editor(
+        display_df,
+        use_container_width=True,
+        hide_index=True,
+        column_config={
+            "Caught": st.column_config.CheckboxColumn(
+                "Caught", help="Mark Pokémon as caught"
+            )
+        },
+        disabled=[col for col in display_cols if col != "Caught"],
+    )
+    if not edited_df["Caught"].equals(display_df["Caught"]):
+        for name, marked in edited_df[["Name", "Caught"]].itertuples(index=False):
+            if marked:
+                caught_set.add(name)
+            else:
+                caught_set.discard(name)
+        save_caught(caught_set)
+        st.session_state.caught_set = caught_set
+    csv = edited_df.to_csv(index=False).encode("utf-8")
     st.download_button(
         label="Download results",
         data=csv,
