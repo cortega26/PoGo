@@ -17,17 +17,25 @@ def test_apply_caught_edits_merges_changes(monkeypatch):
 
     monkeypatch.setattr(app, "save_caught", fake_save)
 
-    df = pd.DataFrame({"Name": ["Bulbasaur", "Chikorita"]})
+    df = pd.DataFrame({"Name": ["Bulbasaur", "Chikorita"], "Caught": [False, False]})
 
-    app.apply_caught_edits(df, {"edited_rows": {"0": {"Caught": True}}})
+    edited = df.copy()
+    edited.loc[0, "Caught"] = True
+    app.apply_caught_edits(df, edited)
     assert st.session_state.caught_set == {"Bulbasaur"}
 
-    # Simulate a rapid second edit where the frontend only sends the second row
-    app.apply_caught_edits(df, {"edited_rows": {"1": {"Caught": True}}})
+    # Simulate a rapid second edit where only the second row changes
+    df2 = edited.copy()
+    edited2 = df2.copy()
+    edited2.loc[1, "Caught"] = True
+    app.apply_caught_edits(df2, edited2)
     assert st.session_state.caught_set == {"Bulbasaur", "Chikorita"}
 
     # Unmark the first Pokémon
-    app.apply_caught_edits(df, {"edited_rows": {"0": {"Caught": False}}})
+    df3 = edited2.copy()
+    edited3 = df3.copy()
+    edited3.loc[0, "Caught"] = False
+    app.apply_caught_edits(df3, edited3)
     assert st.session_state.caught_set == {"Chikorita"}
 
     # Ensure save_caught was invoked with the latest state
@@ -37,4 +45,21 @@ def test_apply_caught_edits_merges_changes(monkeypatch):
 def test_caught_file_path():
     expected = Path.home() / ".pogorarity" / "caught_pokemon.json"
     assert app.CAUGHT_FILE == expected
+
+
+def test_apply_caught_edits_many_rows():
+    st.session_state.clear()
+    st.session_state.caught_set = set()
+
+    names = [f"Poke{i}" for i in range(12)]
+    base = pd.DataFrame({"Name": names, "Caught": [False] * 12})
+
+    original = base.copy()
+    for i in range(10):
+        edited = original.copy()
+        edited.loc[i, "Caught"] = True
+        app.apply_caught_edits(original, edited)
+        original = edited
+
+    assert st.session_state.caught_set == set(names[:10])
 

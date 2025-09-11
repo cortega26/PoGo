@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.9] - 2025-09-11
+
+### Fixed
+
+- Prevent quick successive caught selections from unmarking previously chosen Pokémon by diffing full table state instead of relying on ephemeral widget edits.
+
 ## [0.1.8] - 2025-09-11
 
 ### Added

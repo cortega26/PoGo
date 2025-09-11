@@ -165,26 +165,28 @@ def save_caught(caught: set[str]) -> None:
     )
 
 
-def apply_caught_edits(display_df: pd.DataFrame, editor_state: Optional[dict]) -> None:
+def apply_caught_edits(
+    display_df: pd.DataFrame, edited_df: Optional[pd.DataFrame]
+) -> None:
     """Update session state and storage based on data editor changes.
 
     Parameters
     ----------
     display_df:
         DataFrame currently shown in the editor.
-    editor_state:
-        ``st.session_state`` data for the editor, containing ``edited_rows``.
+    edited_df:
+        DataFrame returned from ``st.data_editor`` reflecting user edits.
     """
 
-    if not editor_state or not editor_state.get("edited_rows"):
+    if edited_df is None:
         return
 
     current_set = set(st.session_state.get("caught_set", set()))
-    for row_idx, changes in editor_state["edited_rows"].items():
-        if "Caught" not in changes:
-            continue
-        name = display_df.iloc[int(row_idx)]["Name"]
-        if changes["Caught"]:
+    changed = edited_df["Caught"] != display_df["Caught"]
+    for name, new_val in zip(
+        edited_df.loc[changed, "Name"], edited_df.loc[changed, "Caught"]
+    ):
+        if new_val:
             current_set.add(name)
         else:
             current_set.discard(name)
@@ -404,7 +406,7 @@ def main() -> None:
         disabled=[col for col in display_cols if col != "Caught"],
         key="caught_editor",
     )
-    apply_caught_edits(display_df, st.session_state.get("caught_editor"))
+    apply_caught_edits(display_df, edited_df)
     csv = edited_df.to_csv(index=False).encode("utf-8")
     st.download_button(
         label="Download results",
