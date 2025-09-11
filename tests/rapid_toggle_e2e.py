@@ -1,23 +1,34 @@
-import time
-import pandas as pd
-import streamlit as st
-import app
+from types import SimpleNamespace
+import pathlib
+import sys
+
+
+class Session(dict):
+    __getattr__ = dict.get
+    __setattr__ = dict.__setitem__
+    __delattr__ = dict.__delitem__
+
+ROOT = pathlib.Path(__file__).resolve().parents[1]
+sys.path.append(str(ROOT))
+
+from app.backend import mock_store  # noqa: E402
+from app.state.selection import ensure_session_state, toggle_and_bump  # noqa: E402
+
 
 def main() -> None:
-    st.write("Rapid toggle demo")
-    st.session_state.clear()
-    st.session_state.caught_set = set()
-    st.session_state.selection_version = 0
+    st = SimpleNamespace(session_state=Session())
+    ensure_session_state(st)
+    mock_store.reset()
+    threads = []
+    for pid in range(1, 21):
+        st.session_state[f"caught_{pid}"] = True
+        ver, ids = toggle_and_bump(st, pid, True)
+        threads.append(mock_store.persist(ids, ver, delay=(pid % 2 == 0)))
+    for t in threads:
+        t.join()
+    ids, ver = mock_store.load()
+    assert ids == st.session_state.caught_ids, "backend lost some selections"
 
-    base = pd.DataFrame({"Name": [f"Poke{i}" for i in range(20)], "Caught": [False] * 20})
-    edited = base.copy()
-    for i in range(20):
-        edited.loc[i, "Caught"] = True
-        app.apply_caught_edits(base, edited)
-        time.sleep(0.05)
-
-    st.write("Final caught set:", sorted(st.session_state.caught_set))
-    st.write("Selection version:", st.session_state.selection_version)
 
 if __name__ == "__main__":
     main()
