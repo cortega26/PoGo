@@ -1,3 +1,5 @@
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 
@@ -30,4 +32,9 @@ def test_apply_caught_edits_merges_changes(monkeypatch):
 
     # Ensure save_caught was invoked with the latest state
     assert saved["caught"] == {"Chikorita"}
+
+
+def test_caught_file_path():
+    expected = Path.home() / ".pogorarity" / "caught_pokemon.json"
+    assert app.CAUGHT_FILE == expected
 

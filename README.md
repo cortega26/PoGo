@@ -152,7 +152,7 @@ cp config.example.json config.json  # edit values as desired
 
 The Streamlit UI lets you mark Pokémon as caught directly in the results table
 or from the detail view. You can also filter the table by caught status.
-Progress is stored locally in `caught_pokemon.json` alongside `app.py`.
+Progress is stored locally in `~/.pogorarity/caught_pokemon.json`.
 
 ## Configuration
 
