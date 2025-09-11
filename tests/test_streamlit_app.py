@@ -1,6 +1,7 @@
 import pandas as pd
 
 from app import load_data, apply_filters
+from pogorarity.helpers import load_favorites, save_favorites
 
 def test_load_data_has_gen_and_rarity():
     df = load_data()
@@ -53,3 +54,25 @@ def test_apply_filters_type_and_region():
     assert list(filtered["Name"]) == ["Bulbasaur"]
     filtered = apply_filters(df, regions=["johto"])
     assert list(filtered["Name"]) == ["Chikorita"]
+
+
+def test_favorites_persist(tmp_path, monkeypatch):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    save_favorites({1, 4})
+    assert load_favorites() == {1, 4}
+
+
+def test_apply_filters_favorites_only(tmp_path, monkeypatch):
+    monkeypatch.setenv("HOME", str(tmp_path))
+    save_favorites({1})
+    df = pd.DataFrame(
+        {
+            "Name": ["Bulbasaur", "Chikorita"],
+            "Generation": [1, 2],
+            "Rarity_Band": ["Rare", "Common"],
+            "Number": [1, 152],
+        }
+    )
+    favorites = load_favorites()
+    filtered = apply_filters(df, favorites_set=favorites, favorites_only=True)
+    assert list(filtered["Name"]) == ["Bulbasaur"]

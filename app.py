@@ -8,6 +8,7 @@ import streamlit as st
 from pogorarity.health import check_cache
 from pogorarity import aggregator, thresholds
 from pogorarity.config import load_config, apply_config
+from pogorarity.helpers import load_favorites, save_favorites
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
@@ -188,6 +189,8 @@ def apply_filters(
     caught: Optional[bool] = None,
     types: Optional[List[str]] = None,
     regions: Optional[List[str]] = None,
+    favorites_set: Optional[set[int]] = None,
+    favorites_only: bool = False,
 ) -> pd.DataFrame:
     mask = pd.Series(True, index=df.index)
     if species:
@@ -217,6 +220,8 @@ def apply_filters(
                 for r in regions
             )
         )
+    if favorites_only and favorites_set is not None:
+        mask &= df["Number"].isin(favorites_set)
     return df[mask]
 
 
@@ -231,6 +236,7 @@ def main() -> None:
     thresholds_sig = tuple(thresholds.get_thresholds().values())
     df = load_data(thresholds_sig)
     caught_set = st.session_state.setdefault("caught_set", load_caught())
+    favorites_set = st.session_state.setdefault("favorites_set", load_favorites())
 
     st.sidebar.header("Status")
     if run_info:
@@ -256,6 +262,7 @@ def main() -> None:
             st.session_state.caught_filter = "All"
             st.session_state.type = []
             st.session_state.region = []
+            st.session_state.favorites_only = False
         with st.form("filters"):
             species = st.multiselect(
                 "Species",
@@ -322,6 +329,11 @@ def main() -> None:
                 key="caught_filter",
                 help="Filter by caught status",
             )
+            st.checkbox(
+                "Show favorites only",
+                key="favorites_only",
+                help="Only display favorited Pokémon",
+            )
             st.form_submit_button("Apply")
 
     if reset:
@@ -343,6 +355,8 @@ def main() -> None:
             caught_bool,
             st.session_state.get("type") or None,
             st.session_state.get("region") or None,
+            favorites_set,
+            st.session_state.get("favorites_only", False),
         )
 
     if result.empty:
@@ -411,6 +425,18 @@ def main() -> None:
                 caught_set.add(selected_name)
                 save_caught(caught_set)
                 st.session_state.caught_set = caught_set
+
+        number = int(row["Number"])
+        if number in favorites_set:
+            if st.button("Unfavorite"):
+                favorites_set.remove(number)
+                save_favorites(favorites_set)
+                st.session_state.favorites_set = favorites_set
+        else:
+            if st.button("Favorite"):
+                favorites_set.add(number)
+                save_favorites(favorites_set)
+                st.session_state.favorites_set = favorites_set
 
         weighted_avg = row.get("Weighted_Average_Rarity_Score")
         if weighted_avg is not None and not pd.isna(weighted_avg):

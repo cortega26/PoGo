@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.6] - 2025-09-11
+
+### Added
+
+- Persist favorite Pokémon selections and filter by favorites in the Streamlit UI.
+
 ## [0.1.5] - 2025-09-11
 
 ### Added
