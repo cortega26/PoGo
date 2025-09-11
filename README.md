@@ -216,6 +216,18 @@ The above HTTP request returns the Streamlit landing page after running `streaml
 
 Run `streamlit run tests/rapid_toggle_e2e.py` to simulate 20 fast caught selections and verify that earlier choices remain checked.
 
+### Diagnostics for Rapid Toggle Reversion
+
+The selection reversion issue can be explored with the built-in tooling:
+
+```bash
+make debug  # launch Streamlit with the debug page
+make e2e    # run rapid toggle script
+make diag   # simulate stale backend writes
+```
+
+On Streamlit Community Cloud, open the "Debug: Selection State" page and optionally enable **simulate backend latency**. Tracer events printed on the page and stdout reveal whether reruns, cache refreshes, or delayed writes flipped selections.
+
 ## Observability
 
 - Request logs are written to `pogorarity/pogo_debug.log`.
