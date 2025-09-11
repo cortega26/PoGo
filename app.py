@@ -11,6 +11,7 @@ from pogorarity.config import load_config, apply_config
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
+CAUGHT_FILE = Path(__file__).with_name("caught_pokemon.json")
 
 DEFAULT_GENERATION_RANGES = [
     (1, 151, 1),
@@ -124,12 +125,31 @@ def load_run_log() -> dict:
     return {}
 
 
+def load_caught() -> set[str]:
+    """Return the set of Pokémon marked as caught."""
+    if CAUGHT_FILE.exists():
+        try:
+            return set(json.loads(CAUGHT_FILE.read_text(encoding="utf-8")))
+        except json.JSONDecodeError:
+            return set()
+    return set()
+
+
+def save_caught(caught: set[str]) -> None:
+    """Persist the caught Pokémon set to disk."""
+    CAUGHT_FILE.write_text(
+        json.dumps(sorted(caught)), encoding="utf-8"
+    )
+
+
 def apply_filters(
     df: pd.DataFrame,
     species: Optional[List[str]] = None,
     generation: Optional[int] = None,
     rarity: Optional[str] = None,
     search: Optional[str] = None,
+    caught_set: Optional[set[str]] = None,
+    caught: Optional[bool] = None,
 ) -> pd.DataFrame:
     mask = pd.Series(True, index=df.index)
     if species:
@@ -140,6 +160,11 @@ def apply_filters(
         mask &= df["Rarity_Band"] == rarity
     if search:
         mask &= df["Name"].str.contains(search, case=False)
+    if caught is not None and caught_set is not None:
+        if caught:
+            mask &= df["Name"].isin(caught_set)
+        else:
+            mask &= ~df["Name"].isin(caught_set)
     return df[mask]
 
 
@@ -153,6 +178,7 @@ def main() -> None:
     health_info = check_cache()
     thresholds_sig = tuple(thresholds.get_thresholds().values())
     df = load_data(thresholds_sig)
+    caught_set = st.session_state.setdefault("caught_set", load_caught())
 
     st.sidebar.header("Status")
     if run_info:
@@ -175,6 +201,7 @@ def main() -> None:
             st.session_state.generation = "All"
             st.session_state.rarity = "All"
             st.session_state.search = ""
+            st.session_state.caught_filter = "All"
         with st.form("filters"):
             species = st.multiselect(
                 "Species",
@@ -199,6 +226,12 @@ def main() -> None:
                 key="search",
                 help="Search by Pokémon name",
             )
+            caught_option = st.selectbox(
+                "Caught Status",
+                ["All", "Caught", "Uncaught"],
+                key="caught_filter",
+                help="Filter by caught status",
+            )
             st.form_submit_button("Apply")
 
     if reset:
@@ -208,24 +241,31 @@ def main() -> None:
         rarity_val = st.session_state.get("rarity", "All")
         gen_val = gen_val if gen_val != "All" else None
         rarity_val = rarity_val if rarity_val != "All" else None
+        caught_val = st.session_state.get("caught_filter", "All")
+        caught_bool = None if caught_val == "All" else (caught_val == "Caught")
         result = apply_filters(
             df,
             st.session_state.get("species") or None,
             gen_val,
             rarity_val,
             st.session_state.get("search") or None,
+            caught_set,
+            caught_bool,
         )
 
     if result.empty:
         st.warning("No Pokémon match the filters.")
         return
 
+    result = result.copy()
+    result["Caught"] = result["Name"].isin(caught_set)
     display_cols = [
         "Name",
         "Generation",
         "Rarity_Band",
         "Recommendation",
         "Average_Rarity_Score",
+        "Caught",
     ]
     if "Weighted_Average_Rarity_Score" in result.columns:
         display_cols.append("Weighted_Average_Rarity_Score")
@@ -256,6 +296,16 @@ def main() -> None:
             st.write("Sources:", sources)
         spawn_type = row.get("Spawn_Type", "wild")
         st.write("Spawn Type:", spawn_type)
+        if selected_name in caught_set:
+            if st.button("Unmark as caught"):
+                caught_set.remove(selected_name)
+                save_caught(caught_set)
+                st.session_state.caught_set = caught_set
+        else:
+            if st.button("Mark as caught"):
+                caught_set.add(selected_name)
+                save_caught(caught_set)
+                st.session_state.caught_set = caught_set
 
         weighted_avg = row.get("Weighted_Average_Rarity_Score")
         if weighted_avg is not None and not pd.isna(weighted_avg):
