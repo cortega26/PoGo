@@ -112,6 +112,7 @@ Output: `/workspace/pokemon_rarity_analysis_enhanced.csv`
 
 ## Release Workflow
 
+- Every update to application code **must** bump the version and changelog.
 - Follow [Semantic Versioning](https://semver.org/) in the form `MAJOR.MINOR.PATCH`.
 - Bump versions in:
   - `pyproject.toml` (`[project] version`)
