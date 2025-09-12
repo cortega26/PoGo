@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.15] - 2025-09-12
+
+### Removed
+
+- Roll back mock store locking and version tracking; race-condition investigation paused.
+
 ## [0.1.14] - 2025-09-12
 
 ### Fixed
