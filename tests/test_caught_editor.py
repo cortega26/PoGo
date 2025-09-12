@@ -4,6 +4,8 @@ import pandas as pd
 import streamlit as st
 import threading
 import time
+import json
+from pathlib import Path
 
 import app
 
@@ -18,6 +20,7 @@ def test_apply_caught_edits_merges_changes(monkeypatch):
         saved["caught"] = set(caught)
 
     monkeypatch.setattr(app, "save_caught", fake_save)
+    monkeypatch.setattr(app.app_module, "save_caught", fake_save)
 
     df = pd.DataFrame({"Name": ["Bulbasaur", "Chikorita"], "Caught": [False, False]})
 
@@ -66,17 +69,22 @@ def test_apply_caught_edits_many_rows():
     assert st.session_state.caught_set == set(names[:10])
 
 
-def test_apply_caught_edits_race_condition(monkeypatch):
+def test_apply_caught_edits_race_condition(monkeypatch, tmp_path):
     st.session_state.clear()
     st.session_state.caught_set = set()
 
-    saved = {}
+    monkeypatch.setattr(app, "CAUGHT_DIR", tmp_path)
+    monkeypatch.setattr(app.app_module, "CAUGHT_DIR", tmp_path)
+    monkeypatch.setattr(app, "CAUGHT_FILE", tmp_path / "caught.json")
+    monkeypatch.setattr(app.app_module, "CAUGHT_FILE", tmp_path / "caught.json")
 
-    def slow_save(caught: set[str]) -> None:
+    original_write = Path.write_text
+
+    def slow_write(self, *args, **kwargs):
         time.sleep(0.1)
-        saved["caught"] = set(caught)
+        return original_write(self, *args, **kwargs)
 
-    monkeypatch.setattr(app, "save_caught", slow_save)
+    monkeypatch.setattr(Path, "write_text", slow_write)
 
     df = pd.DataFrame({"Name": ["Bulbasaur", "Chikorita"], "Caught": [False, False]})
     edited1 = df.copy()
@@ -92,5 +100,6 @@ def test_apply_caught_edits_race_condition(monkeypatch):
     thread.join()
 
     assert st.session_state.caught_set == {"Bulbasaur", "Chikorita"}
-    assert saved["caught"] == {"Bulbasaur", "Chikorita"}
+    saved = set(json.loads(app.CAUGHT_FILE.read_text()))
+    assert saved == {"Bulbasaur", "Chikorita"}
 

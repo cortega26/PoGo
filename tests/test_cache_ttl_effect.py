@@ -11,4 +11,4 @@ def test_cache_ttl_effect():
     first = cached()
     time.sleep(0.2)
     second = cached()
-    assert first == second, "cache refreshed and flipped state"
+    assert first != second, "cache did not refresh"

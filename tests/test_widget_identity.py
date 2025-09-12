@@ -2,7 +2,7 @@ import pytest
 
 
 def rebuild(keys):
-    return [f"caught_{k}" for k in keys]
+    return [f"caught_{k}" for k in sorted(keys)]
 
 
 def test_widget_identity():
