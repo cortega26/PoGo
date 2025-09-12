@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.14] - 2025-09-12
+
+### Fixed
+
+- Serialize caught saves with a lock to prevent stale overwrites.
+
 ## [0.1.13] - 2025-09-12
 
 ### Fixed
