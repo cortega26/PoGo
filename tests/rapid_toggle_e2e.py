@@ -11,23 +11,25 @@ class Session(dict):
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 sys.path.append(str(ROOT))
 
-from app.backend import mock_store  # noqa: E402
+from app.backend import sql_store  # noqa: E402
 from app.state.selection import ensure_session_state, toggle_and_bump  # noqa: E402
 
 
 def main() -> None:
     st = SimpleNamespace(session_state=Session())
     ensure_session_state(st)
-    mock_store.reset()
+    db = ROOT / "caught.db"
+    sql_store.reset(db)
     threads = []
     for pid in range(1, 21):
         st.session_state[f"caught_{pid}"] = True
         ver, ids = toggle_and_bump(st, pid, True)
-        threads.append(mock_store.persist(ids, ver, delay=(pid % 2 == 0)))
+        threads.append(sql_store.persist(ids, ver, db, delay=(pid % 2 == 0)))
     for t in threads:
         t.join()
-    ids, ver = mock_store.load()
+    ids, ver = sql_store.load(db)
     assert ids == st.session_state.caught_ids, "backend lost some selections"
+    db.unlink()
 
 
 if __name__ == "__main__":

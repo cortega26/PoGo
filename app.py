@@ -3,7 +3,6 @@ import json
 from typing import List, Optional
 from urllib.parse import quote
 import logging
-import threading
 
 import pandas as pd
 import streamlit as st
@@ -16,12 +15,13 @@ from pogorarity.helpers import (
     save_favorites,
     top_three_summary,
 )
+from app.backend import sql_store
 
 DATA_FILE = Path(__file__).with_name("pokemon_rarity_analysis_enhanced.csv")
 RUN_LOG_FILE = Path(__file__).resolve().parent / "pogorarity" / "run_log.jsonl"
 CAUGHT_DIR = Path.home() / ".pogorarity"
-CAUGHT_FILE = CAUGHT_DIR / "caught_pokemon.json"
-_caught_lock = threading.Lock()
+CAUGHT_DB = CAUGHT_DIR / "caught_pokemon.db"
+sql_store._ensure_conn(CAUGHT_DB).close()
 
 logger = logging.getLogger(__name__)
 
@@ -154,29 +154,22 @@ def load_run_log() -> dict:
 
 def load_caught() -> set[str]:
     """Return the set of Pokémon marked as caught."""
-    if CAUGHT_FILE.exists():
-        try:
-            return set(json.loads(CAUGHT_FILE.read_text(encoding="utf-8")))
-        except json.JSONDecodeError:
-            return set()
-    return set()
+    ids, _ = sql_store.load(CAUGHT_DB)
+    return {str(i) for i in ids}
 
 
 def save_caught(caught: set[str]) -> None:
     """Persist the caught Pokémon set to disk."""
-    with _caught_lock:
-        version = st.session_state.get("selection_version", 0)
-        CAUGHT_DIR.mkdir(parents=True, exist_ok=True)
-        CAUGHT_FILE.write_text(
-            json.dumps(sorted(caught)), encoding="utf-8"
-        )
-        if st.session_state.get("selection_version", 0) > version:
-            logger.info("selection_version advanced during save; rewriting")
-            CAUGHT_FILE.write_text(
-                json.dumps(sorted(st.session_state.caught_set)), encoding="utf-8"
-            )
-            version = st.session_state.selection_version
-        st.session_state.caught_saved_version = version
+    version = st.session_state.get("selection_version", 0)
+    CAUGHT_DIR.mkdir(parents=True, exist_ok=True)
+    t = sql_store.persist(caught, version, CAUGHT_DB, delay=False)
+    t.join()
+    if st.session_state.get("selection_version", 0) > version:
+        logger.info("selection_version advanced during save; rewriting")
+        t2 = sql_store.persist(st.session_state.caught_set, st.session_state.selection_version, CAUGHT_DB, delay=False)
+        t2.join()
+        version = st.session_state.selection_version
+    st.session_state.caught_saved_version = version
 
 
 def apply_caught_edits(

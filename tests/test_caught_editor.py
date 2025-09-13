@@ -4,10 +4,9 @@ import pandas as pd
 import streamlit as st
 import threading
 import time
-import json
-from pathlib import Path
 
 import app
+from app.backend import sql_store
 
 
 def test_apply_caught_edits_merges_changes(monkeypatch):
@@ -47,9 +46,9 @@ def test_apply_caught_edits_merges_changes(monkeypatch):
     assert saved["caught"] == {"Chikorita"}
 
 
-def test_caught_file_path():
-    expected = Path.home() / ".pogorarity" / "caught_pokemon.json"
-    assert app.CAUGHT_FILE == expected
+def test_caught_db_path():
+    expected = Path.home() / ".pogorarity" / "caught_pokemon.db"
+    assert app.CAUGHT_DB == expected
 
 
 def test_apply_caught_edits_many_rows():
@@ -75,16 +74,21 @@ def test_apply_caught_edits_race_condition(monkeypatch, tmp_path):
 
     monkeypatch.setattr(app, "CAUGHT_DIR", tmp_path)
     monkeypatch.setattr(app.app_module, "CAUGHT_DIR", tmp_path)
-    monkeypatch.setattr(app, "CAUGHT_FILE", tmp_path / "caught.json")
-    monkeypatch.setattr(app.app_module, "CAUGHT_FILE", tmp_path / "caught.json")
+    db = tmp_path / "caught.db"
+    monkeypatch.setattr(app, "CAUGHT_DB", db)
+    monkeypatch.setattr(app.app_module, "CAUGHT_DB", db)
+    sql_store.reset(db)
 
-    original_write = Path.write_text
+    original_persist = app.sql_store.persist
+    call = {"count": 0}
 
-    def slow_write(self, *args, **kwargs):
-        time.sleep(0.1)
-        return original_write(self, *args, **kwargs)
+    def slow_persist(ids, ver, path, delay=False):
+        if call["count"] == 0:
+            time.sleep(0.1)
+        call["count"] += 1
+        return original_persist(ids, ver, path, delay=False)
 
-    monkeypatch.setattr(Path, "write_text", slow_write)
+    monkeypatch.setattr(app.sql_store, "persist", slow_persist)
 
     df = pd.DataFrame({"Name": ["Bulbasaur", "Chikorita"], "Caught": [False, False]})
     edited1 = df.copy()
@@ -100,6 +104,6 @@ def test_apply_caught_edits_race_condition(monkeypatch, tmp_path):
     thread.join()
 
     assert st.session_state.caught_set == {"Bulbasaur", "Chikorita"}
-    saved = set(json.loads(app.CAUGHT_FILE.read_text()))
-    assert saved == {"Bulbasaur", "Chikorita"}
+    ids, _ = sql_store.load(db)
+    assert ids == {"Bulbasaur", "Chikorita"}
 
