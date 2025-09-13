@@ -6,6 +6,7 @@ import logging
 
 import pandas as pd
 import streamlit as st
+from filelock import FileLock
 
 from pogorarity.health import check_cache
 from pogorarity import aggregator, thresholds
@@ -162,13 +163,19 @@ def save_caught(caught: set[str]) -> None:
     """Persist the caught Pokémon set to disk."""
     version = st.session_state.get("selection_version", 0)
     CAUGHT_DIR.mkdir(parents=True, exist_ok=True)
-    t = sql_store.persist(caught, version, CAUGHT_DB, delay=False)
-    t.join()
-    if st.session_state.get("selection_version", 0) > version:
-        logger.info("selection_version advanced during save; rewriting")
-        t2 = sql_store.persist(st.session_state.caught_set, st.session_state.selection_version, CAUGHT_DB, delay=False)
-        t2.join()
-        version = st.session_state.selection_version
+    with FileLock(str(CAUGHT_DB)):
+        t = sql_store.persist(caught, version, CAUGHT_DB, delay=False)
+        t.join()
+        if st.session_state.get("selection_version", 0) > version:
+            logger.info("selection_version advanced during save; rewriting")
+            t2 = sql_store.persist(
+                st.session_state.caught_set,
+                st.session_state.selection_version,
+                CAUGHT_DB,
+                delay=False,
+            )
+            t2.join()
+            version = st.session_state.selection_version
     st.session_state.caught_saved_version = version
 
 
