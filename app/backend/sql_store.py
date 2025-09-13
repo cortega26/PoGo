@@ -3,7 +3,7 @@ from __future__ import annotations
 import sqlite3
 import threading
 from pathlib import Path
-from typing import Iterable, Set, Tuple
+from typing import Iterable, Set, Tuple, Any
 
 from app.diag.latency import maybe_sleep
 from app.diag.tracer import trace
@@ -18,7 +18,7 @@ def _ensure_conn(path: Path) -> sqlite3.Connection:
         conn.execute(
             "CREATE TABLE IF NOT EXISTS meta (ver INTEGER)")
         conn.execute(
-            "CREATE TABLE IF NOT EXISTS caught (id INTEGER PRIMARY KEY)")
+            "CREATE TABLE IF NOT EXISTS caught (id TEXT PRIMARY KEY)")
         cur = conn.execute("SELECT COUNT(*) FROM meta")
         if cur.fetchone()[0] == 0:
             conn.execute("INSERT INTO meta (ver) VALUES (0)")
@@ -30,8 +30,8 @@ def reset(path: Path) -> None:
         path.unlink()
 
 
-def persist(ids: Iterable[int], ver: int, path: Path, delay: bool = True) -> threading.Thread:
-    ids = set(ids)
+def persist(ids: Iterable[Any], ver: int, path: Path, delay: bool = True) -> threading.Thread:
+    ids = {str(i) for i in ids}
 
     def _commit() -> None:
         trace("persist_start", ver=ver, size=len(ids))
@@ -58,11 +58,17 @@ def persist(ids: Iterable[int], ver: int, path: Path, delay: bool = True) -> thr
     return t
 
 
-def load(path: Path) -> Tuple[Set[int], int]:
+def load(path: Path) -> Tuple[Set[Any], int]:
     conn = _ensure_conn(path)
     try:
         rows = conn.execute("SELECT id FROM caught").fetchall()
-        ids = {row[0] for row in rows}
+        ids: Set[Any] = set()
+        for row in rows:
+            val = row[0]
+            if isinstance(val, str) and val.isdigit():
+                ids.add(int(val))
+            else:
+                ids.add(val)
         ver = conn.execute("SELECT ver FROM meta").fetchone()[0]
         trace("load", ver=ver, size=len(ids))
         return ids, ver
