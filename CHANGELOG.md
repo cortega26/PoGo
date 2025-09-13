@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.15] - 2025-09-13
+
+### Added
+
+- Persist caught toggles as append-only events with log compaction.
+- Test interleaved add/remove event sequences.
+
 ## [0.1.14] - 2025-09-12
 
 ### Fixed

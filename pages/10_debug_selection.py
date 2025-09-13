@@ -1,6 +1,6 @@
 import streamlit as st
 
-from app.backend.mock_store import load, persist
+from app.backend.event_store import append_toggle, load
 from app.diag.tracer import trace
 from app.state.selection import ensure_session_state, toggle_and_bump
 
@@ -19,8 +19,7 @@ def on_change(pid: int):
     checked = st.session_state[f"caught_{pid}"]
     ver, ids = toggle_and_bump(st, pid, checked)
     trace("toggle", pid=pid, checked=checked, ver=ver, size=len(ids))
-    if simulate_latency:
-        persist(ids, ver)
+    append_toggle(pid, checked)
 
 
 st.title("Debug: Selection State")
