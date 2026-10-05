@@ -1,20 +1,13 @@
-<div align="center">
-
 # PoGo Rarity
 
-<p><strong>Before you transfer it, know how replaceable it really is.</strong></p>
-<p>A multi-source Pokémon GO rarity signal that helps you decide what to keep, trade or transfer — with confidence shown instead of hidden.</p>
+**Before you transfer it, know how replaceable it really is.**
+
+A multi-source Pokémon GO rarity signal that helps you decide what to keep, trade or transfer — with confidence shown instead of hidden.
 
 [![GitHub stars](https://img.shields.io/github/stars/cortega26/PoGo?style=flat&logo=github)](https://github.com/cortega26/PoGo/stargazers)
 ![status](https://img.shields.io/badge/status-experimental-blue)
 
-<p>
-  <a href="https://pokemongo.streamlit.app/"><strong>Open the Streamlit app</strong></a> ·
-  <a href="#quickstart">Run locally</a> ·
-  <a href="#scoring-model">See the scoring model</a>
-</p>
-
-</div>
+**[Open the Streamlit app](https://pokemongo.streamlit.app/)** · [Run locally](#quickstart) · [See the scoring model](#scoring-model)
 
 ![Streamlit UI](docs/screenshot.png)
 
@@ -23,7 +16,7 @@
 Availability in Pokémon GO changes by species, events, region and source quality. PoGo Rarity combines several public signals instead of pretending one feed is ground truth, then exposes a **confidence score** so weak evidence stays visible.
 
 | Question | What PoGo Rarity gives you |
-|:---|:---|
+| :--- | :--- |
 | Is this Pokémon easy to replace? | Weighted rarity score |
 | Do the sources actually agree? | Confidence based on available source weight |
 | Should I keep, trade or transfer it? | Configurable recommendation bands |
@@ -188,7 +181,7 @@ summary of the rarest Pokémon.
 ## Configuration
 
 | Flag | Type | Default | Required | Description |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | `--limit` | int | – | No | Limit number of Pokémon scraped for testing |
 | `--dry-run` | flag | false | No | Run the scraper without writing CSV output |
 | `--output-dir` | str | – | No | Directory to save the CSV output file |
@@ -270,7 +263,7 @@ On Streamlit Community Cloud, open the "Debug: Selection State" page and optiona
 ## Troubleshooting
 
 | Issue | Cause | Fix |
-|---|---|---|
+| --- | --- | --- |
 | ModuleNotFoundError | Dependencies missing | `pip install -r requirements.lock && pip install -e .` |
 | HTTP 429 errors | Rate limiting by external sites | Re-run later; scraper backs off automatically |
 | CSV not generated | `--dry-run` used or path unwritable | Remove `--dry-run` or set `--output-dir` |
