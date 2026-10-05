@@ -1,10 +1,36 @@
-# PoGo Rarity
->
-> Aggregates public Pokémon GO data sources to recommend which monsters to keep or trade.
+<div align="center">
 
-![tests](https://img.shields.io/badge/tests-passing-brightgreen) ![status](https://img.shields.io/badge/status-experimental-blue)
+# PoGo Rarity
+
+<p><strong>Before you transfer it, know how replaceable it really is.</strong></p>
+<p>A multi-source Pokémon GO rarity signal that helps you decide what to keep, trade or transfer — with confidence shown instead of hidden.</p>
+
+[![GitHub stars](https://img.shields.io/github/stars/cortega26/PoGo?style=flat&logo=github)](https://github.com/cortega26/PoGo/stargazers)
+![status](https://img.shields.io/badge/status-experimental-blue)
+
+<p>
+  <a href="https://pokemongo.streamlit.app/"><strong>Open the Streamlit app</strong></a> ·
+  <a href="#quickstart">Run locally</a> ·
+  <a href="#scoring-model">See the scoring model</a>
+</p>
+
+</div>
 
 ![Streamlit UI](docs/screenshot.png)
+
+## Rarity is not one number from one website
+
+Availability in Pokémon GO changes by species, events, region and source quality. PoGo Rarity combines several public signals instead of pretending one feed is ground truth, then exposes a **confidence score** so weak evidence stays visible.
+
+| Question | What PoGo Rarity gives you |
+|:---|:---|
+| Is this Pokémon easy to replace? | Weighted rarity score |
+| Do the sources actually agree? | Confidence based on available source weight |
+| Should I keep, trade or transfer it? | Configurable recommendation bands |
+| Can I tune the assumptions? | Custom source weights and thresholds |
+| Can I explore instead of reading CSVs? | Streamlit UI with filters and caught tracking |
+
+> **Important:** this is a decision aid built from public/community data, not an authoritative live spawn oracle. Event rotations and regional availability can make any static rarity estimate temporarily wrong.
 
 ## Overview
 
